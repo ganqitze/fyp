@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <link rel="stylesheet" type="text/css" href="page.css">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+  <link rel="stylesheet" href="https://code.getmdl.io/1.3.0/material.blue_grey-light_blue.min.css"/>
+  <script defer src="https://code.getmdl.io/1.3.0/material.min.js"></script>
+  <title>FYP</title>  
+</head>
+
+<body>
+  <div class="mdl-layout mdl-js-layout mdl-layout--fixed-header mdl-layout--fixed-tabs">
+    <header class="mdl-layout__header">
+      <div class="mdl-layout__header-row">
+        <!-- Title -->
+        <span class="mdl-layout-title">FYP</span>
+      </div>
+      <!-- Tabs -->
+      <div class="mdl-layout__tab-bar mdl-js-ripple-effect">
+        <a href="#dist" class="mdl-layout__tab is-active">Distribution of words frequencies vs. topics</a>
+        <a href="#graph" class="mdl-layout__tab ">Graph of Topics vs. time</a>
+      </div>      
+    </header>
+    <!-- Drawer -->
+    <div class="mdl-layout__drawer">
+      <span class="mdl-layout-title">FYP</span>
+      <nav class="mdl-navigation">
+        <a class="mdl-navigation__link" href="">Link</a>
+        <a class="mdl-navigation__link" href="">Link</a>
+      </nav>
+    </div>
+    <!-- Contents -->
+    <main class="mdl-layout__content">
+
+      <!-- Distribution -->
+      <section class="mdl-layout__tab-panel is-active" id="dist">
+        <div class="page-content"><!-- Your content goes here --></div>
+      </section>
+
+      <!-- Graph -->
+      <section class="mdl-layout__tab-panel" id="graph">
+        <div class="page-content">
+         <div class="mdl-grid">
+          <div class="mdl-cell mdl-cell--1-col"></div>
+          <div class="mdl-cell mdl-cell--4-col">
+
+            <form action="#">
+              <div class="mdl-textfield mdl-js-textfield">
+                <input class="mdl-textfield__input" type="text" id="input-1">
+                <label class="mdl-textfield__label" for="input-1">Topic 1</label>
+              </div>
+              <label> VS. </label>
+              <div class="mdl-textfield mdl-js-textfield">
+                <input class="mdl-textfield__input" type="text" id="input-2">
+                <label class="mdl-textfield__label" for="input-2">Topic 2</label>
+              </div>
+            </form>
+          </div>
+
+          <div class="mdl-cell mdl-cell--6-col">
+            <img src="sample1.png" width="720px" height="480px">
+          </div>
+        </div>
+      </div>
+    </section>
+
+  </main>
+</div>
+</body>
+</html>
