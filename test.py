@@ -42,10 +42,10 @@ from pdfminer.converter import PDFPageAggregator
 
 start_time = time.time()
 
-base_path = "C://Users/User/Desktop/fyp-github"
+base_path = "C://Users/User/Desktop/fyp"
 
 my_file = os.path.join(base_path + "/" + "paper1.pdf")
-log_file = os.path.join(base_path + "/" + "log.txt")
+log_file = os.path.join(base_path + "/" + "log2.csv")
 
 password = ""
 extracted_text = ""
@@ -89,7 +89,7 @@ for page in PDFPage.create_pages(document):
 	for lt_obj in layout:
 		if isinstance(lt_obj, LTTextBox) or isinstance(lt_obj, LTTextLine):
 			extracted_text += lt_obj.get_text()
-			extracted_text = extracted_text.replace('\n', '').replace('\r', '').replace('\t', '')
+			extracted_text = extracted_text.replace('\n', '').replace('\r', '').replace('\t', '').replace('       ','').replace('    ', '')
 			
 #close the pdf file
 fp.close()
