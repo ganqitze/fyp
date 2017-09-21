@@ -42,7 +42,7 @@ from pdfminer.converter import PDFPageAggregator
 
 start_time = time.time()
 
-base_path = "C://Users/User/Desktop/fyp"
+base_path = "C://Users/User/Desktop/fyp/order_paper"
 
 my_file = os.path.join(base_path + "/" + "paper1.pdf")
 log_file = os.path.join(base_path + "/" + "log2.csv")
