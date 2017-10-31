@@ -5,6 +5,8 @@
 # and preprocesses it. This can take a few hours, and a lot of
 # memory, so please be patient!
 
+import time
+
 from lda2vec import preprocess, Corpus
 import numpy as np
 import pandas as pd
@@ -14,12 +16,15 @@ import os.path
 
 logging.basicConfig()
 
+start_time = time.time()
+
 max_length = 250   # Limit of 250 words per comment
 min_author_comments = 50  # Exclude authors with fewer comments
-nrows = None  # Number of rows of file to read; None reads in full file
+# nrows = None  # Number of rows of file to read; None reads in full file
+nrows = 2  # Number of rows of file to read; None reads in full file
 
 # fn = "hacker_news_comments.csv"
-fn = "C:/Users/User/Desktop/fyp/log2.csv"
+fn = "C:/Users/User/Desktop/fyp/order_paper/log.csv"
 # url = "https://zenodo.org/record/45901/files/hacker_news_comments.csv"
 # if not os.path.exists(fn):
 #     import requests
@@ -43,12 +48,14 @@ for col, dtype in zip(features.columns, features.dtypes):
 # Only the most recent versions have tokenization of noun phrases
 # I'm using SHA dfd1a1d3a24b4ef5904975268c1bbb13ae1a32ff
 # Also try running python -m spacy.en.download all --force
-texts = features.pop('c').values
+texts = features.pop('f').values
 # texts = features.pop('comment_text').values
 tokens, vocab = preprocess.tokenize(texts, max_length, n_threads=4,
                                     merge=False)
 print tokens, vocab
 del texts
+
+print("--- %s seconds ---" % (time.time() - start_time))
 
 # # Make a ranked list of rare vs frequent words
 # corpus = Corpus()
@@ -64,6 +71,7 @@ del texts
 # # Words tend to have power law frequency, so selectively
 # # downsample the most prevalent words
 # clean = corpus.subsample_frequent(pruned)
+# print np.unique(clean)
 # print "n_words", np.unique(clean).max()
 
 # # Extract numpy arrays over the fields we want covered by topics

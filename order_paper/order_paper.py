@@ -27,7 +27,7 @@ from pdfminer.pdfinterp import PDFResourceManager, PDFPageInterpreter
 from pdfminer.pdfdevice import PDFDevice
 # Import this to raise exception whenever text extraction from PDF is not allowed
 from pdfminer.pdfpage import PDFTextExtractionNotAllowed
-from pdfminer.layout import LAParams, LTTextBox, LTTextLine
+from pdfminer.layout import LAParams, LTTextBox, LTTextLine, LTChar
 from pdfminer.converter import PDFPageAggregator
 
 ''' This is what we are trying to do:
@@ -44,11 +44,20 @@ start_time = time.time()
 
 base_path = "C://Users/User/Desktop/fyp/order_paper"
 
+
 my_file = os.path.join(base_path + "/" + "paper1.pdf")
-log_file = os.path.join(base_path + "/" + "log2.csv")
+log_file = os.path.join(base_path + "/" + "log.csv")
+stopword_file = os.path.join("C://Users/User/Desktop/fyp/" + "stopword.txt")
 
 password = ""
 extracted_text = ""
+
+# stopword list
+with open(stopword_file) as f:
+    blacklist = f.readlines()
+# you may also want to remove whitespace characters like `\n` at the end of each line
+blacklist = [x.strip() for x in blacklist] 
+
 
 # Open and read the pdf file in binary mode
 fp = open(my_file, "rb")
@@ -89,18 +98,16 @@ for page in PDFPage.create_pages(document):
 	for lt_obj in layout:
 		if isinstance(lt_obj, LTTextBox) or isinstance(lt_obj, LTTextLine):
 			extracted_text += lt_obj.get_text()
-			extracted_text = extracted_text.replace('\n', '').replace('\r', '').replace('\t', '').replace('       ','').replace('    ', '')
-			
+			extracted_text = extracted_text.replace('\n', ' ').replace('\r', ' ').replace('\t', ' ').replace(u'\u2019', '\'').replace('       ',' ').replace('    ', ' ').replace('         ', ' ')
+			for word in blacklist:
+				extracted_text = extracted_text.replace(' ' + word + ' ', ' ')
 #close the pdf file
 fp.close()
 
-			
 with open(log_file, "w") as my_log:
-	my_log.write(extracted_text.encode("utf-8"))
-print("Done parsing !!")
+    my_log.write(extracted_text.encode("utf-8"))
+
+print("--- Done parsing! %s seconds ---" % (time.time() - start_time))
 
 
-
-
-print("--- %s seconds ---" % (time.time() - start_time))
 
