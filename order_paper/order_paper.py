@@ -45,8 +45,8 @@ start_time = time.time()
 base_path = "C://Users/User/Desktop/fyp/order_paper"
 
 
-my_file = os.path.join(base_path + "/" + "paper2.pdf")
-log_file = os.path.join(base_path + "/" + "log4.csv")
+my_file = os.path.join(base_path + "/" + "OPDR08032017_11.pdf")
+log_file = os.path.join(base_path + "/" + "log8.csv")
 stopword_file = os.path.join("C://Users/User/Desktop/fyp/" + "stopword.txt")
 
 password = ""
@@ -99,12 +99,14 @@ for page in PDFPage.create_pages(document):
 		if isinstance(lt_obj, LTTextBox) or isinstance(lt_obj, LTTextLine):
 			extracted_text += lt_obj.get_text()
 			extracted_text = extracted_text.replace('\n', ' ').replace('\r', ' ').replace('\t', ' ').replace(u'\u2019', '\'').replace('       ',' ').replace('    ', ' ').replace('         ', ' ').replace(',', '')
+			while "  " in extracted_text:
+				extracted_text = extracted_text.replace('  ', ' ')  # Replace double spaces by one while double spaces are in text
 			for word in blacklist:
 				extracted_text = extracted_text.replace(' ' + word + ' ', ' ')
-#close the pdf file
+			#close the pdf file
 fp.close()
 
-with open(log_file, "a") as my_log:
+with open(log_file, "w") as my_log:
     my_log.write(extracted_text.encode("utf-8"))
 
 print("--- Done parsing! %s seconds ---" % (time.time() - start_time))

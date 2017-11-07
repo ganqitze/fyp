@@ -12,4 +12,12 @@ with open(log_file, "a") as my_log:
 				my_log.write(date.encode("utf-8"))
 
 
-		
+
+
+# log_file = "C://Users/User/Desktop/fyp/ministry.txt"
+# with open(log_file) as f:
+#     blacklist = f.read()
+
+
+# with open(log_file, "w") as f:
+#     f.write(blacklist.upper())
