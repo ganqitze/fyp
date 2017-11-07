@@ -18,8 +18,9 @@ log_file = os.path.join(base_path + "/" + "log_2.csv")
 stopword_file = os.path.join("C://Users/User/Desktop/fyp/" + "stopword.txt")
 word_1 = "AT THE COMMENCEMENT OF PUBLIC BUSINESS PRESENTATION OF GOVERNMENT BILL FOR FIRST READING"
 word_2 = "AT THE COMMENCEMENT OF PUBLIC BUSINESS PRESENTATION OF GOVERNMENT BILLS FOR FIRST READING"
-word_3= "ORDERS OF THE DAY AND MOTIONS"
-word_4= "ORDERS OF THE DAY AND MOTION"
+word_3 = "ORDERS OF THE DAY AND MOTIONS"
+word_4 = "ORDERS OF THE DAY AND MOTION"
+word_5 = "AT THE COMMENCEMENT OF PUBLIC BUSINESS PRESENTATION OF GOVERNMENT BILL FOR THE FIRST READING"
 # word_5 = "AT THE COMMENCEMENT OF PUBLIC BUSINESS PRESENTATION OF GOVERNMENT BILLS FOR FIRST READINNG"
 
 open(log_file, 'wb').close()
@@ -83,7 +84,7 @@ def parser(date, file):
 						break
 					else:
 						extracted_text += lt_obj.get_text()
-						print lt_obj.get_text()
+						# print lt_obj.get_text()
 						extracted_text = extracted_text.replace('\n', ' ').replace('\r', ' ').replace('\t', ' ').replace(u'\u2019', '\'').replace('       ',' ').replace('    ', ' ').replace('         ', ' ').replace(',', '').replace('READINNG', 'READING')
 						while "  " in extracted_text:
 							extracted_text = extracted_text.replace('  ', ' ')  # Replace double spaces by one while double spaces are in text
