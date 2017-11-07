@@ -21,7 +21,7 @@ word_2 = "AT THE COMMENCEMENT OF PUBLIC BUSINESS PRESENTATION OF GOVERNMENT BILL
 word_3 = "ORDERS OF THE DAY AND MOTIONS"
 word_4 = "ORDERS OF THE DAY AND MOTION"
 word_5 = "AT THE COMMENCEMENT OF PUBLIC BUSINESS PRESENTATION OF GOVERNMENT BILL FOR THE FIRST READING"
-# word_list = ["AT THE COMMENCEMENT OF PUBLIC BUSINESS PRESENTATION OF GOVERNMENT BILL FOR FIRST READING", "AT THE COMMENCEMENT OF PUBLIC BUSINESS PRESENTATION OF GOVERNMENT BILLS FOR FIRST READING", "AT THE COMMENCEMENT OF PUBLIC BUSINESS PRESENTATION OF GOVERNMENT BILL FOR THE FIRST READING", "ORDERS OF THE DAY AND MOTIONS", "ORDERS OF THE DAY AND MOTION"]
+# word_5 = "AT THE COMMENCEMENT OF PUBLIC BUSINESS PRESENTATION OF GOVERNMENT BILLS FOR FIRST READINNG"
 
 open(log_file, 'wb').close()
 
@@ -40,7 +40,7 @@ def stopword():
 	return stop_list
 
 def parser(date, file):
-	# page_count = 1
+	page_count = 1
 	password = ""
 	extracted_text = ""
 	blacklist = stopword()
@@ -70,27 +70,28 @@ def parser(date, file):
 	
 	for page in PDFPage.create_pages(document):
 
-		# if not 9 < page_count < 11:
-		# 	print "sup", page_count
-		# else:
-		# As the interpreter processes the page stored in PDFDocument object
-		interpreter.process_page(page)
-		# The device renders the layout from interpreter
-		layout = device.get_result()
-		# Out of the many LT objects within layout, we are interested in LTTextBox and LTTextLine
-		for lt_obj in layout:
-			if isinstance(lt_obj, LTTextBox) or isinstance(lt_obj, LTTextLine):
-				if word_1 in extracted_text or word_2 in extracted_text or word_3 in extracted_text or word_4 in extracted_text or word_5 in extracted_text:
-					break
-				else:
-					extracted_text += lt_obj.get_text()
-					# print lt_obj.get_text(), "SKIP"
-					extracted_text = extracted_text.replace('\n', ' ').replace('\r', ' ').replace('\t', ' ').replace(u'\u2019', '\'').replace('       ',' ').replace('    ', ' ').replace('         ', ' ').replace(',', '').replace('READINNG', 'READING')
-					while "  " in extracted_text:
-						extracted_text = extracted_text.replace('  ', ' ')  # Replace double spaces by one while double spaces are in text
-					for word in blacklist:
-							extracted_text = extracted_text.replace(' ' + word + ' ', ' ')
-		# page_count = page_count + 1
+		if not 9 < page_count < 12:
+			print "sup", page_count
+		else:
+			# As the interpreter processes the page stored in PDFDocument object
+			interpreter.process_page(page)
+			# The device renders the layout from interpreter
+			layout = device.get_result()
+			# Out of the many LT objects within layout, we are interested in LTTextBox and LTTextLine
+			for lt_obj in layout:
+				if isinstance(lt_obj, LTTextBox) or isinstance(lt_obj, LTTextLine):
+					if word_1 in extracted_text or word_2 in extracted_text or word_3 in extracted_text or word_4 in extracted_text or word_5 in extracted_text:
+						break
+					else:
+						extracted_text += lt_obj.get_text()
+						# print lt_obj.get_text()
+						extracted_text = extracted_text.replace('\n', ' ').replace('\r', ' ').replace('\t', ' ').replace(u'\u2019', '\'').replace('       ',' ').replace('    ', ' ').replace('         ', ' ').replace(',', '').replace('READINNG', 'READING')
+						while "  " in extracted_text:
+							extracted_text = extracted_text.replace('  ', ' ')  # Replace double spaces by one while double spaces are in text
+						for word in blacklist:
+								extracted_text = extracted_text.replace(' ' + word + ' ', ' ')
+		page_count = page_count + 1
+
 	fp.close()
 	with open(log_file, "ab") as newFile:
 		newFileWriter = csv.writer(newFile)
@@ -104,5 +105,6 @@ if __name__ == "__main__":
 		interval_time = time.time()
 		if filename.startswith("OPDR") and filename.endswith(".pdf"):
 			parser(filename[4:-4], os.path.join(directory, filename))
-		print("--- Done %s with %s seconds ---" % (filename, time.time() - interval_time))
+			# print filename[13:-7]
+		print("--- Done %s with %s seconds ---" % (filename, time.time() - interval_time))        	
 	print("--- Done all! %s seconds ---" % (time.time() - start_time))
