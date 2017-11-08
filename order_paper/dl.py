@@ -12,15 +12,18 @@ from pdfminer.converter import PDFPageAggregator
 
 start_time = time.time()
 
-directory = "C:/Users/User/Desktop/paper"
-base_path = "C://Users/User/Desktop/fyp/order_paper"
-log_file = os.path.join(base_path + "/" + "log_2.csv")
-stopword_file = os.path.join("C://Users/User/Desktop/fyp/" + "stopword.txt")
-word_1 = "AT THE COMMENCEMENT OF PUBLIC BUSINESS PRESENTATION OF GOVERNMENT BILL FOR FIRST READING"
-word_2 = "AT THE COMMENCEMENT OF PUBLIC BUSINESS PRESENTATION OF GOVERNMENT BILLS FOR FIRST READING"
+paper_dir = "C:/Users/User/Desktop/paper/13_4_2"
+stopword_dir = "C://Users/User/Desktop/fyp/stopword"
+log_file = "C://Users/User/Desktop/fyp/order_paper/log1.csv"
+symbol_file = "C://Users/User/Desktop/fyp/stopword/special/symbol.txt"
+
+
+word_1 = "THE COMMENCEMENT OF PUBLIC BUSINESS PRESENTATION OF GOVERNMENT BILL FOR FIRST READING"
+word_2 = "THE COMMENCEMENT OF PUBLIC BUSINESS PRESENTATION OF GOVERNMENT BILLS FOR FIRST READING"
 word_3 = "ORDERS OF THE DAY AND MOTIONS"
 word_4 = "ORDERS OF THE DAY AND MOTION"
-word_5 = "AT THE COMMENCEMENT OF PUBLIC BUSINESS PRESENTATION OF GOVERNMENT BILL FOR THE FIRST READING"
+word_5 = "THE COMMENCEMENT OF PUBLIC BUSINESS PRESENTATION OF GOVERNMENT BILL FOR THE FIRST READING"
+word_5 = "THE COMMENCEMENT OF PUBLIC BUSINESS PRESENTATION OF GOVERNMENT BILL FOR THE FIRST READING"
 # word_list = ["AT THE COMMENCEMENT OF PUBLIC BUSINESS PRESENTATION OF GOVERNMENT BILL FOR FIRST READING", "AT THE COMMENCEMENT OF PUBLIC BUSINESS PRESENTATION OF GOVERNMENT BILLS FOR FIRST READING", "AT THE COMMENCEMENT OF PUBLIC BUSINESS PRESENTATION OF GOVERNMENT BILL FOR THE FIRST READING", "ORDERS OF THE DAY AND MOTIONS", "ORDERS OF THE DAY AND MOTION"]
 
 open(log_file, 'wb').close()
@@ -32,19 +35,29 @@ def write_header():
 	    writer.writeheader()
 	    # writer.writerow({'date': filename[4:-4], 'content': extracted_text.encode("utf-8")})
 
-def stopword():
-	with open(stopword_file) as f:
-		stop_list = f.readlines()
-	# you may also want to remove whitespace characters like `\n` at the end of each line
-	stop_list = [x.strip() for x in stop_list]
+def stopword_read():
+	stop_list = []
+	try:
+		for file in os.listdir(stopword_dir):
+			if file.endswith(".txt"):
+				with open(os.path.join(stopword_dir + "/" + file)) as f:
+					stop_list += f.readlines()
+			stop_list = [x.strip() for x in stop_list]
+	except IOError as e:
+		print 'Operation failed: %s' % e.strerror
 	return stop_list
 
-def parser(date, file):
+def symbol_stop():
+	with open(symbol_file) as f:
+		symbol_list = f.readlines()
+	# you may also want to remove whitespace characters like `\n` at the end of each line
+	symbol_list = [x.strip() for x in symbol_list]
+	return symbol_list
+
+def parser(date, file, stopword, symbol):
 	# page_count = 1
 	password = ""
 	extracted_text = ""
-	blacklist = stopword()
-
 	# Open and read the pdf file in binary mode
 	fp = open(file, "rb")
 	# Create parser object to parse the pdf content
@@ -69,7 +82,6 @@ def parser(date, file):
 	# Ok now that we have everything to process a pdf document, lets process it page by page
 	
 	for page in PDFPage.create_pages(document):
-
 		# if not 9 < page_count < 11:
 		# 	print "sup", page_count
 		# else:
@@ -88,8 +100,11 @@ def parser(date, file):
 					extracted_text = extracted_text.replace('\n', ' ').replace('\r', ' ').replace('\t', ' ').replace(u'\u2019', '\'').replace('       ',' ').replace('    ', ' ').replace('         ', ' ').replace(',', '').replace('READINNG', 'READING')
 					while "  " in extracted_text:
 						extracted_text = extracted_text.replace('  ', ' ')  # Replace double spaces by one while double spaces are in text
-					for word in blacklist:
+					for word in stopword:
 							extracted_text = extracted_text.replace(' ' + word + ' ', ' ')
+					for s in symbol:
+						extracted_text = extracted_text.replace(s + ' ', ' ')
+					
 		# page_count = page_count + 1
 	fp.close()
 	with open(log_file, "ab") as newFile:
@@ -97,12 +112,13 @@ def parser(date, file):
 		newFileWriter.writerow([date, extracted_text.encode("utf-8")])
 
 
-
 if __name__ == "__main__":	
 	write_header()
-	for filename in os.listdir(directory):
+	blacklist = stopword_read()
+	symbol_blacklist = symbol_stop()
+	for filename in os.listdir(paper_dir):
 		interval_time = time.time()
 		if filename.startswith("OPDR") and filename.endswith(".pdf"):
-			parser(filename[4:-4], os.path.join(directory, filename))
+			parser(filename[4:-4], os.path.join(paper_dir, filename), blacklist, symbol_blacklist)
 		print("--- Done %s with %s seconds ---" % (filename, time.time() - interval_time))
 	print("--- Done all! %s seconds ---" % (time.time() - start_time))
