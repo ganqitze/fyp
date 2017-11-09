@@ -45,9 +45,9 @@ start_time = time.time()
 base_path = "C://Users/User/Desktop/fyp/order_paper"
 
 
-my_file = os.path.join(base_path + "/" + "paper1.pdf")
-log_file = os.path.join(base_path + "/" + "log8.csv")
-stopword_file = os.path.join("C://Users/User/Desktop/fyp/stopword/special/" + "symbol.txt")
+my_file = os.path.join(base_path + "/" + "OPDR26032014.pdf")
+log_file = os.path.join(base_path + "/" + "log8.txt")
+stopword_file = os.path.join("C://Users/User/Desktop/fyp/stopword/" + "minister.txt")
 
 password = ""
 extracted_text = ""

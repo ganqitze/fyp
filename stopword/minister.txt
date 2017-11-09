@@ -13,6 +13,7 @@ MINISTER OF PLANTATION INDUSTRY AND COMMODITY
 MINISTER OF PLANTATION INDUSTRIES AND COMMODITY
 MINISTER OF PLANTATION INDUSTRY AND COMMODITIES
 MINISTER OF ENERGY GREEN TECHNOLOGY AND WATER
+MINISTER OF ENERGYGREEN TECHNOLOGY AND WATER
 MINISTER OF AGRICULTURE AND AGRO-BASED INDUSTRY
 MINISTER OF AGRICULTURE AND AGRO-BASED INDUSTRIES
 MINISTER OF RURAL AND REGIONAL DEVELOPMENT
@@ -56,6 +57,7 @@ Minister of Plantation Industry and Commodity
 Minister of Plantation Industries and Commodity
 Minister of Plantation Industry and Commodities
 Minister of Energy Green Technology and Water
+Minister of EnergyGreen Technology and Water
 Minister of Agriculture and Agro-Based Industry
 Minister of agriculture and Agro-Based Industries
 Minister of Rural and Regional Development
@@ -84,3 +86,7 @@ Minister of Communication and Multimedia
 Minister of Communications and Multimedia
 Minister In The Prime Minister's Department
 MINISTER
+OF AGRICULTURE AND AGRO-BASED
+OF WOMEN AND COMMUNITY
+DEVELOPMENT
+FAMILY

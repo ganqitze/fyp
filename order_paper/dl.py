@@ -12,9 +12,9 @@ from pdfminer.converter import PDFPageAggregator
 
 start_time = time.time()
 
-paper_dir = "C:/Users/User/Desktop/paper/13_4_2"
+paper_dir = "C:/Users/User/Desktop/paper/13_1_3"
 stopword_dir = "C://Users/User/Desktop/fyp/stopword"
-log_file = "C://Users/User/Desktop/fyp/order_paper/log1.csv"
+log_file = "C://Users/User/Desktop/fyp/order_paper/log9.csv"
 symbol_file = "C://Users/User/Desktop/fyp/stopword/special/symbol.txt"
 
 
