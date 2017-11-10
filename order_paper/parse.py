@@ -13,10 +13,12 @@ from pdfminer.converter import PDFPageAggregator
 
 start_time = time.time()
 
-paper_dir = "C:/Users/User/Desktop/paper/13_2_2"
-stopword_dir = "C://Users/User/Desktop/fyp/stopword"
-log_file = "C://Users/User/Desktop/fyp/order_paper/log2.csv"
-symbol_file = "C://Users/User/Desktop/fyp/stopword/special/symbol.txt"
+# base_path_lin  = "/home/User/Desktop/fyp/order_paper"
+# base_path_win = "C:/Users/User/Desktop/fyp/order_paper"
+paper_dir = "/home/User/Desktop/paper/13_2_2"
+stopword_dir = "/home/User/Desktop/fyp/stopword"
+log_file = "/home/User/Desktop/fyp/order_paper/log3.csv"
+symbol_file = "/home/User/Desktop/fyp/stopword/special/symbol.txt"
 
 
 word_1 = "THE COMMENCEMENT OF PUBLIC BUSINESS PRESENTATION OF GOVERNMENT BILL FOR FIRST READING"

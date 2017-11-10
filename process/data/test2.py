@@ -23,9 +23,11 @@ max_length = 32767   # Limit of 250 words per comment
 min_author_comments = 50  # Exclude authors with fewer comments
 nrows = None  # Number of rows of file to read; None reads in full file
 
+# base_path_lin  = "/home/User/Desktop/fyp/order_paper"
+# base_path_win = "C:/Users/User/Desktop/fyp/order_paper"
 
 # fn = "hacker_news_comments.csv"
-fn = "C:/Users/User/Desktop/fyp/order_paper/log6.csv"
+fn = "/home/User/Desktop/fyp/order_paper/log2.csv"
 # url = "https://zenodo.org/record/45901/files/hacker_news_comments.csv"
 # if not os.path.exists(fn):
 #     import requests
@@ -134,11 +136,11 @@ flattened, features_flat = corpus.compact_to_flat(pruned, *feature_arrs)
 # np.savez('data', **data)
 # np.save(open('tokens', 'w'), tokens)
 
-pickle.dump(corpus, open('corpus', 'w'), protocol=2)
-pickle.dump(vocab, open('vocab', 'w'), protocol=2)
+pickle.dump(corpus, open('corpus', 'wb'), protocol=2)
+pickle.dump(vocab, open('vocab', 'wb'), protocol=2)
 features.to_pickle('features.pd')
-data = dict(paper_id=paper_id_f, date_id=date_id_f)
+data = dict(flattened=flattened, paper_id=paper_id_f, date_id=date_id_f)
 np.savez('data', **data)
-np.save(open('tokens', 'w'), tokens)
+np.save(open('tokens', 'wb'), tokens)
 
 print("--- Done %s seconds ---" % (time.time() - start_time))
