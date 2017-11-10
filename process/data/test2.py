@@ -25,7 +25,7 @@ nrows = None  # Number of rows of file to read; None reads in full file
 
 
 # fn = "hacker_news_comments.csv"
-fn = "C:/Users/User/Desktop/fyp/order_paper/log4.csv"
+fn = "C:/Users/User/Desktop/fyp/order_paper/log6.csv"
 # url = "https://zenodo.org/record/45901/files/hacker_news_comments.csv"
 # if not os.path.exists(fn):
 #     import requests
@@ -94,11 +94,13 @@ clean = corpus.subsample_frequent(pruned)
 # # features['story_id_codes'] = story_id
 # # features['author_id_codes'] = story_id
 # # features['time_id_codes'] = time_id
+paper_id = pd.Categorical(features['paper_id']).codes
+features['paper_id_codes'] = paper_id
 
 # Chop timestamps into days
 paper_date = pd.to_datetime(features['date'])
-today_date = pd.to_datetime(datetime.today())
-days_since = abs((paper_date - today_date) / pd.Timedelta('1 day'))
+# today_date = pd.to_datetime(datetime.today())
+days_since = abs((paper_date - paper_date.min()) / pd.Timedelta('1 day'))
 date_id = days_since.astype('int32') #time_id
 
 # print "n_authors", author_id.max()
@@ -117,6 +119,11 @@ date_id = days_since.astype('int32') #time_id
 # # Flattened feature arrays
 # (story_id_f, author_id_f, time_id_f, ranking_f, score_f) = features_flat
 
+feature_arrs = (paper_id, date_id)
+flattened, features_flat = corpus.compact_to_flat(pruned, *feature_arrs)
+# Flattened feature arrays
+(paper_id_f, date_id_f) = features_flat
+
 # # Save the data
 # pickle.dump(corpus, open('corpus', 'w'), protocol=2)
 # pickle.dump(vocab, open('vocab', 'w'), protocol=2)
@@ -126,5 +133,12 @@ date_id = days_since.astype('int32') #time_id
 #             author_name=author_name, author_index=author_id)
 # np.savez('data', **data)
 # np.save(open('tokens', 'w'), tokens)
+
+pickle.dump(corpus, open('corpus', 'w'), protocol=2)
+pickle.dump(vocab, open('vocab', 'w'), protocol=2)
+features.to_pickle('features.pd')
+data = dict(paper_id=paper_id_f, date_id=date_id_f)
+np.savez('data', **data)
+np.save(open('tokens', 'w'), tokens)
 
 print("--- Done %s seconds ---" % (time.time() - start_time))

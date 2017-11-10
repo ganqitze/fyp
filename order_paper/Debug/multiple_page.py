@@ -16,6 +16,7 @@ directory = "C:/Users/User/Desktop/paper"
 base_path = "C://Users/User/Desktop/fyp/order_paper"
 log_file = os.path.join(base_path + "/" + "log_2.csv")
 stopword_file = os.path.join("C://Users/User/Desktop/fyp/" + "stopword.txt")
+symbol_file = "C://Users/User/Desktop/fyp/stopword/special/symbol.txt"
 word_1 = "AT THE COMMENCEMENT OF PUBLIC BUSINESS PRESENTATION OF GOVERNMENT BILL FOR FIRST READING"
 word_2 = "AT THE COMMENCEMENT OF PUBLIC BUSINESS PRESENTATION OF GOVERNMENT BILLS FOR FIRST READING"
 word_3 = "ORDERS OF THE DAY AND MOTIONS"
@@ -32,19 +33,29 @@ def write_header():
 	    writer.writeheader()
 	    # writer.writerow({'date': filename[4:-4], 'content': extracted_text.encode("utf-8")})
 
-def stopword():
-	with open(stopword_file) as f:
-		stop_list = f.readlines()
-	# you may also want to remove whitespace characters like `\n` at the end of each line
-	stop_list = [x.strip() for x in stop_list]
+def stopword_read():
+	stop_list = []
+	try:
+		for file in os.listdir(stopword_dir):
+			if file.endswith(".txt"):
+				with open(os.path.join(stopword_dir + "/" + file)) as f:
+					stop_list += f.readlines()
+			stop_list = [x.strip() for x in stop_list]
+	except IOError as e:
+		print 'Operation failed: %s' % e.strerror
 	return stop_list
 
-def parser(date, file):
+def symbol_stop():
+	with open(symbol_file) as f:
+		symbol_list = f.readlines()
+	# you may also want to remove whitespace characters like `\n` at the end of each line
+	symbol_list = [x.strip() for x in symbol_list]
+	return symbol_list
+
+def parser(date, file, stopword, symbol):
 	page_count = 1
 	password = ""
 	extracted_text = ""
-	blacklist = stopword()
-
 	# Open and read the pdf file in binary mode
 	fp = open(file, "rb")
 	# Create parser object to parse the pdf content
@@ -81,15 +92,19 @@ def parser(date, file):
 			for lt_obj in layout:
 				if isinstance(lt_obj, LTTextBox) or isinstance(lt_obj, LTTextLine):
 					if word_1 in extracted_text or word_2 in extracted_text or word_3 in extracted_text or word_4 in extracted_text or word_5 in extracted_text:
-						break
-					else:
-						extracted_text += lt_obj.get_text()
-						# print lt_obj.get_text()
-						extracted_text = extracted_text.replace('\n', ' ').replace('\r', ' ').replace('\t', ' ').replace(u'\u2019', '\'').replace('       ',' ').replace('    ', ' ').replace('         ', ' ').replace(',', '').replace('READINNG', 'READING')
-						while "  " in extracted_text:
-							extracted_text = extracted_text.replace('  ', ' ')  # Replace double spaces by one while double spaces are in text
-						for word in blacklist:
-								extracted_text = extracted_text.replace(' ' + word + ' ', ' ')
+					extracted_text = extracted_text.replace(word_1, '').replace(word_2, '').replace(word_3, '').replace(word_4, '').replace(word_5, '')
+					break
+				else:
+					extracted_text += lt_obj.get_text()
+					# print lt_obj.get_text(), "SKIP"
+					extracted_text = extracted_text.replace('\n', ' ').replace('\r', ' ').replace('\t', ' ').replace(u'\u2019', '\'').replace('       ',' ').replace('    ', ' ').replace('         ', ' ').replace(',', '').replace('READINNG', 'READING')
+					while "  " in extracted_text:
+						extracted_text = extracted_text.replace('  ', ' ')  # Replace double spaces by one while double spaces are in text
+					for word in stopword:
+							extracted_text = extracted_text.replace(' ' + word + ' ', ' ')
+					for s in symbol:
+						extracted_text = extracted_text.replace(s + ' ', ' ')
+					
 		page_count = page_count + 1
 
 	fp.close()
@@ -98,13 +113,15 @@ def parser(date, file):
 		newFileWriter.writerow([date, extracted_text.encode("utf-8")])
 
 
-
 if __name__ == "__main__":	
 	write_header()
+	blacklist = stopword_read()
+	symbol_blacklist = symbol_stop()
 	for filename in os.listdir(directory):
 		interval_time = time.time()
 		if filename.startswith("OPDR") and filename.endswith(".pdf"):
-			parser(filename[4:-4], os.path.join(directory, filename))
-			# print filename[13:-7]
+			date = datetime.strptime(filename[4:-4], '%d%m%Y')
+			parser(date, os.path.join(paper_dir, filename), blacklist, symbol_blacklist) 
+			# print filename[4:-4]
 		print("--- Done %s with %s seconds ---" % (filename, time.time() - interval_time))        	
 	print("--- Done all! %s seconds ---" % (time.time() - start_time))

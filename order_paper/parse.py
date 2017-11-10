@@ -15,7 +15,7 @@ start_time = time.time()
 
 paper_dir = "C:/Users/User/Desktop/paper/13_2_2"
 stopword_dir = "C://Users/User/Desktop/fyp/stopword"
-log_file = "C://Users/User/Desktop/fyp/order_paper/log4.csv"
+log_file = "C://Users/User/Desktop/fyp/order_paper/log2.csv"
 symbol_file = "C://Users/User/Desktop/fyp/stopword/special/symbol.txt"
 
 
@@ -24,14 +24,13 @@ word_2 = "THE COMMENCEMENT OF PUBLIC BUSINESS PRESENTATION OF GOVERNMENT BILLS F
 word_3 = "ORDERS OF THE DAY AND MOTIONS"
 word_4 = "ORDERS OF THE DAY AND MOTION"
 word_5 = "THE COMMENCEMENT OF PUBLIC BUSINESS PRESENTATION OF GOVERNMENT BILL FOR THE FIRST READING"
-word_5 = "THE COMMENCEMENT OF PUBLIC BUSINESS PRESENTATION OF GOVERNMENT BILL FOR THE FIRST READING"
 # word_list = ["AT THE COMMENCEMENT OF PUBLIC BUSINESS PRESENTATION OF GOVERNMENT BILL FOR FIRST READING", "AT THE COMMENCEMENT OF PUBLIC BUSINESS PRESENTATION OF GOVERNMENT BILLS FOR FIRST READING", "AT THE COMMENCEMENT OF PUBLIC BUSINESS PRESENTATION OF GOVERNMENT BILL FOR THE FIRST READING", "ORDERS OF THE DAY AND MOTIONS", "ORDERS OF THE DAY AND MOTION"]
 
 open(log_file, 'wb').close()
 
 def write_header():
 	with open(log_file, 'wb') as csvfile:
-	    fieldnames = ['date', 'content']
+	    fieldnames = ['paper_id', 'date', 'content']
 	    writer = csv.DictWriter(csvfile, fieldnames=fieldnames)
 	    writer.writeheader()
 	    # writer.writerow({'date': filename[4:-4], 'content': extracted_text.encode("utf-8")})
@@ -55,7 +54,7 @@ def symbol_stop():
 	symbol_list = [x.strip() for x in symbol_list]
 	return symbol_list
 
-def parser(date, file, stopword, symbol):
+def parser(paper_id, date, file, stopword, symbol):
 	# page_count = 1
 	password = ""
 	extracted_text = ""
@@ -105,12 +104,13 @@ def parser(date, file, stopword, symbol):
 							extracted_text = extracted_text.replace(' ' + word + ' ', ' ')
 					for s in symbol:
 						extracted_text = extracted_text.replace(s + ' ', ' ')
-					
 		# page_count = page_count + 1
+	extracted_text = extracted_text.replace(word_1, '').replace(word_2, '').replace(word_3, '').replace(word_4, '').replace(word_5, '')
+		
 	fp.close()
 	with open(log_file, "ab") as newFile:
 		newFileWriter = csv.writer(newFile)
-		newFileWriter.writerow([date, extracted_text.encode("utf-8")])
+		newFileWriter.writerow([paper_id, date, extracted_text.encode("utf-8")])
 
 
 if __name__ == "__main__":	
@@ -121,6 +121,6 @@ if __name__ == "__main__":
 		interval_time = time.time()
 		if filename.startswith("OPDR") and filename.endswith(".pdf"):
 			date = datetime.strptime(filename[4:-4], '%d%m%Y')
-			parser(date, os.path.join(paper_dir, filename), blacklist, symbol_blacklist) 
+			parser(filename[:-4], date, os.path.join(paper_dir, filename), blacklist, symbol_blacklist) 
 		print("--- Done %s with %s seconds ---" % (filename, time.time() - interval_time))
 	print("--- Done all! %s seconds ---" % (time.time() - start_time))
