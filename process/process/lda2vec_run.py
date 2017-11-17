@@ -64,7 +64,7 @@ n_vocab = flattened.max() + 1
 # Number of dimensions in a single word vector
 n_units = 256
 # Number of topics to fit
-n_story_topics = 2
+n_story_topics = 20
 batchsize = 4096
 # Get the string representation for every compact key
 words = corpus.word_list(vocab)[:n_vocab]
@@ -170,7 +170,7 @@ optimizer.add_hook(clip)
 j = 0
 epoch = 0
 fraction = batchsize * 1.0 / flattened.shape[0]
-for epoch in range(50):
+for epoch in range(150):
     ts = prepare_topics(cuda.to_cpu(model.mixture_sty.weights.W.data).copy(),
                         cuda.to_cpu(model.mixture_sty.factors.W.data).copy(),
                         cuda.to_cpu(model.sampler.W.data).copy(),

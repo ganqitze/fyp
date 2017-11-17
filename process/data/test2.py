@@ -27,7 +27,7 @@ nrows = None  # Number of rows of file to read; None reads in full file
 # base_path_win = "C:/Users/User/Desktop/fyp/order_paper"
 
 # fn = "hacker_news_comments.csv"
-fn = "/home/User/Desktop/fyp/order_paper/log2.csv"
+fn = "/home/User/fyp/order_paper/log.csv"
 # url = "https://zenodo.org/record/45901/files/hacker_news_comments.csv"
 # if not os.path.exists(fn):
 #     import requests

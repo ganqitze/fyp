@@ -15,10 +15,10 @@ start_time = time.time()
 
 # base_path_lin  = "/home/User/Desktop/fyp/order_paper"
 # base_path_win = "C:/Users/User/Desktop/fyp/order_paper"
-paper_dir = "/home/User/Desktop/paper/13_2_2"
-stopword_dir = "/home/User/Desktop/fyp/stopword"
-log_file = "/home/User/Desktop/fyp/order_paper/log3.csv"
-symbol_file = "/home/User/Desktop/fyp/stopword/special/symbol.txt"
+paper_dir = "/home/User/fyp/paper"
+stopword_dir = "/home/User/fyp/stopword"
+log_file = "/home/User/fyp/order_paper/log.csv"
+symbol_file = "/home/User/fyp/stopword/special/symbol.txt"
 
 
 word_1 = "THE COMMENCEMENT OF PUBLIC BUSINESS PRESENTATION OF GOVERNMENT BILL FOR FIRST READING"
