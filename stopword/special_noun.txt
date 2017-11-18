@@ -1,9 +1,17 @@
-MALAYSIA
 DEWAN RAKYAT
 ORDER PAPER
 http://www.parlimen.gov.my
+http://www.parlimen.gov
 TRANSLATION
 [Authoritative Copy - Bahasa Malaysia]
+Authoritative Copy - Bahasa Malaysia
+NASKHAH SAHIH/BAHASA ATURAN URUSAN MESYUARAT
+ATURAN URUSAN MESYUARAT
+HARI
+PUKUL
+PAGI
+Bil
+PERTANYAAN-PERTANYAAN BAGI JAWAB LISAN
 MINISTER'S QUESTION TIME
 QUESTIONS FOR ORAL ANSWERS
 No.
@@ -13,3 +21,35 @@ ADMINISTRATION OF OATH
 AM
 PM
 AT
+MALAYSIA
+4.00
+AKT
+Act
+ask
+state
+Malaysia
+Malaysian
+government
+Government
+ministry
+Ministry
+ops
+pertama
+Pertama
+Yang di-Pertuan Agong
+number
+10th
+11th
+12th
+13th
+Federal Government
+SK Punan Bah
+Belaga District Kapit Division
+Punan Sama
+SK Nanga Stapang
+Sungai Gaat
+Baleh Kapit Division
+SK Long Busang
+SK Nanga Tiau
+Sungai Mujong
+collecting

@@ -99,7 +99,8 @@ def parser(paper_id, date, file, stopword, symbol):
 				else:
 					extracted_text += lt_obj.get_text()
 					# print lt_obj.get_text(), "SKIP"
-					extracted_text = extracted_text.replace('\n', ' ').replace('\r', ' ').replace('\t', ' ').replace(u'\u2019', '\'').replace('       ',' ').replace('    ', ' ').replace('         ', ' ').replace(',', '').replace('READINNG', 'READING')
+					extracted_text = extracted_text.replace('\n', ' ').replace('\r', ' ').replace('\t', ' ').replace(u'-', ' ').replace('       ',' ').replace('    ', ' ').replace('         ', ' ').replace(',', '').replace('READINNG', 'READING')
+					extracted_text = extracted_text.replace(u'\u2018', '\'').replace(u'\u2019', '\'').replace(u'\u201C', '\"').replace(u'\u201D', '\"')
 					while "  " in extracted_text:
 						extracted_text = extracted_text.replace('  ', ' ')  # Replace double spaces by one while double spaces are in text
 					for word in stopword:
