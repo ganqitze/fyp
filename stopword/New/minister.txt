@@ -1,0 +1,176 @@
+PRIME MINISTER
+MINISTER OF FINANCE
+DEPUTY PRIME MINISTER
+MINISTER OF HOME AFFAIRS
+MINISTER OF HOME AFFAIR
+MINISTER OF TRANSPORT
+MINISTER OF TOURISM AND CULTURE
+MINISTER OF DEFENCE
+MINISTER OF INTERNATIONAL TRADE AND INDUSTRY
+MINISTER OF INTERNATIONAL TRADE AND INDUSTRIES
+MINISTER OF PLANTATION INDUSTRIES AND COMMODITIES
+MINISTER OF PLANTATION INDUSTRY AND COMMODITY
+MINISTER OF PLANTATION INDUSTRIES AND COMMODITY
+MINISTER OF PLANTATION INDUSTRY AND COMMODITIES
+MINISTER OF ENERGY GREEN TECHNOLOGY AND WATER
+MINISTER OF ENERGYGREEN TECHNOLOGY AND WATER
+MINISTER OF AGRICULTURE AND AGRO-BASED INDUSTRY
+MINISTER OF AGRICULTURE AND AGRO-BASED INDUSTRIES
+MINISTER OF RURAL AND REGIONAL DEVELOPMENT
+MINISTER OF FOREIGN AFFAIRS
+MINISTER OF FOREIGN AFFAIR
+MINISTER OF SCIENCE TECHNOLOGY AND INNOVATIONS
+MINISTER OF SCIENCE TECHNOLOGY AND INNOVATION
+MINISTER OF WOMEN FAMILY AND COMMUNITY DEVELOPMENT
+MINISTER OF WORKS
+MINISTER OF WORK
+MINISTER OF HUMAN RESOURCES
+MINISTER OF HUMAN RESOURCE
+MINISTER OF HIGHER EDUCATION
+MINISTER OF FEDERAL TERRITORIES
+MINISTER OF FEDERAL TERRITORY
+MINISTER OF YOUTH AND SPORT
+MINISTER OF YOUTH AND SPORTS
+MINISTER OF URBAN WELLBEING HOUSING AND LOCAL GOVERNMENT
+MINISTER OF URBAN WELL-BEING HOUSING AND LOCAL GOVERNMENT
+MINISTER OF DOMESTIC TRADE CO-OPERATIVE AND CONSUMERISM
+MINISTER OF DOMESTIC TRADE CO-OPERATIVES AND CONSUMERISM
+MINISTER OF NATURAL RESOURCES AND ENVIRONMENT
+MINISTER OF NATURAL RESOURCES AND THE ENVIRONMENT
+MINISTER OF EDUCATION
+MINISTER OF HEALTH
+MINISTER OF COMMUNICATION AND MULTIMEDIA
+MINISTER OF COMMUNICATIONS AND MULTIMEDIA
+MINISTER IN THE PRIME MINISTER'S DEPARTMENT
+Prime Minister
+Minister of Finance
+Deputy Prime Minister
+Minister of Home Affairs
+Minister of Home Affair
+Minister of Transport
+Minister of Tourism and Culture
+Minister of Defence
+Minister of International Trade and Industry
+Minister of International Trade and Industries
+Minister of Plantation Industries and Commodities
+Minister of Plantation Industry and Commodity
+Minister of Plantation Industries and Commodity
+Minister of Plantation Industry and Commodities
+Minister of Energy Green Technology and Water
+Minister of EnergyGreen Technology and Water
+Minister of Agriculture and Agro-Based Industry
+Minister of agriculture and Agro-Based Industries
+Minister of Rural and Regional Development
+Minister of Foreign Affairs
+Minister of Foreign Affair
+Minister of Science Technology and Innovations
+Minister of Science Technology and Innovation
+Minister of Women Family and Community Development
+Minister of Works
+Minister of Work
+Minister of Human Resources
+Minister of Human Resource
+Minister of Higher Education
+Minister of Federal Territories
+Minister of Federal Territory
+Minister of Youth and Sport
+Minister of Youth and Sports
+Minister of Urban Wellbeing Housing and Local Government
+Minister of Urban Well-Being Housing and Local Government
+Minister of Domestic Trade Co-operative and Consumerism
+Minister of Domestic Trade Co-operatives and Consumerism
+Minister of Natural Resources and Environment
+Minister of Natural Resources and the Environment
+Minister of Education
+Minister of Health
+Minister of Communication and Multimedia
+Minister of Communications and Multimedia
+Minister In The Prime Minister's Department
+[ Prime Minister ]
+[ Minister of Finance ]
+[ Deputy Prime Minister ]
+[ Minister of Home Affairs ]
+[ Minister of Home Affair ]
+[ Minister of Transport ]
+[ Minister of Tourism and Culture ]
+[ Minister of Defence ]
+[ Minister of International Trade and Industry ]
+[ Minister of International Trade and Industries ]
+[ Minister of Plantation Industries and Commodities ]
+[ Minister of Plantation Industry and Commodity ]
+[ Minister of Plantation Industries and Commodity ]
+[ Minister of Plantation Industry and Commodities ]
+[ Minister of Energy Green Technology and Water ]
+[ Minister of EnergyGreen Technology and Water ]
+[ Minister of Agriculture and Agro-Based Industry ]
+[ Minister of agriculture and Agro-Based Industries ]
+[ Minister of Rural and Regional Development ]
+[ Minister of Foreign Affairs ]
+[ Minister of Foreign Affair ]
+[ Minister of Science Technology and Innovations ]
+[ Minister of Science Technology and Innovation ]
+[ Minister of Women Family and Community Development ]
+[ Minister of Works ]
+[ Minister of Work ]
+[ Minister of Human Resources ]
+[ Minister of Human Resource ]
+[ Minister of Higher Education ]
+[ Minister of Federal Territories ]
+[ Minister of Federal Territory ]
+[ Minister of Youth and Sport ]
+[ Minister of Youth and Sports ]
+[ Minister of Urban Wellbeing Housing and Local Government ]
+[ Minister of Urban Well-Being Housing and Local Government ]
+[ Minister of Domestic Trade Co-operative and Consumerism ]
+[ Minister of Domestic Trade Co-operatives and Consumerism ]
+[ Minister of Natural Resources and Environment ]
+[ Minister of Natural Resources and the Environment ]
+[ Minister of Education ]
+[ Minister of Health ]
+[ Minister of Communication and Multimedia ]
+[ Minister of Communications and Multimedia ]
+[ Minister In The Prime Minister's Department ]
+[Prime Minister]
+[Minister of Finance]
+[Deputy Prime Minister]
+[Minister of Home Affairs]
+[Minister of Home Affair]
+[Minister of Transport]
+[Minister of Tourism and Culture]
+[Minister of Defence]
+[Minister of International Trade and Industry]
+[Minister of International Trade and Industries]
+[Minister of Plantation Industries and Commodities]
+[Minister of Plantation Industry and Commodity]
+[Minister of Plantation Industries and Commodity]
+[Minister of Plantation Industry and Commodities]
+[Minister of Energy Green Technology and Water]
+[Minister of EnergyGreen Technology and Water]
+[Minister of Agriculture and Agro-Based Industry]
+[Minister of agriculture and Agro-Based Industries]
+[Minister of Rural and Regional Development]
+[Minister of Foreign Affairs]
+[Minister of Foreign Affair]
+[Minister of Science Technology and Innovations]
+[Minister of Science Technology and Innovation]
+[Minister of Women Family and Community Development]
+[Minister of Works]
+[Minister of Work]
+[Minister of Human Resources]
+[Minister of Human Resource]
+[Minister of Higher Education]
+[Minister of Federal Territories]
+[Minister of Federal Territory]
+[Minister of Youth and Sport]
+[Minister of Youth and Sports]
+[Minister of Urban Wellbeing Housing and Local Government]
+[Minister of Urban Well-Being Housing and Local Government]
+[Minister of Domestic Trade Co-operative and Consumerism]
+[Minister of Domestic Trade Co-operatives and Consumerism]
+[Minister of Natural Resources and Environment]
+[Minister of Natural Resources and the Environment]
+[Minister of Education]
+[Minister of Health]
+[Minister of Communication and Multimedia]
+[Minister of Communications and Multimedia]
+[Minister In The Prime Minister's Department]

@@ -15,10 +15,15 @@ start_time = time.time()
 
 # base_path_lin  = "/home/User/Desktop/fyp/order_paper"
 # base_path_win = "C:/Users/User/Desktop/fyp/order_paper"
-paper_dir = "/home/User/fyp/paper"
-stopword_dir = "/home/User/fyp/stopword"
-log_file = "/home/User/fyp/order_paper/log.csv"
-symbol_file = "/home/User/fyp/stopword/special/symbol.txt"
+paper_dir = "C:/Users/User/Desktop/paper/13_4_3"
+stopword_dir = "C:/Users/User/Desktop/fyp/stopword"
+log_file = "C:/Users/User/Desktop/fyp/order_paper/log1.csv"
+symbol_file = "C:/Users/User/Desktop/fyp/stopword/special/symbol.txt"
+
+# paper_dir = "/home/User/fyp/paper"
+# stopword_dir = "/home/User/fyp/stopword"
+# log_file = "/home/User/fyp/order_paper/log.csv"
+# symbol_file = "/home/User/fyp/stopword/special/symbol.txt"
 
 
 word_1 = "THE COMMENCEMENT OF PUBLIC BUSINESS PRESENTATION OF GOVERNMENT BILL FOR FIRST READING"
@@ -99,14 +104,14 @@ def parser(paper_id, date, file, stopword, symbol):
 				else:
 					extracted_text += lt_obj.get_text()
 					# print lt_obj.get_text(), "SKIP"
-					extracted_text = extracted_text.replace('\n', ' ').replace('\r', ' ').replace('\t', ' ').replace(u'-', ' ').replace('       ',' ').replace('    ', ' ').replace('         ', ' ').replace(',', '').replace('READINNG', 'READING')
+					extracted_text = extracted_text.replace('\n', ' ').replace('\r', ' ').replace('\t', ' ').replace('       ',' ').replace('    ', ' ').replace('         ', ' ').replace(',', '').replace('READINNG', 'READING')
 					extracted_text = extracted_text.replace(u'\u2018', '\'').replace(u'\u2019', '\'').replace(u'\u201C', '\"').replace(u'\u201D', '\"')
-					while "  " in extracted_text:
-						extracted_text = extracted_text.replace('  ', ' ')  # Replace double spaces by one while double spaces are in text
+					for s in symbol:
+						extracted_text = extracted_text.replace(s, ' ')
 					for word in stopword:
 							extracted_text = extracted_text.replace(' ' + word + ' ', ' ')
-					for s in symbol:
-						extracted_text = extracted_text.replace(s + ' ', ' ')
+					while "  " in extracted_text:
+						extracted_text = extracted_text.replace('  ', ' ')  # Replace double spaces by one while double spaces are in text
 		# page_count = page_count + 1
 	extracted_text = extracted_text.replace(word_1, '').replace(word_2, '').replace(word_3, '').replace(word_4, '').replace(word_5, '')
 		

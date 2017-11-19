@@ -31,8 +31,6 @@ Malaysia
 Malaysian
 government
 Government
-ministry
-Ministry
 ops
 pertama
 Pertama
@@ -53,3 +51,9 @@ SK Long Busang
 SK Nanga Tiau
 Sungai Mujong
 collecting
+negara
+Negara
+action
+Sub
+sub
+Question pursuant 22(5)

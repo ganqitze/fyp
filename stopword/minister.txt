@@ -36,6 +36,7 @@ MINISTER OF URBAN WELL-BEING HOUSING AND LOCAL GOVERNMENT
 MINISTER OF DOMESTIC TRADE CO-OPERATIVE AND CONSUMERISM
 MINISTER OF DOMESTIC TRADE CO-OPERATIVES AND CONSUMERISM
 MINISTER OF NATURAL RESOURCES AND ENVIRONMENT
+MINISTER OF NATURAL RESOURCES AND THE ENVIRONMENT
 MINISTER OF EDUCATION
 MINISTER OF HEALTH
 MINISTER OF COMMUNICATION AND MULTIMEDIA
@@ -79,6 +80,7 @@ Minister of Urban Well-Being Housing and Local Government
 Minister of Domestic Trade Co-operative and Consumerism
 Minister of Domestic Trade Co-operatives and Consumerism
 Minister of Natural Resources and Environment
+Minister of Natural Resources and the Environment
 Minister of Education
 Minister of Health
 Minister of Communication and Multimedia
@@ -122,6 +124,7 @@ Minister In The Prime Minister's Department
 [ Minister of Domestic Trade Co-operative and Consumerism ]
 [ Minister of Domestic Trade Co-operatives and Consumerism ]
 [ Minister of Natural Resources and Environment ]
+[ Minister of Natural Resources and the Environment ]
 [ Minister of Education ]
 [ Minister of Health ]
 [ Minister of Communication and Multimedia ]
@@ -165,13 +168,9 @@ Minister In The Prime Minister's Department
 [Minister of Domestic Trade Co-operative and Consumerism]
 [Minister of Domestic Trade Co-operatives and Consumerism]
 [Minister of Natural Resources and Environment]
+[Minister of Natural Resources and the Environment]
 [Minister of Education]
 [Minister of Health]
 [Minister of Communication and Multimedia]
 [Minister of Communications and Multimedia]
 [Minister In The Prime Minister's Department]
-MINISTER
-OF AGRICULTURE AND AGRO-BASED
-OF WOMEN AND COMMUNITY
-DEVELOPMENT
-FAMILY
