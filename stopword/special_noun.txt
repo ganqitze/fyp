@@ -1,28 +1,28 @@
 DEWAN RAKYAT
 ORDER PAPER
-http://www.parlimen.gov.my
-http://www.parlimen.gov
+MALAYSIA
+wwwparlimengovmy
+wwwparlimengov
+http
 TRANSLATION
-[Authoritative Copy - Bahasa Malaysia]
-Authoritative Copy - Bahasa Malaysia
-NASKHAH SAHIH/BAHASA ATURAN URUSAN MESYUARAT
+Authoritative Copy
+Bahasa Malaysia
+NASKHAH SAHIHBAHASA ATURAN URUSAN MESYUARAT
 ATURAN URUSAN MESYUARAT
 HARI
 PUKUL
 PAGI
 Bil
-PERTANYAAN-PERTANYAAN BAGI JAWAB LISAN
-MINISTER'S QUESTION TIME
+PERTANYAANPERTANYAAN BAGI JAWAB LISAN
+MINISTER QUESTION TIME
 QUESTIONS FOR ORAL ANSWERS
-No.
+No
 OPDR
 SO
 ADMINISTRATION OF OATH
 AM
 PM
 AT
-MALAYSIA
-4.00
 AKT
 Act
 ask
@@ -34,7 +34,7 @@ Government
 ops
 pertama
 Pertama
-Yang di-Pertuan Agong
+Yang diPertuan Agong
 number
 10th
 11th
@@ -49,6 +49,7 @@ Sungai Gaat
 Baleh Kapit Division
 SK Long Busang
 SK Nanga Tiau
+SK Kebagu
 Sungai Mujong
 collecting
 negara
@@ -56,4 +57,5 @@ Negara
 action
 Sub
 sub
-Question pursuant 22(5)
+Question pursuant
+Sdn Bhd

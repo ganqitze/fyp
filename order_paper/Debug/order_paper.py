@@ -42,12 +42,13 @@ from pdfminer.converter import PDFPageAggregator
 
 start_time = time.time()
 
-base_path = "C://Users/User/Desktop/fyp/order_paper"
+base_path = "C://Users/User/Desktop/fyp/order_paper/Debug"
 
 
-my_file = os.path.join(base_path + "/" + "OPDR26032014.pdf")
+my_file = os.path.join(base_path + "/" + "OPDR30092013.pdf")
 log_file = os.path.join(base_path + "/" + "log8.txt")
-stopword_file = os.path.join("C://Users/User/Desktop/fyp/stopword/" + "code.txt")
+symbol_file = "C:/Users/User/Desktop/fyp/stopword/special/symbol.txt"
+stopword_file = os.path.join("C://Users/User/Desktop/fyp/stopword/" + "special_noun.txt")
 
 password = ""
 extracted_text = ""
@@ -57,6 +58,11 @@ with open(stopword_file) as f:
     blacklist = f.readlines()
 # you may also want to remove whitespace characters like `\n` at the end of each line
 blacklist = [x.strip() for x in blacklist] 
+
+with open(symbol_file) as f:
+	symbol_list = f.readlines()
+# you may also want to remove whitespace characters like `\n` at the end of each line
+symbol_list = [x.strip() for x in symbol_list]
 
 
 # Open and read the pdf file in binary mode
@@ -99,10 +105,13 @@ for page in PDFPage.create_pages(document):
 		if isinstance(lt_obj, LTTextBox) or isinstance(lt_obj, LTTextLine):
 			extracted_text += lt_obj.get_text()
 			extracted_text = extracted_text.replace('\n', ' ').replace('\r', ' ').replace('\t', ' ').replace(u'\u2019', '\'').replace('       ',' ').replace('    ', ' ').replace('         ', ' ').replace(',', '')
-			while "  " in extracted_text:
-				extracted_text = extracted_text.replace('  ', ' ')  # Replace double spaces by one while double spaces are in text
+			for s in symbol_list:
+						extracted_text = extracted_text.replace(s, ' ')
 			for word in blacklist:
 				extracted_text = extracted_text.replace(' ' + word + ' ', ' ')
+			while "  " in extracted_text:
+				extracted_text = extracted_text.replace('  ', ' ')  # Replace double spaces by one while double spaces are in text
+			print extracted_text
 			#close the pdf file
 fp.close()
 

@@ -1,6 +1,7 @@
 import os
 import time
 import csv
+from datetime import datetime
 from pdfminer.pdfparser import PDFParser
 from pdfminer.pdfdocument import PDFDocument
 from pdfminer.pdfpage import PDFPage
@@ -12,11 +13,11 @@ from pdfminer.converter import PDFPageAggregator
 
 start_time = time.time()
 
-directory = "C:/Users/User/Desktop/paper"
-base_path = "C://Users/User/Desktop/fyp/order_paper"
-log_file = os.path.join(base_path + "/" + "log_2.csv")
-stopword_file = os.path.join("C://Users/User/Desktop/fyp/" + "stopword.txt")
+directory = "C:/Users/User/Desktop/fyp/order_paper/Debug"
+log_file = "C://Users/User/Desktop/fyp/order_paper/Debug/log_2.csv"
+stopword_dir = "C://Users/User/Desktop/fyp/stopword"
 symbol_file = "C://Users/User/Desktop/fyp/stopword/special/symbol.txt"
+
 word_1 = "AT THE COMMENCEMENT OF PUBLIC BUSINESS PRESENTATION OF GOVERNMENT BILL FOR FIRST READING"
 word_2 = "AT THE COMMENCEMENT OF PUBLIC BUSINESS PRESENTATION OF GOVERNMENT BILLS FOR FIRST READING"
 word_3 = "ORDERS OF THE DAY AND MOTIONS"
@@ -52,7 +53,8 @@ def symbol_stop():
 	symbol_list = [x.strip() for x in symbol_list]
 	return symbol_list
 
-def parser(date, file, stopword, symbol):
+
+def parser(paper_id, date, file, stopword, symbol):
 	page_count = 1
 	password = ""
 	extracted_text = ""
@@ -80,9 +82,9 @@ def parser(date, file, stopword, symbol):
 	# Ok now that we have everything to process a pdf document, lets process it page by page
 	
 	for page in PDFPage.create_pages(document):
-
-		if not 9 < page_count < 12:
+		if not 27 < page_count < 30:
 			print "sup", page_count
+			# break
 		else:
 			# As the interpreter processes the page stored in PDFDocument object
 			interpreter.process_page(page)
@@ -92,25 +94,26 @@ def parser(date, file, stopword, symbol):
 			for lt_obj in layout:
 				if isinstance(lt_obj, LTTextBox) or isinstance(lt_obj, LTTextLine):
 					if word_1 in extracted_text or word_2 in extracted_text or word_3 in extracted_text or word_4 in extracted_text or word_5 in extracted_text:
-					extracted_text = extracted_text.replace(word_1, '').replace(word_2, '').replace(word_3, '').replace(word_4, '').replace(word_5, '')
-					break
-				else:
-					extracted_text += lt_obj.get_text()
-					# print lt_obj.get_text(), "SKIP"
-					extracted_text = extracted_text.replace('\n', ' ').replace('\r', ' ').replace('\t', ' ').replace(u'\u2019', '\'').replace('       ',' ').replace('    ', ' ').replace('         ', ' ').replace(',', '').replace('READINNG', 'READING')
-					while "  " in extracted_text:
-						extracted_text = extracted_text.replace('  ', ' ')  # Replace double spaces by one while double spaces are in text
-					for word in stopword:
+						break
+					else:
+						extracted_text += lt_obj.get_text()
+						print extracted_text
+						extracted_text = extracted_text.replace('\n', ' ').replace('\r', ' ').replace('\t', ' ').replace('       ',' ').replace('    ', ' ').replace('         ', ' ').replace(',', '').replace('READINNG', 'READING')
+						extracted_text = extracted_text.replace(u'\u2018', '\'').replace(u'\u2019', '\'').replace(u'\u201C', '\"').replace(u'\u201D', '\"').replace(u'\u2013', '-')
+						extracted_text = extracted_text.replace('.', '').replace('-', '').replace('MALAYSIA', '')
+						for s in symbol:
+							extracted_text = extracted_text.replace(s, ' ')
+						for word in stopword:
 							extracted_text = extracted_text.replace(' ' + word + ' ', ' ')
-					for s in symbol:
-						extracted_text = extracted_text.replace(s + ' ', ' ')
-					
+						while "  " in extracted_text:
+							extracted_text = extracted_text.replace('  ', ' ')  # Replace double spaces by one while double spaces are in text			
+						# print extracted_text, "SKIP"
 		page_count = page_count + 1
 
 	fp.close()
-	with open(log_file, "ab") as newFile:
-		newFileWriter = csv.writer(newFile)
-		newFileWriter.writerow([date, extracted_text.encode("utf-8")])
+	# with open(log_file, "ab") as newFile:
+	# 	newFileWriter = csv.writer(newFile)
+	# 	newFileWriter.writerow([date, extracted_text.encode("utf-8")])
 
 
 if __name__ == "__main__":	
@@ -121,7 +124,7 @@ if __name__ == "__main__":
 		interval_time = time.time()
 		if filename.startswith("OPDR") and filename.endswith(".pdf"):
 			date = datetime.strptime(filename[4:-4], '%d%m%Y')
-			parser(date, os.path.join(paper_dir, filename), blacklist, symbol_blacklist) 
+			parser(filename[:-4], date, os.path.join(directory, filename), blacklist, symbol_blacklist)  
 			# print filename[4:-4]
 		print("--- Done %s with %s seconds ---" % (filename, time.time() - interval_time))        	
 	print("--- Done all! %s seconds ---" % (time.time() - start_time))

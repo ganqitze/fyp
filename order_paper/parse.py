@@ -15,9 +15,9 @@ start_time = time.time()
 
 # base_path_lin  = "/home/User/Desktop/fyp/order_paper"
 # base_path_win = "C:/Users/User/Desktop/fyp/order_paper"
-paper_dir = "C:/Users/User/Desktop/paper/13_4_3"
+paper_dir = "C:/Users/User/Desktop/fyp/paper"
 stopword_dir = "C:/Users/User/Desktop/fyp/stopword"
-log_file = "C:/Users/User/Desktop/fyp/order_paper/log1.csv"
+log_file = "C:/Users/User/Desktop/fyp/order_paper/log3.csv"
 symbol_file = "C:/Users/User/Desktop/fyp/stopword/special/symbol.txt"
 
 # paper_dir = "/home/User/fyp/paper"
@@ -105,7 +105,8 @@ def parser(paper_id, date, file, stopword, symbol):
 					extracted_text += lt_obj.get_text()
 					# print lt_obj.get_text(), "SKIP"
 					extracted_text = extracted_text.replace('\n', ' ').replace('\r', ' ').replace('\t', ' ').replace('       ',' ').replace('    ', ' ').replace('         ', ' ').replace(',', '').replace('READINNG', 'READING')
-					extracted_text = extracted_text.replace(u'\u2018', '\'').replace(u'\u2019', '\'').replace(u'\u201C', '\"').replace(u'\u201D', '\"')
+					extracted_text = extracted_text.replace(u'\u2018', '\'').replace(u'\u2019', '\'').replace(u'\u201C', '\"').replace(u'\u201D', '\"').replace(u'\u2013', '-')
+					extracted_text = extracted_text.replace('.', '').replace('-', '').replace('MALAYSIA', '')
 					for s in symbol:
 						extracted_text = extracted_text.replace(s, ' ')
 					for word in stopword:
