@@ -39,6 +39,7 @@ Anifah bin Haji Aman
 Mejar Jeneral
 Jamil Khir Bin Baharum
 Jamil Khir bin Baharum
+Panglima Joseph Kurup
 Tan Panglima Joseph Kurup
 Joseph Entulu anak Belaun
 Joseph Entulu Anak Belaun
@@ -228,6 +229,8 @@ Tan Panglima Haji Annuar Bin Haji Musa
 Tan Panglima Haji Annuar bin Haji Musa
 Panglima Annuar bin Musa
 Panglima Annuar Bin Musa
+Mohd Isa Bin Abdul Samad
+Mohd Isa bin Abdul Samad
 Tan Mohd Isa Bin Abdul Samad
 Tan Mohd Isa bin Abdul Samad
 Jamaluddin Bin Mohd Jarjis
@@ -309,6 +312,7 @@ Mahfuz Bin Haji Omar
 Mahfuz bin Haji Omar
 Mahfuz Bin Omar
 Mahfuz bin Omar
+Kok Wai
 Tan Kok Wai
 Mohamed Azmin Bin Ali
 Mohamed Azmin bin Ali
@@ -379,6 +383,8 @@ V Sivakumar
 Sivakumar
 Idris Bin Haji Ahmad
 Idris bin Haji Ahmad
+Idris Bin Ahmad
+Idris bin Ahmad
 Che Rosli Bin Che Mat
 Che Rosli bin Che Mat
 Lee Boon Chye
@@ -436,6 +442,7 @@ Manivannan l Gowindasamy
 Manivanan l Gowindasamy
 Michael Teo Yu Keng
 Julian Tan Kok Ping
+Julian Kok Ping
 Ahmad Baihaki Bin Atiqullah
 Ahmad Baihaki bin Atiqullah
 Ong Kian Ming

@@ -17,7 +17,7 @@ start_time = time.time()
 # base_path_win = "C:/Users/User/Desktop/fyp/order_paper"
 paper_dir = "C:/Users/User/Desktop/fyp/paper"
 stopword_dir = "C:/Users/User/Desktop/fyp/stopword"
-log_file = "C:/Users/User/Desktop/fyp/order_paper/log3.csv"
+log_file = "C:/Users/User/Desktop/fyp/order_paper/log4.csv"
 symbol_file = "C:/Users/User/Desktop/fyp/stopword/special/symbol.txt"
 
 # paper_dir = "/home/User/fyp/paper"
@@ -102,7 +102,7 @@ def parser(paper_id, date, file, stopword, symbol):
 				if word_1 in extracted_text or word_2 in extracted_text or word_3 in extracted_text or word_4 in extracted_text or word_5 in extracted_text:
 					break
 				else:
-					extracted_text += lt_obj.get_text()
+					extracted_text += ' ' + lt_obj.get_text()
 					# print lt_obj.get_text(), "SKIP"
 					extracted_text = extracted_text.replace('\n', ' ').replace('\r', ' ').replace('\t', ' ').replace('       ',' ').replace('    ', ' ').replace('         ', ' ').replace(',', '').replace('READINNG', 'READING')
 					extracted_text = extracted_text.replace(u'\u2018', '\'').replace(u'\u2019', '\'').replace(u'\u201C', '\"').replace(u'\u201D', '\"').replace(u'\u2013', '-')
