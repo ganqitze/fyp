@@ -102,7 +102,7 @@ def parser(paper_id, date, file, stopword, symbol):
 				if word_1 in extracted_text or word_2 in extracted_text or word_3 in extracted_text or word_4 in extracted_text or word_5 in extracted_text:
 					break
 				else:
-					extracted_text += ' ' + lt_obj.get_text()
+					extracted_text += lt_obj.get_text()
 					# print lt_obj.get_text(), "SKIP"
 					extracted_text = extracted_text.replace('\n', ' ').replace('\r', ' ').replace('\t', ' ').replace('       ',' ').replace('    ', ' ').replace('         ', ' ').replace(',', '').replace('READINNG', 'READING')
 					extracted_text = extracted_text.replace(u'\u2018', '\'').replace(u'\u2019', '\'').replace(u'\u201C', '\"').replace(u'\u201D', '\"').replace(u'\u2013', '-')
