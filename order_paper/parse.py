@@ -12,8 +12,8 @@ from pdfminer.layout import LAParams, LTTextBox, LTTextLine, LTChar
 from pdfminer.converter import PDFPageAggregator
 
 start_time = time.time()
-
-# base_path_lin  = "/home/User/Desktop/fyp/order_paper"
+#HELLO WORLD
+# base_path_lin  = "/home/User/fyp/order_paper"
 # base_path_win = "C:/Users/User/Desktop/fyp/order_paper"
 paper_dir = "C:/Users/User/Desktop/fyp/paper"
 stopword_dir = "C:/Users/User/Desktop/fyp/stopword"
