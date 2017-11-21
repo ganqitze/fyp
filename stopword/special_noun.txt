@@ -65,3 +65,5 @@ country
 countries
 year
 project
+people
+amounted
