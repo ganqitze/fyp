@@ -13,12 +13,12 @@ from pdfminer.converter import PDFPageAggregator
 
 start_time = time.time()
 #HELLO WORLD
-# base_path_lin  = "/home/User/fyp/order_paper"
-# base_path_win = "C:/Users/User/Desktop/fyp/order_paper"
-paper_dir = "/home/User/fyp/paper"
-stopword_dir = "/home/User/fyp/stopword"
-log_file = "/home/User/fyp/order_paper/log4.csv"
-symbol_file = "/home/User/fyp/stopword/special/symbol.txt"
+# base_path_lin  = "/home/User/fyp/English/parse"
+# base_path_win = "C:/Users/User/Desktop/fyp/English/parse"
+paper_dir = "/home/User/fyp/English/paper"
+stopword_dir = "/home/User/fyp/English/stopword"
+log_file = "/home/User/fyp/English/parse/log4.csv"
+symbol_file = "/home/User/fyp/English/stopword/special/symbol.txt"
 
 # paper_dir = "/home/User/fyp/paper"
 # stopword_dir = "/home/User/fyp/stopword"
