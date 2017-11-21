@@ -15,10 +15,10 @@ start_time = time.time()
 #HELLO WORLD
 # base_path_lin  = "/home/User/fyp/order_paper"
 # base_path_win = "C:/Users/User/Desktop/fyp/order_paper"
-paper_dir = "C:/Users/User/Desktop/fyp/paper"
-stopword_dir = "C:/Users/User/Desktop/fyp/stopword"
-log_file = "C:/Users/User/Desktop/fyp/order_paper/log4.csv"
-symbol_file = "C:/Users/User/Desktop/fyp/stopword/special/symbol.txt"
+paper_dir = "/home/User/fyp/paper"
+stopword_dir = "/home/User/fyp/stopword"
+log_file = "/home/User/fyp/order_paper/log4.csv"
+symbol_file = "/home/User/fyp/stopword/special/symbol.txt"
 
 # paper_dir = "/home/User/fyp/paper"
 # stopword_dir = "/home/User/fyp/stopword"
