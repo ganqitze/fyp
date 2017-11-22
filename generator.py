@@ -17,6 +17,7 @@
 #     blacklist = f.read()
 # with open(log_file, "a") as f:
 #     f.write(blacklist.lower())
+#     f.write(blacklist.title())
 
 
 # hour = 24
@@ -44,11 +45,11 @@
 
 # meeting-code = 
 # num-code = 
-log_file = "C://Users/User/Desktop/code.txt"
-with open(log_file, "w") as my_log:		
-	for x in xrange(1, 6):
-		for y in xrange(1,4):
-			for z in xrange(0, 100000):
-				code = "PR-13%d%d-%05d\n" %(x,y,z)
-				# print code
-				my_log.write(code.encode("utf-8"))
+# log_file = "C://Users/User/Desktop/code.txt"
+# with open(log_file, "w") as my_log:		
+# 	for x in xrange(1, 6):
+# 		for y in xrange(1,4):
+# 			for z in xrange(0, 100000):
+# 				code = "PR-13%d%d-%05d\n" %(x,y,z)
+# 				# print code
+# 				my_log.write(code.encode("utf-8"))

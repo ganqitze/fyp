@@ -106,7 +106,7 @@ def parser(paper_id, date, file, stopword, symbol):
                     extracted_text = extracted_text.replace('\n', ' ').replace('\r', ' ').replace('\t', ' ').replace('       ',' ').replace('    ', ' ').replace('         ', ' ').replace(',', '').replace('READINNG', 'READING')
                     extracted_text = extracted_text.replace(u'\u2018', '\'').replace(u'\u2019', '\'').replace(u'\u201C', '\"').replace(u'\u201D', '\"').replace(u'\u2013', '-')
                     # extracted_text = extracted_text.replace('.', '').replace('-', '').replace('MALAYSIA', '')
-                    extracted_text = extracted_text.replace('.', '')
+                    extracted_text = extracted_text.replace('.', '').replace('-', '')
                     for s in symbol:
                         extracted_text = extracted_text.replace(s, ' ')
                     for word in stopword:

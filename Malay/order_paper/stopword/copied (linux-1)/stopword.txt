@@ -1,3 +1,4 @@
+A
 a
 about
 above
@@ -321,3 +322,12 @@ yourselves
 according
 specific
 use
+uses
+plan
+plans
+especially
+ensure
+ensures
+state
+measure
+measures
