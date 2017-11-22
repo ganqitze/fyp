@@ -36,6 +36,7 @@ baru-baru
 bawah
 beberapa
 bekas
+belas
 beliau
 belum
 berada
@@ -132,6 +133,8 @@ kecil
 kedua
 kedua-dua
 kedudukan
+keempat
+kelima
 kekal
 kemudahan
 kenaikan
@@ -148,6 +151,7 @@ kes
 keselamatan
 keseluruhan
 kesihatan
+ketiga
 ketika
 ketua
 keuntungan

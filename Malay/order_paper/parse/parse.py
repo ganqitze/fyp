@@ -27,7 +27,7 @@ symbol_file = "C:/Users/User/Desktop/fyp/Malay/order_paper/stopword/special/symb
 # log_file = "/home/User/fyp/order_paper/log.csv"
 # symbol_file = "/home/User/fyp/stopword/special/symbol.txt"
 
-word_1 = "UCAPAN-UCAPAN"
+word_1 = "UCAPANUCAPAN"
 
 open(log_file, 'wb').close()
 
