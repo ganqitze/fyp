@@ -27,7 +27,7 @@ nrows = None  # Number of rows of file to read; None reads in full file
 # base_path_win = "C:/Users/User/Desktop/fyp/order_paper"
 
 # fn = "hacker_news_comments.csv"
-fn = "/home/User/fyp/English/parse/log4.csv"
+fn = "/home/User/fyp/English/parse/log1.csv"
 # url = "https://zenodo.org/record/45901/files/hacker_news_comments.csv"
 # if not os.path.exists(fn):
 #     import requests
@@ -54,7 +54,7 @@ for col, dtype in zip(features.columns, features.dtypes):
 texts = features.pop('content').values
 # texts = features.pop('comment_text').values
 tokens, vocab = preprocess.tokenize(texts, max_length, n_threads=4,
-                                    merge=False)
+                                    merge=True)
 # print tokens, vocab
 del texts
 

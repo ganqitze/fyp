@@ -17,7 +17,7 @@ start_time = time.time()
 # base_path_win = "C:/Users/User/Desktop/fyp/English/parse"
 paper_dir = "/home/User/fyp/English/paper"
 stopword_dir = "/home/User/fyp/English/stopword"
-log_file = "/home/User/fyp/English/parse/log4.csv"
+log_file = "/home/User/fyp/English/parse/log1.csv"
 symbol_file = "/home/User/fyp/English/stopword/special/symbol.txt"
 
 # paper_dir = "/home/User/fyp/paper"
@@ -26,11 +26,11 @@ symbol_file = "/home/User/fyp/English/stopword/special/symbol.txt"
 # symbol_file = "/home/User/fyp/stopword/special/symbol.txt"
 
 
-word_1 = "THE COMMENCEMENT OF PUBLIC BUSINESS PRESENTATION OF GOVERNMENT BILL FOR FIRST READING"
-word_2 = "THE COMMENCEMENT OF PUBLIC BUSINESS PRESENTATION OF GOVERNMENT BILLS FOR FIRST READING"
-word_3 = "ORDERS OF THE DAY AND MOTIONS"
-word_4 = "ORDERS OF THE DAY AND MOTION"
-word_5 = "THE COMMENCEMENT OF PUBLIC BUSINESS PRESENTATION OF GOVERNMENT BILL FOR THE FIRST READING"
+word_1 = "THE COMMENCEMENT PUBLIC BUSINESS PRESENTATION GOVERNMENT BILL FOR FIRST READING"
+word_2 = "THE COMMENCEMENT PUBLIC BUSINESS PRESENTATION GOVERNMENT BILLS FOR FIRST READING"
+word_3 = "ORDERS THE DAY AND MOTIONS"
+word_4 = "ORDERS THE DAY AND MOTION"
+word_5 = "THE COMMENCEMENT PUBLIC BUSINESS PRESENTATION GOVERNMENT BILL FOR THE FIRST READING"
 # word_list = ["AT THE COMMENCEMENT OF PUBLIC BUSINESS PRESENTATION OF GOVERNMENT BILL FOR FIRST READING", "AT THE COMMENCEMENT OF PUBLIC BUSINESS PRESENTATION OF GOVERNMENT BILLS FOR FIRST READING", "AT THE COMMENCEMENT OF PUBLIC BUSINESS PRESENTATION OF GOVERNMENT BILL FOR THE FIRST READING", "ORDERS OF THE DAY AND MOTIONS", "ORDERS OF THE DAY AND MOTION"]
 
 open(log_file, 'wb').close()
@@ -114,7 +114,7 @@ def parser(paper_id, date, file, stopword, symbol):
 					while "  " in extracted_text:
 						extracted_text = extracted_text.replace('  ', ' ')  # Replace double spaces by one while double spaces are in text
 		# page_count = page_count + 1
-	extracted_text = extracted_text.replace(word_1, '').replace(word_2, '').replace(word_3, '').replace(word_4, '').replace(word_5, '')
+	extracted_text = extracted_text.replace(word_1 + ' ', '').replace(word_2 + ' ', '').replace(word_3 + ' ', '').replace(word_4 + ' ', '').replace(word_5 + ' ', '')
 		
 	fp.close()
 	with open(log_file, "ab") as newFile:
