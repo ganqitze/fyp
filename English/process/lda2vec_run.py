@@ -81,7 +81,7 @@ paper_idx, lengths = np.unique(paper_id, return_counts=True)
 paper_len = np.zeros(paper_idx.max() + 1, dtype='int32')
 paper_len[paper_idx] = lengths
 # print paper_len[paper_idx]
-# # print 'story token = ' + paper_len[paper_idx] 
+print 'story token = ', paper_len[paper_idx] 
 
 # # How many tokens are in each author
 # aut_idx, lengths = np.unique(author_id, return_counts=True)
@@ -99,7 +99,7 @@ paper_len[paper_idx] = lengths
 tok_idx, freq = np.unique(flattened, return_counts=True)
 term_frequency = np.zeros(n_vocab, dtype='int32')
 term_frequency[tok_idx] = freq
-# print 'token freq ', term_frequency[tok_idx] 
+print 'token freq ', term_frequency[tok_idx] 
 
 # model = LDA2Vec(n_stories=n_stories, n_story_topics=n_story_topics,
 #                 n_authors=n_authors, n_author_topics=n_author_topics,
@@ -170,7 +170,7 @@ optimizer.add_hook(clip)
 j = 0
 epoch = 0
 fraction = batchsize * 1.0 / flattened.shape[0]
-for epoch in range(150):
+for epoch in range(250):
     ts = prepare_topics(cuda.to_cpu(model.mixture_sty.weights.W.data).copy(),
                         cuda.to_cpu(model.mixture_sty.factors.W.data).copy(),
                         cuda.to_cpu(model.sampler.W.data).copy(),

@@ -1,4 +1,3 @@
-A
 a
 about
 above
@@ -236,7 +235,6 @@ still
 such
 system
 take
-taken
 ten
 than
 that
@@ -319,6 +317,3 @@ your
 yours
 yourself
 yourselves
-according
-specific
-use
