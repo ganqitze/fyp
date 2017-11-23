@@ -1,4 +1,12 @@
 Yang Amat Berhormat
+YB
+YAB
+Paduka Baginda
+Ampun Tuanku
+Patik
+Yang diPertuan Agong
+Yang diPertua
+Yang Berhormat
 Dato
 Sri
 Seri
@@ -10,6 +18,7 @@ Ust
 Dr
 Ir
 Bt
+Hj
 Mohd Najib Bin Tun Abdul Razak
 Mohd Najib bin Tun Abdul Razak
 Najib Tun Razak
@@ -143,7 +152,9 @@ Othman Bin Aziz
 Othman bin Aziz
 Zahidi Bin Zainul Abidin
 Zahidi bin Zainul Abidin
+Tsen Thau Lin Linda
 Linda Tsen Thau Lin
+Tsen Thau Lin
 Ahmad Lai Bin Bujang
 Ahmad Lai bin Bujang
 Mas Ermieyati Binti Samsudin
@@ -159,7 +170,9 @@ Rubiah Binti Haji Wang
 Rubiah binti Haji Wang
 Khoo Soo Seang
 Hasbi Bin Haji Habibollah
+Hasbi Bin Habibollah
 Hasbi bin Haji Habibollah
+Hasbi bin Habibollah
 Henry Sum Agong
 Mansor Bin Haji Abd Rahman
 Mansor bin Haji Abd Rahman
@@ -201,6 +214,7 @@ Mohd Zaim Bin Abu Hasan
 Mohd Zaim bin Abu Hasan
 Rozman Bin Isli
 Rozman bin Isli
+Rozman Bin
 Isli
 Normala Binti Abdul Samad
 Normala binti Abdul Samad
@@ -215,6 +229,8 @@ Zainudin bin Ismail
 Noor Ehsanuddin Bin Mohd Harun Narrashid
 Noor Ehsanuddin bin Mohd Harun Narrashid
 Anyi Ngau
+Ngau
+Anyi
 Wan Mohammad Khairil Anuar Bin Wan Ahmad
 Wan Mohammad Khairil Anuar bin Wan Ahmad
 Wan Mohammad Khairil Anuar Wan Ahmad
@@ -323,7 +339,12 @@ Siti Zailah binti Mohd Yusoff
 Nurul Izzah Binti Anwar
 Nurul Izzah binti Anwar
 Teresa Kok Suh Sim
-M Kulasegaran
+M Kula Segaran L V Murugeson
+M Kula Segaran l V Murugeson
+M Kulasegaran L
+M Kulasegaran l
+M Kula Segaran
+V Murugeson
 N Surendran L K Nagarajan
 N Surendran l K Nagarajan
 N Surendran
@@ -375,6 +396,7 @@ Gobind Singh Deo
 Liew Chin Tong
 Mohd Rafizi Bin Ramli
 Mohd Rafizi bin Ramli
+Mohd Rafizi
 Johari Bin Abdul
 Johari bin Abdul
 Wong Sze Phin Jimmy
@@ -471,6 +493,8 @@ Ko Chung Sen
 Er Teck Hwa
 Gooi Hsiao Leung
 Gooi HsiaoLeung
+Wan Azizah Bin Wan Ismail
+Wan Azizah bin Wan Ismail
 Wan Azizah Binti Wan Ismail
 Wan Azizah binti Wan Ismail
 Wan Azizah Wan Ismail

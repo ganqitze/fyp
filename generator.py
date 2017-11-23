@@ -12,12 +12,12 @@
 # 				my_log.write(date.encode("utf-8"))
 
 
-# log_file = "C://Users/User/Desktop/minister.txt"
-# with open(log_file) as f:
-#     blacklist = f.read()
-# with open(log_file, "a") as f:
-#     f.write(blacklist.lower())
-#     f.write(blacklist.title())
+log_file = "C://Users/User/Desktop/stopword_malay.txt"
+with open(log_file) as f:
+    blacklist = f.read()
+open(log_file, 'w').close()
+with open(log_file, "w") as f:
+    f.write(blacklist.title())
 
 
 # hour = 24
@@ -53,3 +53,10 @@
 # 				code = "PR-13%d%d-%05d\n" %(x,y,z)
 # 				# print code
 # 				my_log.write(code.encode("utf-8"))
+
+
+# log_file = "C://Users/User/Desktop/num.txt"
+# with open(log_file, 'w') as my_log:
+# 	for x in range(200, 801):
+# 		num = "%d\n" %(x)
+# 		my_log.write(num.encode("utf-8"))

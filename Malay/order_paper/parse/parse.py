@@ -28,6 +28,7 @@ symbol_file = "C:/Users/User/Desktop/fyp/Malay/order_paper/stopword/special/symb
 # symbol_file = "/home/User/fyp/stopword/special/symbol.txt"
 
 word_1 = "UCAPANUCAPAN"
+word_2 = "RISALATRISALAT YANG DIBAWA KE DALAM MESYUARAT DEWAN RAKYAT"
 
 open(log_file, 'wb').close()
 
@@ -59,10 +60,8 @@ def symbol_stop():
 
 def parser(paper_id, date, file, stopword, symbol):
     page_count = 1
-    # page_read_begin = pages    
-    # page_read_until = page_read_begin + 10
     password = ""
-    extracted_text = ""
+    extracted_text = " "
     # Open and read the pdf file in binary mode
     fp = open(file, "rb")
     # Create parser object to parse the pdf content
@@ -86,10 +85,9 @@ def parser(paper_id, date, file, stopword, symbol):
     interpreter = PDFPageInterpreter(rsrcmgr, device)
     # Ok now that we have everything to process a pdf document, lets process it page by page
     
-    for page in PDFPage.create_pages(document):
-         
-        # if not page_read_begin < page_count < page_read_until:
-        #   print "sup", page_read_begin
+    for page in PDFPage.create_pages(document):         
+        # if not 8 < page_count < 10:
+        #   print "sup", page_count
         # else:
         # As the interpreter processes the page stored in PDFDocument object
         interpreter.process_page(page)
@@ -98,31 +96,34 @@ def parser(paper_id, date, file, stopword, symbol):
         # Out of the many LT objects within layout, we are interested in LTTextBox and LTTextLine
         for lt_obj in layout:
             if isinstance(lt_obj, LTTextBox) or isinstance(lt_obj, LTTextLine):
-                if word_1 in extracted_text:
+                if word_1 in extracted_text or word_2 in extracted_text:
                     break
                 else:
                     extracted_text += lt_obj.get_text()
                     # print lt_obj.get_text(), "SKIP"
-                    extracted_text = extracted_text.replace('\n', ' ').replace('\r', ' ').replace('\t', ' ').replace('       ',' ').replace('    ', ' ').replace('         ', ' ').replace(',', '').replace('READINNG', 'READING')
-                    extracted_text = extracted_text.replace(u'\u2018', '\'').replace(u'\u2019', '\'').replace(u'\u201C', '\"').replace(u'\u201D', '\"').replace(u'\u2013', '-')
-                    # extracted_text = extracted_text.replace('.', '').replace('-', '').replace('MALAYSIA', '')
-                    extracted_text = extracted_text.replace('.', '').replace('-', '')
-                    for s in symbol:
-                        extracted_text = extracted_text.replace(s, ' ')
-                    for word in stopword:
-                            extracted_text = extracted_text.replace(' ' + word + ' ', ' ')
-                    while "  " in extracted_text:
-                        extracted_text = extracted_text.replace('  ', ' ')  # Replace double spaces by one while double spaces are in text
+                    extracted_text = extracted_text.replace('\n', ' ').replace('\r', ' ').replace('\t', ' ').replace('       ',' ').replace('    ', ' ').replace('         ', ' ').replace(',', '')
+                    extracted_text = extracted_text.replace(u'\u2018', '\'').replace(u'\u2019', '\'').replace(u'\u201C', '\"').replace(u'\u201D', '\"').replace(u'\u2013', '')
+                    extracted_text = extracted_text.replace('.', '').replace('-', '').replace(')', '').replace('(', '').replace('MALAYSIA', '')
+                    extracted_text = remove_stopword(extracted_text, symbol, stopword)
         page_count = page_count + 1        
         if (page_count%10 == 0):     
+            extracted_text = remove_stopword(extracted_text, symbol, stopword)
             save_text(paper_id, date, extracted_text)
-            extracted_text = ""
-            
-    extracted_text = extracted_text.replace(word_1 + ' ', '')
+            extracted_text = " "        
+    extracted_text = extracted_text.replace(word_1 + ' ', '').replace(word_2 + ' ', '')
     fp.close()
+    extracted_text = remove_stopword(extracted_text, symbol, stopword)
     save_text(paper_id, date, extracted_text)
-    # print page_read_until
-    # return page_read_until
+
+
+def remove_stopword(extracted_text, symbol, stopword):
+    for s in symbol:
+        extracted_text = extracted_text.replace(s, ' ')
+    for word in stopword:
+            extracted_text = extracted_text.replace(' ' + word + ' ', ' ')
+    while "  " in extracted_text:
+        extracted_text = extracted_text.replace('  ', ' ')  # Replace double spaces by one while double spaces are in text
+    return extracted_text
 
 
 def save_text(paper_id, date, extracted_text):    
@@ -141,8 +142,5 @@ if __name__ == "__main__":
         if filename.startswith("AUMDR") and filename.endswith(".pdf"):
             date = datetime.strptime(filename[5:-4], '%d%m%Y')
             parser(filename[:-4], date, os.path.join(paper_dir, filename), blacklist, symbol_blacklist) 
-            #Assume maximum 30 pages
-            # page_end = parser(filename[:-4], date, os.path.join(paper_dir, filename), blacklist, symbol_blacklist) 
-            # page_end = parser(filename[:-4], date, os.path.join(paper_dir, filename), blacklist, symbol_blacklist, page_end) 
         print("--- Done %s with %s seconds ---" % (filename, time.time() - interval_time))
     print("--- Done all! %s seconds ---" % (time.time() - start_time))
