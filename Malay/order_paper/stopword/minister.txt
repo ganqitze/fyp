@@ -18,6 +18,8 @@ KERJA RAYA
 KESIHATAN
 BELIA SUKAN
 SUMBER MANUSIA
+PERDAGANGAN KOPERASI KEPENGGUNAAN
+KPERDAGANGAN KOPERASI KEPENGGUNAAN
 PERDAGANGAN DALAM NEGERI KOPERASI KEPENGGUNAAN
 KESEJAHTERAAN BANDAR PERUMAHAN KERAJAAN TEMPATAN
 PEMBANGUNAN WANITA KELUARGA MASYARAKAT
@@ -27,25 +29,25 @@ SETIAUSAHA KABINET
 KABINET
 KETUA SETIAUSAHA NEGARA
 KETUA NEGARA
-
 TIMBALAN
 PERDAGANGAN ANTARABANGSA 
 INDUSTRI
 PERTANIAN 
 ASAS TANI
 KESEJAHTERAAN
-BANDAR PERUMAHAN
+BANDAR
+PERUMAHAN
 KERAJAAN TEMPATAN
 DAN
 TINGGI
+KEMAJUAN LUAR
+WILAYAH
+PERSEKUTUAN
 SETIAUSAHA
 MENTERI
-
-
-Perdana
+Perdana 
 Jabatan
 Kewangan
-Pendidikan Tinggi
 Pendidikan
 Pengangkutan
 Perusahaan Perladangan Komoditi
@@ -63,12 +65,30 @@ Kerja Raya
 Kesihatan
 Belia Sukan
 Sumber Manusia
+Perdagangan Koperasi Kepenggunaan
+KPerdagangan Koperasi Kepenggunaan
 Perdagangan Dalam Negeri Koperasi Kepenggunaan
 Kesejahteraan Bandar Perumahan Kerajaan Tempatan
 Pembangunan Wanita Keluarga Masyarakat
 Luar Negeri
 Wilayah Persekutuan
 Setiausaha Kabinet
+Kabinet
 Ketua Setiausaha Negara
+Ketua Negara
 Timbalan
+Perdagangan Antarabangsa 
+Industri
+Pertanian 
+Asas Tani
+Kesejahteraan
+Bandar
+Perumahan
+Kerajaan Tempatan
+Dan
+Tinggi
+Kemajuan Luar
+Wilayah
+Persekutuan
+Setiausaha
 Menteri

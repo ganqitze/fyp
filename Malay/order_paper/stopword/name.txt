@@ -1,12 +1,18 @@
-Yang Amat Berhormat
+Amat Berhormat
 YB
 YAB
 Paduka Baginda
 Ampun Tuanku
 Patik
-Yang diPertuan Agong
-Yang diPertua
-Yang Berhormat
+DYMM
+Pertuan
+Agong
+DiPertuan
+iPertuan
+DiPertua
+diPertua
+Berhormat
+Speaker
 Dato
 Sri
 Seri
@@ -19,6 +25,7 @@ Dr
 Ir
 Bt
 Hj
+En
 Mohd Najib Bin Tun Abdul Razak
 Mohd Najib bin Tun Abdul Razak
 Najib Tun Razak
@@ -184,6 +191,7 @@ Anuar Bin Abd Manap
 Anuar bin Abd Manap
 Ahmad Nazlan Bin Idris
 Ahmad Nazlan bin Idris
+Idris Ahmad Nazlan
 Mohd Fasiah Bin Mohd Fakeh
 Mohd Fasiah bin Mohd Fakeh
 Mohd Fasiah Bin Haji Mohd Fakeh
@@ -343,10 +351,13 @@ M Kula Segaran L V Murugeson
 M Kula Segaran l V Murugeson
 M Kulasegaran L
 M Kulasegaran l
-M Kula Segaran
+M Kulasegaran
+M Kula Segaran L
+M Kula Segaran l
 V Murugeson
 N Surendran L K Nagarajan
 N Surendran l K Nagarajan
+Surendran l K Nagarajan
 N Surendran
 Mansor Bin Othman
 Mansor bin Othman

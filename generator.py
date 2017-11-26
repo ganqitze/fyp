@@ -12,12 +12,12 @@
 # 				my_log.write(date.encode("utf-8"))
 
 
-log_file = "C://Users/User/Desktop/stopword_malay.txt"
-with open(log_file) as f:
-    blacklist = f.read()
-open(log_file, 'w').close()
-with open(log_file, "w") as f:
-    f.write(blacklist.title())
+# log_file = "C://Users/User/Desktop/ment.txt"
+# with open(log_file) as f:
+#     blacklist = f.read()
+# open(log_file, 'w').close()
+# with open(log_file, "w") as f:
+#     f.write(blacklist.title())
 
 
 # hour = 24

@@ -3,6 +3,8 @@ a
 acara
 ada
 adalah
+adakah
+agar
 ahli
 ahliahli
 akan
@@ -11,17 +13,18 @@ akhir
 aktiviti
 alam
 amat
-anak
 anggota
 antara
 antarabangsa
 apa
 apabila
+apakah
 as
 asas
 asing
 atas
 atau
+ataupun
 awal
 awam
 b
@@ -40,6 +43,8 @@ barangan
 baru
 barubaru
 bawah
+berapa
+berapakah
 beberapa
 bekas
 belas
@@ -50,6 +55,7 @@ berakhir
 berbanding
 berdasarkan
 berharap
+beri
 berikutan
 berjaya
 berjumlah
@@ -64,8 +70,12 @@ bersama
 berubah
 besar
 bidang
+bila
+bilakah
+bilangan
 bilion
 boleh
+buat
 bukan
 bulan
 bursa
@@ -87,7 +97,10 @@ depan
 derivatives
 di
 diadakan
+diambil
+diberi
 dibuka
+dibuat
 dicatatkan
 dijangka
 diniagakan
@@ -111,6 +124,8 @@ hanya
 harga
 hari
 hasil
+hendak
+hendaklah
 hingga
 hubungan
 i
@@ -135,6 +150,7 @@ juga
 jumlah
 juta
 kadar
+kadang kala
 kalangan
 kali
 kami
@@ -153,6 +169,8 @@ kelima
 kekal
 kemudahan
 kenaikan
+kenapa
+kenapakah
 kenyataan
 kepada
 kepentingan
@@ -186,6 +204,7 @@ lagi
 lain
 lainlain
 langkah
+lapan
 laporan
 lebih
 lepas
@@ -196,9 +215,11 @@ mahkamah
 mahu
 majlis
 makanan
+maklum
 maklumat
 malam
 mana
+manakah
 manakala
 masa
 masalah
@@ -229,6 +250,8 @@ menerima
 menerusi
 mengadakan
 mengambil
+mengapa
+mengapakah
 mengenai
 menggalakkan
 menggunakan
@@ -309,6 +332,7 @@ perkhidmatan
 perladangan
 perlu
 permintaan
+pernah
 perniagaan
 persidangan
 pertama
@@ -330,6 +354,7 @@ projek
 proses
 pukul
 pula
+puluh
 pun
 pusat
 rakan
@@ -342,6 +367,7 @@ ringgit
 rumah
 sahaja
 saham
+saja
 sama
 satu
 sawit
@@ -369,6 +395,7 @@ seluruh
 semakin
 semalam
 semasa
+sembilan
 sementara
 semua
 semula
@@ -383,7 +410,9 @@ serta
 sesi
 setiap
 setiausaha
+si
 sidang
+sila
 sini
 sistem
 sokongan
@@ -397,6 +426,7 @@ tahap
 tahun
 tanah
 tanpa
+tarikh
 tawaran
 teknologi
 telah
@@ -412,6 +442,7 @@ terbesar
 terbuka
 terdapat
 terhadap
+terima kasih
 termasuk
 tersebut
 terus
@@ -419,11 +450,13 @@ tetapi
 tiada
 tidak
 tiga
+tujuh
 tindakan
 tinggi
 tunai
 turun
 turut
+ucapan
 unit
 untuk
 untung
@@ -437,4 +470,5 @@ viii
 walaupun
 wang
 x
+ya
 yang

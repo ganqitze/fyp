@@ -28,7 +28,10 @@ symbol_file = "C:/Users/User/Desktop/fyp/Malay/order_paper/stopword/special/symb
 # symbol_file = "/home/User/fyp/stopword/special/symbol.txt"
 
 word_1 = "UCAPANUCAPAN"
-word_2 = "RISALATRISALAT YANG DIBAWA KE DALAM MESYUARAT DEWAN RAKYAT"
+word_2 = "UCAPAN PENANGGUHAN"
+word_3 = "UCAPANUCAPAN PENANGGUHAN"
+word_4 = "RISALATRISALAT YANG DIBAWA KE DALAM MESYUARAT"
+word_5 = "RISALAT DOKUMEN TARIKH DIBENTANGKAN"
 
 open(log_file, 'wb').close()
 
@@ -96,7 +99,7 @@ def parser(paper_id, date, file, stopword, symbol):
         # Out of the many LT objects within layout, we are interested in LTTextBox and LTTextLine
         for lt_obj in layout:
             if isinstance(lt_obj, LTTextBox) or isinstance(lt_obj, LTTextLine):
-                if word_1 in extracted_text or word_2 in extracted_text:
+                if word_1 in extracted_text or word_2 in extracted_text or word_3 in extracted_text or word_4 in extracted_text or word_5 in extracted_text:
                     break
                 else:
                     extracted_text += lt_obj.get_text()
@@ -110,10 +113,10 @@ def parser(paper_id, date, file, stopword, symbol):
             extracted_text = remove_stopword(extracted_text, symbol, stopword)
             save_text(paper_id, date, extracted_text)
             extracted_text = " "        
-    extracted_text = extracted_text.replace(word_1 + ' ', '').replace(word_2 + ' ', '')
     fp.close()
     extracted_text = remove_stopword(extracted_text, symbol, stopword)
-    save_text(paper_id, date, extracted_text)
+    if not extracted_text == " ":
+        save_text(paper_id, date, extracted_text)
 
 
 def remove_stopword(extracted_text, symbol, stopword):
@@ -123,6 +126,7 @@ def remove_stopword(extracted_text, symbol, stopword):
             extracted_text = extracted_text.replace(' ' + word + ' ', ' ')
     while "  " in extracted_text:
         extracted_text = extracted_text.replace('  ', ' ')  # Replace double spaces by one while double spaces are in text
+    extracted_text = extracted_text.replace(word_1 + ' ', '').replace(word_2 + ' ', '').replace(word_3 + ' ', '').replace(word_4 + ' ', '').replace(word_5 + ' ', '')
     return extracted_text
 
 
