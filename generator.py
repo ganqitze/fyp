@@ -60,3 +60,15 @@
 # 	for x in range(200, 801):
 # 		num = "%d\n" %(x)
 # 		my_log.write(num.encode("utf-8"))
+
+# log_file = "C://Users/User/Desktop/ee.txt"
+# with open(log_file) as f:
+#     blacklist = f.readlines()
+# blacklist = [x.strip() for x in blacklist]
+# open(log_file, 'w').close()
+# hue = sorted(list(set(blacklist)))
+# 	# print hue
+# with open(log_file, "w") as f:
+# 	for x in hue:
+# 		haha = "%s\n" %(x)
+# 		f.write(haha)

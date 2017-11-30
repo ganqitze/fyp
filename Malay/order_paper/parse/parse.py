@@ -17,9 +17,9 @@ start_time = time.time()
 # base_path_lin  = "/home/User/Desktop/fyp/order_paper"
 # base_path_win = "C:/Users/User/Desktop/fyp/English/order_paper"
 
-paper_dir = "C:/Users/User/Desktop/fyp/Malay/order_paper/paper"
+paper_dir = "C:/Users/User/Desktop/fyp/Malay/order_paper/paper/test2"
 stopword_dir = "C:/Users/User/Desktop/fyp/Malay/order_paper/stopword"
-log_file = "C:/Users/User/Desktop/fyp/Malay/order_paper/parse/log.csv"
+log_file = "C:/Users/User/Desktop/fyp/Malay/order_paper/parse/log4.csv"
 symbol_file = "C:/Users/User/Desktop/fyp/Malay/order_paper/stopword/special/symbol.txt"
 
 # paper_dir = "/home/User/fyp/paper"
@@ -27,10 +27,10 @@ symbol_file = "C:/Users/User/Desktop/fyp/Malay/order_paper/stopword/special/symb
 # log_file = "/home/User/fyp/order_paper/log.csv"
 # symbol_file = "/home/User/fyp/stopword/special/symbol.txt"
 
-word_1 = "UCAPANUCAPAN"
+word_1 = "UCAPAN-UCAPAN"
 word_2 = "UCAPAN PENANGGUHAN"
-word_3 = "UCAPANUCAPAN PENANGGUHAN"
-word_4 = "RISALATRISALAT YANG DIBAWA KE DALAM MESYUARAT"
+word_3 = "UCAPAN-UCAPAN PENANGGUHAN"
+word_4 = "RISALAT-RISALAT YANG DIBAWA KE DALAM MESYUARAT"
 word_5 = "RISALAT DOKUMEN TARIKH DIBENTANGKAN"
 
 open(log_file, 'wb').close()
@@ -106,15 +106,14 @@ def parser(paper_id, date, file, stopword, symbol):
                     # print lt_obj.get_text(), "SKIP"
                     extracted_text = extracted_text.replace('\n', ' ').replace('\r', ' ').replace('\t', ' ').replace('       ',' ').replace('    ', ' ').replace('         ', ' ').replace(',', '')
                     extracted_text = extracted_text.replace(u'\u2018', '\'').replace(u'\u2019', '\'').replace(u'\u201C', '\"').replace(u'\u201D', '\"').replace(u'\u2013', '')
-                    extracted_text = extracted_text.replace('.', '').replace('-', '').replace(')', '').replace('(', '').replace('MALAYSIA', '')
+                    extracted_text = extracted_text.replace('.', '').replace(')', '').replace('(', '').replace('MALAYSIA', '')
                     extracted_text = remove_stopword(extracted_text, symbol, stopword)
         page_count = page_count + 1        
         if (page_count%10 == 0):     
-            extracted_text = remove_stopword(extracted_text, symbol, stopword)
             save_text(paper_id, date, extracted_text)
             extracted_text = " "        
     fp.close()
-    extracted_text = remove_stopword(extracted_text, symbol, stopword)
+    extracted_text = extracted_text.replace(word_1 + ' ', '').replace(word_2 + ' ', '').replace(word_3 + ' ', '').replace(word_4 + ' ', '').replace(word_5 + ' ', '')
     if not extracted_text == " ":
         save_text(paper_id, date, extracted_text)
 
@@ -126,7 +125,7 @@ def remove_stopword(extracted_text, symbol, stopword):
             extracted_text = extracted_text.replace(' ' + word + ' ', ' ')
     while "  " in extracted_text:
         extracted_text = extracted_text.replace('  ', ' ')  # Replace double spaces by one while double spaces are in text
-    extracted_text = extracted_text.replace(word_1 + ' ', '').replace(word_2 + ' ', '').replace(word_3 + ' ', '').replace(word_4 + ' ', '').replace(word_5 + ' ', '')
+    # extracted_text = extracted_text.replace(word_1 + ' ', '').replace(word_2 + ' ', '').replace(word_3 + ' ', '').replace(word_4 + ' ', '').replace(word_5 + ' ', '')
     return extracted_text
 
 
