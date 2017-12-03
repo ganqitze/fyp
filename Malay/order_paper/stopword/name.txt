@@ -8,9 +8,13 @@ DYMM
 Pertuan
 Agong
 DiPertuan
-iPertuan
+Di-Pertuan
+diPertuan
+di-Pertuan
 DiPertua
+Di-Pertua
 diPertua
+di-Pertua
 Berhormat
 Speaker
 Dato
@@ -239,6 +243,9 @@ Noor Ehsanuddin bin Mohd Harun Narrashid
 Anyi Ngau
 Ngau
 Anyi
+Wan Mohammad Khair-il Anuar Bin Wan Ahmad
+Wan Mohammad Khair-il Anuar bin Wan Ahmad
+Wan Mohammad Khair-il Anuar Wan Ahmad
 Wan Mohammad Khairil Anuar Bin Wan Ahmad
 Wan Mohammad Khairil Anuar bin Wan Ahmad
 Wan Mohammad Khairil Anuar Wan Ahmad
@@ -486,7 +493,7 @@ Mohamad Imran Bin Abd Hamid
 Mohamad Imran bin Abd Hamid
 Mohamad Imran Bin Abdul Hamid
 Mohamad Imran bin Abdul Hamid
-Laksamana Pertama
+Laksamana
 Seah Leong Peng
 Azman Bin Ismail
 Azman bin Ismail
@@ -503,6 +510,7 @@ Wong Chen
 Ko Chung Sen
 Er Teck Hwa
 Gooi Hsiao Leung
+Gooi Hsiao-Leung
 Gooi HsiaoLeung
 Wan Azizah Bin Wan Ismail
 Wan Azizah bin Wan Ismail
@@ -526,6 +534,9 @@ Budiman Mohd Zohdi
 Budiman Bin Mohd Zohdi
 Budiman bin Mohd Zohdi
 Ahmad Zahid Hamidi
+Shamsul Anuar Bin Nasarah
+Shamsul Anuar bin Nasarah
+Shamsul Anuar Nasarah
 Tan
 Haji
 Hajah

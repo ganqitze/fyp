@@ -17,22 +17,20 @@ import cPickle as pickle
 import os.path
 
 from Sastrawi.Stemmer.StemmerFactory import StemmerFactory
-import nltk 
 
 
 logging.basicConfig()
 
 
 max_length = 32767   # Limit of 250 words per comment
-min_author_comments = 50  # Exclude authors with fewer comments
+# min_author_comments = 50  # Exclude authors with fewer comments
 nrows = None  # Number of rows of file to read; None reads in full file
 
 # base_path_lin  = "/home/User/Desktop/fyp/order_paper"
 # base_path_win = "C:/Users/User/Desktop/fyp/order_paper"
 
 # fn = "hacker_news_comments.csv"
-fn = "C:/Users/User/Desktop/fyp/Malay/order_paper/parse/log4.csv"
-stopword_file = "C:/Users/User/Desktop/fyp/Malay/order_paper/data/stopword.txt"
+fn = "C:/Users/User/Desktop/fyp/Malay/order_paper/parse/log2.csv"
 
 # url = "https://zenodo.org/record/45901/files/hacker_news_comments.csv"
 # if not os.path.exists(fn):
@@ -59,82 +57,37 @@ for col, dtype in zip(features.columns, features.dtypes):
 # Also try running python -m spacy.en.download all --force
 texts = features.pop('content').values
 # texts = features.pop('comment_text').values
+
+
+# # STEM the text
+factory = StemmerFactory()
+stemmer = factory.create_stemmer()
+katadasar = [stemmer.stem(x) for x in texts]
+tokens, vocab = preprocess.tokenize(katadasar, max_length, n_threads=4,
+                                    merge=False)
+
 # tokens, vocab = preprocess.tokenize(texts, max_length, n_threads=4,
 #                                     merge=False)
 # np.set_printoptions(edgeitems=200)
 # print tokens
-# print tokens, vocab
-# del texts
-
-
-
-
-f_list = []
-
-# # STEMMER
-factory = StemmerFactory()
-stemmer = factory.create_stemmer()
-katadasar = [stemmer.stem(x) for x in texts]
-
-# # tokenize words using nltk
-stem_tokens = [nltk.word_tokenize(x) for x in katadasar]
-
-# flatten nested list based on SOF-Q952914
-for sublist in stem_tokens:
-    for item in sublist:
-        f_list.append(item.lower())
-print "texts count", len(f_list) 
-
-# # unique list
-# vocab = stem_tokens
-vocab = sorted(list(set(f_list)))
-print "remove duplicate", len(vocab)
-
-# remove stopword
-with open(stopword_file) as f:
-    stopword_list = f.readlines()
-stopword_list = [x.strip() for x in stopword_list]
-for stopword in stopword_list:
-	if stopword in vocab:
-		vocab.remove(stopword) # no remove() in np.array
-print "remove stopword", len(vocab)
-
-# # create list with certain size
-# nums = []
-# for i in range(len(vocab)):
-# 	nums.append(i)
-
-# data = np.zeros((len(texts), max_length), dtype='int32')
-# uniques = np.unique(data)
-# vocab = {v: vocab[v] for v in uniques}
-# print vocab
-# # list to dictionary
-# data = zip(nums, vocab)
-# data_dict = dict(data)
-# print data_dict
-
-
-
+print len(tokens), len(vocab)
 del texts
 
 # # Make a ranked list of rare vs frequent words
-# corpus = Corpus()
-# corpus.update_word_count(tokens)
-# corpus.finalize()
+corpus = Corpus()
+corpus.update_word_count(tokens)
+corpus.finalize()
 
-# # # The tokenization uses spaCy indices, and so may have gaps
-# # # between indices for words that aren't present in our dataset.
-# # # This builds a new compact index
-# compact = corpus.to_compact(vocab)
-# # # Remove extremely rare words
-# pruned = corpus.filter_count(compact, min_count=10)
-# # Words tend to have power law frequency, so selectively
-# # downsample the most prevalent words
-# clean = corpus.subsample_frequent(pruned)
-
-# print np.unique(clean)
-# print "n_words", np.unique(clean).max()
-
+# # The tokenization uses spaCy indices, and so may have gaps
+# # between indices for words that aren't present in our dataset.
+# # This builds a new compact index
+compact = corpus.to_compact(tokens)
+# # Remove extremely rare words
+pruned = corpus.filter_count(compact, min_count=10)
+# Words tend to have power law frequency, so selectively
+# downsample the most prevalent words
+clean = corpus.subsample_frequent(pruned)
+print "n_words", np.unique(clean).max()
 
 # # Extract numpy arrays over the fields we want covered by topics
 # # Convert to categorical variables
@@ -156,35 +109,35 @@ del texts
 # # features['author_id_codes'] = story_id
 # # features['time_id_codes'] = time_id
 
-# paper_id = pd.Categorical(features['paper_id']).codes
-# features['paper_id_codes'] = paper_id
+paper_id = pd.Categorical(features['paper_id']).codes
+features['paper_id_codes'] = paper_id
 
-# # Chop timestamps into days
-# paper_date = pd.to_datetime(features['date'])
-# # today_date = pd.to_datetime(datetime.today())
-# days_since = abs((paper_date - paper_date.min()) / pd.Timedelta('1 day'))
-# date_id = days_since.astype('int32') #time_id
+# Chop timestamps into days
+paper_date = pd.to_datetime(features['date'])
+# today_date = pd.to_datetime(datetime.today())
+days_since = abs((paper_date - paper_date.min()) / pd.Timedelta('1 day'))
+date_id = days_since.astype('int32') #time_id
 
-# # print "n_authors", author_id.max()
-# # print "n_stories", story_id.max()
-# # print "n_times", time_id.max()
+# print "n_authors", author_id.max()
+# print "n_stories", story_id.max()
+# print "n_times", time_id.max()
 
-# # # Extract outcome supervised features
-# # # ranking = features['comment_ranking'].values
-# # # score = features['story_comment_count'].values
+# # Extract outcome supervised features
+# # ranking = features['comment_ranking'].values
+# # score = features['story_comment_count'].values
 
-# # # Now flatten a 2D array of document per row and word position
-# # # per column to a 1D array of words. This will also remove skips
-# # # and OoV words
-# # feature_arrs = (story_id, author_id, time_id, ranking, score)
-# # flattened, features_flat = corpus.compact_to_flat(pruned, *feature_arrs)
-# # # Flattened feature arrays
-# # (story_id_f, author_id_f, time_id_f, ranking_f, score_f) = features_flat
-
-# feature_arrs = (paper_id, date_id)
+# # Now flatten a 2D array of document per row and word position
+# # per column to a 1D array of words. This will also remove skips
+# # and OoV words
+# feature_arrs = (story_id, author_id, time_id, ranking, score)
 # flattened, features_flat = corpus.compact_to_flat(pruned, *feature_arrs)
 # # Flattened feature arrays
-# (paper_id_f, date_id_f) = features_flat
+# (story_id_f, author_id_f, time_id_f, ranking_f, score_f) = features_flat
+
+feature_arrs = (paper_id, date_id)
+flattened, features_flat = corpus.compact_to_flat(pruned, *feature_arrs)
+# Flattened feature arrays
+(paper_id_f, date_id_f) = features_flat
 
 # # # Save the data
 # # pickle.dump(corpus, open('corpus', 'w'), protocol=2)

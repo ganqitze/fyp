@@ -132,7 +132,6 @@ i
 ii
 iii
 iv
-ix
 ia
 iaitu
 ialah
@@ -371,6 +370,7 @@ saja
 sama
 satu
 sawit
+sana
 saya
 sebagai
 sebahagian
@@ -414,8 +414,10 @@ si
 sidang
 sila
 sini
+situ
 sistem
 sokongan
+suatu
 sudah
 suku
 sumber
@@ -463,8 +465,8 @@ untung
 urus
 usaha
 utama
-v
 vi
+v
 vii
 viii
 walaupun

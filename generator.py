@@ -72,3 +72,15 @@
 # 	for x in hue:
 # 		haha = "%s\n" %(x)
 # 		f.write(haha)
+
+# import nltk
+# from Sastrawi.Stemmer.StemmerFactory import StemmerFactory
+# factory = StemmerFactory()
+# stemmer = factory.create_stemmer()
+
+# blob = """ PR-1351-MQT0015 berkuasa terutamanya PDRM menangani ancaman pengganas Daesh PR-1351-MQT0002 Kota bercadang kajian menyeluruh pemberian subsidi bersasar ianya dinikmati PR-1351-MQT0005 Laksamana elaun risiko bomba penyelamat dikuatkuasakan PERTANYAAN-PERTANYAAN BAGI JAWAB LISAN PR-1351-L00284 mengatasi pemerdagangan manusia kesemua pintu-pintu masuk perancangan bekerjasama agensi-agensi perlindungan bantuan mangsa pemerdagangan penyeludupan PR-1351-L00624 statistik terkini syarikat-syarikat China milikan ekuiti projek-projek Forest City Iskandar Johor Melaka Gateway East Coast Rail Line Malaysia-China Industrial Park PR-1351-L00193 pendirian menghadapi tekanan pentadbiran Amerika sejauh ianya dikhuatiri kesan PR-1351-L00661 subsidi minyak minyak masak keperluan dibayar sekiranya penjimatan subsidi dimansuhkan langkah-langkah dicadangkan membebankan melaksanakan had siling Terangkan impak PR-1351-L00118 status terkini pengiktirafan pengajian Diploma Vokasional MQA Sekolah Menengah Vokasional SMV dinaiktaraf Kolej Vokasional PR-1351-L00324 langkah-langkah menangani serangan virus-virus merbahaya kencing tikus Leptospirosis seumpamanya virus misteri maut kejadian Kelantan lalu PR-1351-L01139 pelaksanaan CEO Faculty Programme Institut Pengajian IPTA impak positif mahasiswa siswi IPTA bercadang memperluaskan Institut Pengajian Swasta IPTS terutamanya dimiliki agensi-agensi PR-1351-L00949 Mara menaja pelajar bidang-bidang kritikal perubatan pergigian"""
+# katadasar = stemmer.stem(blob)
+# stem_tokens = nltk.word_tokenize(katadasar)
+
+# print len(katadasar), katadasar, len(stem_tokens), stem_tokens
+

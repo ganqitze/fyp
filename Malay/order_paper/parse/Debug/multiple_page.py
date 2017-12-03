@@ -16,9 +16,9 @@ start_time = time.time()
 # base_path_lin  = "/home/User/Desktop/fyp/order_paper"
 # base_path_win = "C:/Users/User/Desktop/fyp/English/order_paper"
 
-paper_dir = "C:/Users/User/Desktop/fyp/Malay/order_paper/paper/test"
+paper_dir = "C:/Users/User/Desktop/fyp/Malay/order_paper/parse/Debug"
 stopword_dir = "C:/Users/User/Desktop/fyp/Malay/order_paper/stopword"
-log_file = "C:/Users/User/Desktop/fyp/Malay/order_paper/parse/log3.csv"
+log_file = "C:/Users/User/Desktop/fyp/Malay/order_paper/parse/Debug/log.csv"
 symbol_file = "C:/Users/User/Desktop/fyp/Malay/order_paper/stopword/special/symbol.txt"
 
 # paper_dir = "/home/User/fyp/paper"
@@ -88,34 +88,35 @@ def parser(paper_id, date, file, stopword, symbol):
     interpreter = PDFPageInterpreter(rsrcmgr, device)
     # Ok now that we have everything to process a pdf document, lets process it page by page
     for page in PDFPage.create_pages(document):         
-        # if not 8 < page_count < 10:
-        #   print "sup", page_count
-        # else:
-        # As the interpreter processes the page stored in PDFDocument object
-        interpreter.process_page(page)
-        # The device renders the layout from interpreter
-        layout = device.get_result()
-        # Out of the many LT objects within layout, we are interested in LTTextBox and LTTextLine
-        for lt_obj in layout:
-            if isinstance(lt_obj, LTTextBox) or isinstance(lt_obj, LTTextLine):
-                if word_1 in extracted_text or word_2 in extracted_text or word_3 in extracted_text or word_4 in extracted_text or word_5 in extracted_text:
-                    break
-                else:
-                    extracted_text += lt_obj.get_text()
-                    # print lt_obj.get_text(), "SKIP"
-                    extracted_text = extracted_text.replace('\n', ' ').replace('\r', ' ').replace('\t', ' ').replace('       ',' ').replace('    ', ' ').replace('         ', ' ').replace(',', '')
-                    extracted_text = extracted_text.replace(u'\u2018', '\'').replace(u'\u2019', '\'').replace(u'\u201C', '\"').replace(u'\u201D', '\"').replace(u'\u2013', '')
-                    extracted_text = extracted_text.replace('D.R.', '').replace('CMD.', '').replace('ST.', '')
-                    extracted_text = extracted_text.replace('.', '').replace(')', '').replace('(', '').replace('MALAYSIA', '')
-                    extracted_text = remove_stopword(extracted_text, symbol, stopword)
+        if False:
+          print "sup", page_count
+        else:
+	       	 # As the interpreter processes the page stored in PDFDocument object
+	        interpreter.process_page(page)
+	        # The device renders the layout from interpreter
+	        layout = device.get_result()
+	        # Out of the many LT objects within layout, we are interested in LTTextBox and LTTextLine
+	        for lt_obj in layout:
+	            if isinstance(lt_obj, LTTextBox) or isinstance(lt_obj, LTTextLine):
+	                if word_1 in extracted_text or word_2 in extracted_text or word_3 in extracted_text or word_4 in extracted_text or word_5 in extracted_text:
+	                    break
+	                else:
+	                    extracted_text += lt_obj.get_text()
+	                    # print lt_obj.get_text(), "SKIP"
+	                    extracted_text = extracted_text.replace('\n', ' ').replace('\r', ' ').replace('\t', ' ').replace('       ',' ').replace('    ', ' ').replace('         ', ' ').replace(',', '')
+	                    extracted_text = extracted_text.replace(u'\u2018', '\'').replace(u'\u2019', '\'').replace(u'\u201C', '\"').replace(u'\u201D', '\"').replace(u'\u2013', '')
+	                    extracted_text = extracted_text.replace('D.R.', '').replace('CMD.', '').replace('ST.', '')
+	                    extracted_text = extracted_text.replace('.', '').replace(')', '').replace('(', '').replace('MALAYSIA', '')
+	                    extracted_text = remove_stopword(extracted_text, symbol, stopword)
         page_count = page_count + 1        
-        if (page_count%10 == 0):  
-            extracted_text = extracted_text.replace(word_1 + ' ', '').replace(word_2 + ' ', '').replace(word_3 + ' ', '').replace(word_4 + ' ', '').replace(word_5 + ' ', '').replace(word_6 + ' ', '')   
-            save_text(paper_id, date, extracted_text)
-            extracted_text = " "        
-    fp.close()   
-    extracted_text = extracted_text.replace(word_1 + ' ', '').replace(word_2 + ' ', '').replace(word_3 + ' ', '').replace(word_4 + ' ', '').replace(word_5 + ' ', '').replace(word_6 + ' ', '') 
-    if not extracted_text == " ":        
+        if (page_count%10 == 0):     
+			extracted_text = extracted_text.replace(word_1 + ' ', '').replace(word_2 + ' ', '').replace(word_3 + ' ', '').replace(word_4 + ' ', '').replace(word_5 + ' ', '')
+			save_text(paper_id, date, extracted_text)
+			extracted_text = " "			                 
+    fp.close()
+    # extracted_text = extracted_text.replace(word_1 + ' ', '').replace(word_2 + ' ', '').replace(word_3 + ' ', '').replace(word_4 + ' ', '').replace(word_5 + ' ', '')
+    if not extracted_text == " ":
+    	extracted_text = extracted_text.replace(word_1 + ' ', '').replace(word_2 + ' ', '').replace(word_3 + ' ', '').replace(word_4 + ' ', '').replace(word_5 + ' ', '')
         save_text(paper_id, date, extracted_text)
 
 
