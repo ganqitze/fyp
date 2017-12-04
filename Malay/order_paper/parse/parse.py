@@ -16,7 +16,7 @@ start_time = time.time()
 # base_path_lin  = "/home/User/Desktop/fyp/order_paper"
 # base_path_win = "C:/Users/User/Desktop/fyp/English/order_paper"
 
-paper_dir = "C:/Users/User/Desktop/fyp/Malay/order_paper/paper/test"
+paper_dir = "C:/Users/User/Desktop/fyp/Malay/order_paper/paper"
 stopword_dir = "C:/Users/User/Desktop/fyp/Malay/order_paper/stopword"
 log_file = "C:/Users/User/Desktop/fyp/Malay/order_paper/parse/log3.csv"
 symbol_file = "C:/Users/User/Desktop/fyp/Malay/order_paper/stopword/special/symbol.txt"
@@ -29,15 +29,17 @@ symbol_file = "C:/Users/User/Desktop/fyp/Malay/order_paper/stopword/special/symb
 word_1 = "UCAPAN-UCAPAN PENANGGUHAN"
 word_2 = "UCAPAN PENANGGUHAN"
 word_3 = "UCAPAN-UCAPAN"
-word_4 = "RISALAT-RISALAT YANG DIBAWA KE DALAM MESYUARAT"
-word_5 = "RISALAT DOKUMEN"
-word_6 = "TARIKH DIBENTANGKAN"
+word_4 = "UCAPAN"
+word_5 = "RISALAT-RISALAT YANG DIBAWA KE DALAM MESYUARAT"
+word_6 = "RISALAT YANG DIBAWA KE DALAM MESYUARAT"
+word_7 = "RISALAT DOKUMEN"
+word_8 = "TARIKH DIBENTANGKAN"
 
 open(log_file, 'wb').close()
 
 def write_header():
     with open(log_file, 'wb') as csvfile:
-        fieldnames = ['paper_id', 'date', 'content']
+        fieldnames = ['paper_id', 'date', 'last page', 'content']
         writer = csv.DictWriter(csvfile, fieldnames=fieldnames)
         writer.writeheader()
         # writer.writerow({'date': filename[4:-4], 'content': extracted_text.encode("utf-8")})
@@ -98,25 +100,26 @@ def parser(paper_id, date, file, stopword, symbol):
         # Out of the many LT objects within layout, we are interested in LTTextBox and LTTextLine
         for lt_obj in layout:
             if isinstance(lt_obj, LTTextBox) or isinstance(lt_obj, LTTextLine):
-                if word_1 in extracted_text or word_2 in extracted_text or word_3 in extracted_text or word_4 in extracted_text or word_5 in extracted_text:
+                if word_1 in extracted_text or word_2 in extracted_text or word_3 in extracted_text or word_4 in extracted_text or word_5 in extracted_text or word_6 in extracted_text or word_7 in extracted_text or word_8 in extracted_text:
                     break
                 else:
                     extracted_text += lt_obj.get_text()
                     # print lt_obj.get_text(), "SKIP"
                     extracted_text = extracted_text.replace('\n', ' ').replace('\r', ' ').replace('\t', ' ').replace('       ',' ').replace('    ', ' ').replace('         ', ' ').replace(',', '')
-                    extracted_text = extracted_text.replace(u'\u2018', '\'').replace(u'\u2019', '\'').replace(u'\u201C', '\"').replace(u'\u201D', '\"').replace(u'\u2013', '')
+                    extracted_text = extracted_text.replace(u'\u2018', '\'').replace(u'\u2019', '\'').replace(u'\u201C', '\"').replace(u'\u201D', '\"').replace(u'\u2013', '').replace(u'\u201E', '\"').replace(u'\u201F', '\"')
                     extracted_text = extracted_text.replace('D.R.', '').replace('CMD.', '').replace('ST.', '')
                     extracted_text = extracted_text.replace('.', '').replace(')', '').replace('(', '').replace('MALAYSIA', '')
                     extracted_text = remove_stopword(extracted_text, symbol, stopword)
         page_count = page_count + 1        
         if (page_count%10 == 0):  
-            extracted_text = extracted_text.replace(word_1 + ' ', '').replace(word_2 + ' ', '').replace(word_3 + ' ', '').replace(word_4 + ' ', '').replace(word_5 + ' ', '').replace(word_6 + ' ', '')   
-            save_text(paper_id, date, extracted_text)
+            extracted_text = extracted_text.replace(word_1 + ' ', '').replace(word_2 + ' ', '').replace(word_3 + ' ', '').replace(word_4 + ' ', '').replace(word_5 + ' ', '').replace(word_6 + ' ', '').replace(word_7 + ' ', '').replace(word_8 + ' ', '')   
+            save_text(paper_id, date, page_count, extracted_text)
             extracted_text = " "        
     fp.close()   
-    extracted_text = extracted_text.replace(word_1 + ' ', '').replace(word_2 + ' ', '').replace(word_3 + ' ', '').replace(word_4 + ' ', '').replace(word_5 + ' ', '').replace(word_6 + ' ', '') 
-    if not extracted_text == " ":        
-        save_text(paper_id, date, extracted_text)
+    extracted_text = extracted_text.replace(word_1 + ' ', '').replace(word_2 + ' ', '').replace(word_3 + ' ', '').replace(word_4 + ' ', '').replace(word_5 + ' ', '').replace(word_6 + ' ', '').replace(word_7 + ' ', '').replace(word_8 + ' ', '')
+    if not extracted_text == " ": 
+        extracted_text = remove_stopword(extracted_text, symbol, stopword)       
+        save_text(paper_id, date, page_count, extracted_text)
 
 
 def remove_stopword(extracted_text, symbol, stopword):
@@ -126,14 +129,14 @@ def remove_stopword(extracted_text, symbol, stopword):
             extracted_text = extracted_text.replace(' ' + word + ' ', ' ')
     while "  " in extracted_text:
         extracted_text = extracted_text.replace('  ', ' ')  # Replace double spaces by one while double spaces are in text
-    # extracted_text = extracted_text.replace(word_1 + ' ', '').replace(word_2 + ' ', '').replace(word_3 + ' ', '').replace(word_4 + ' ', '').replace(word_5 + ' ', '')
+    # extracted_text = extracted_text.replace(word_1 + ' ', '').replace(word_2 + ' ', '').replace(word_3 + ' ', '').replace(word_4 + ' ', '').replace(word_5 + ' ', '').replace(word_6 + ' ', '').replace(word_7 + ' ', '').replace(word_8 + ' ', '')
     return extracted_text
 
 
-def save_text(paper_id, date, extracted_text):    
+def save_text(paper_id, date, page_count, extracted_text):    
     with open(log_file, "ab") as newFile:
         newFileWriter = csv.writer(newFile)
-        newFileWriter.writerow([paper_id, date, extracted_text.encode("utf-8")])
+        newFileWriter.writerow([paper_id, date, page_count, extracted_text.encode("utf-8")])
 
 
 if __name__ == "__main__":  
