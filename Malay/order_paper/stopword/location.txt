@@ -7,6 +7,7 @@ Kubang Pasu
 Padang Terap
 Pokok Sena
 Alor Setar
+Alor Star
 Kuala Kedah
 Pendang
 Jerai
@@ -16,6 +17,7 @@ Sungai Petani
 Baling
 Padang Serai
 Kulim Bandar Baharu
+Kulim-Bandar Baharu
 Tumpat
 Pengkalan Chepa
 Kota Bharu
@@ -221,6 +223,15 @@ Gajah
 Tanjong
 Parit
 Bagan
+Datok
 Tanjung Piai
 Tanjung
 Sulong
+Petrajaya
+Sungai
+Siput
+Petani
+Manis
+Malim
+Piai
+Karang

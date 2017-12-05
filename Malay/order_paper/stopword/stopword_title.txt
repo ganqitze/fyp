@@ -112,7 +112,6 @@ Eksport
 Empat
 Enam
 Faedah
-G
 Global
 Hadapan
 Hanya
@@ -438,6 +437,7 @@ Terbesar
 Terbuka
 Terdapat
 Terhadap
+Terima kasih
 Terima Kasih
 Termasuk
 Tersebut
