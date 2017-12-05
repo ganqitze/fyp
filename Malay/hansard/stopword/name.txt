@@ -17,7 +17,6 @@ diPertua
 di-Pertua
 Kaya Indera Shah
 Speaker
-Senator
 Dato
 Sri
 Seri
@@ -64,8 +63,8 @@ Ahmad Husni bin Mohamad
 Hanadzlah
 Anifah Bin Haji Aman
 Anifah bin Haji Aman
-Anifah Bin Haji
-Anifah bin Haji
+Anifah Bin Aman
+Anifah bin Aman
 Mejar Jeneral
 Jamil Khir Bin Baharum
 Jamil Khir bin Baharum
@@ -110,10 +109,10 @@ Abd Rahim bin Bakri
 Abdul Rahim bin
 Bakri
 Abd Rahim
-Rosnah Binti Haji Abd Rashid Shirlin
-Rosnah binti Haji Abd Rashid Shirlin
-Rosnah Binti Haji Abdul Rashid Shirlin
-Rosnah binti Haji Abdul Rashid Shirlin
+Rosnah Binti Abd Rashid Shirlin
+Rosnah binti Abd Rashid Shirlin
+Rosnah Binti Abdul Rashid Shirlin
+Rosnah binti Abdul Rashid Shirlin
 Razali Bin Ibrahim
 Razali bin Ibrahim
 Ahmad Bin Haji Maslan
@@ -365,6 +364,8 @@ Ahmad Jazlan bin Yaakub
 Ronald Kiandee
 Ismail Bin Haji Mohamed Said
 Ismail bin Haji Mohamed Said
+Ismail Bin Mohamed Said
+Ismail bin Mohamed Said
 Anwar Bin Ibrahim
 Anwar bin Ibrahim
 Abdul Hadi Bin Awang
@@ -484,6 +485,8 @@ Fauzi Bin Abdul Rahman
 Fauzi bin Abdul Rahman
 Mohd Khairuddin Bin Aman Razali
 Mohd Khairuddin bin Aman Razali
+Mohd Khairuddin Bin Razali
+Mohd Khairuddin bin Razali
 Charles Anthony Santiago
 Charles Anthony R Santiago
 Charles Anthony l R Santiago
@@ -587,45 +590,11 @@ Loga Bala Mohan L Jaganathan
 Loga Bala Mohan l Jaganathan
 Chew Mei Fun
 Chew Fun
-Asyraf Wajdi bin Dato' Dusuki
-Asyraf Wajdi bin Dusuki
-Chong Sin Woon
-Awang Alik bin Jeman
-Roosme binti Hamzah
-Encik Mohd Sazali bin Mohd Zin
-Azhari bin Hamzah
-Monarita binti Mohd Hassan
-Rosna binti Bujairomi
-Nor Hamizah binti Hassan
-Noraidah binti Manaf
-Siti Norlina binti Ahmad
-Suriyani binti Mohd Noh
-Nor Liyana binti Ahmad
-Zatul Hijanah binti Yahya
-Sharifah Nor Asilah binti Syed Basir
-Nik Nor Ashikin binti Nik Hassan
-Hafilah binti Hamid
-Siti Norhazarina binti Ali
-Mulyati binti Kamarudin
-Nor Faraliza binti Murad Nordin Alli
-Sherliza Maya binti Talkah
-Mohd Salleh bin Ak Atoh
-Azmir bin Mohd Salleh
-Mohd Izwan bin Mohd Esa
-Nor Kamsiah binti Asmad
-Siti Zubaidah binti Karim
-Aifarina binti Azaman
-Noorfazilah binti Talib
-Farah Asyraf binti Khairul Anuar
-Julia binti Mohd Johari
-Syahila binti Ab Mohd Khalid
-Ismalinda binti Ismail
-Hazliana binti Yahaya
-Amir Arshad bin Ab Samad
-Sharifah Raabiatul Adawiyah binti Syed Mohamed
-Nik Nor Nazrin binti Nik Ab Rahman
-Nurul Fadhilah binti Ibharim
-Hizamihatim Maggiha bin Juarah 
+Idris Jala
+Paul Low Seng Kwan
+Ahmad Bashah bin Md Hanipah
+Waytha Moorthy Ponnusamy
+Senator
 Panglima
 Tan
 Haji

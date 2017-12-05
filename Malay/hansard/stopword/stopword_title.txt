@@ -112,7 +112,6 @@ Eksport
 Empat
 Enam
 Faedah
-G
 Global
 Hadapan
 Hanya
@@ -222,6 +221,7 @@ Media
 Melalui
 Melihat
 Memandangkan
+Memangku
 Memastikan
 Membantu
 Membawa
@@ -438,6 +438,7 @@ Terbesar
 Terbuka
 Terdapat
 Terhadap
+Terima kasih
 Terima Kasih
 Termasuk
 Tersebut
