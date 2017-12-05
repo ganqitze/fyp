@@ -6,7 +6,7 @@ adalah
 adakah
 agar
 ahli
-ahliahli
+air
 akan
 akhbar
 akhir
@@ -41,7 +41,6 @@ bank
 banyak
 barangan
 baru
-barubaru
 bawah
 berapa
 berapakah
@@ -55,6 +54,7 @@ berakhir
 berbanding
 berdasarkan
 berharap
+berhormat
 beri
 berikutan
 berjaya
@@ -95,6 +95,7 @@ demikian
 dengan
 depan
 derivatives
+dewan
 di
 diadakan
 diambil
@@ -103,7 +104,9 @@ dibuka
 dibuat
 dicatatkan
 dijangka
+dimulakan
 diniagakan
+ditangguhkan
 ditutup
 dolar
 dua
@@ -127,6 +130,7 @@ hasil
 hendak
 hendaklah
 hingga
+hijau
 hubungan
 i
 ii
@@ -161,11 +165,11 @@ ke
 keadaan
 kecil
 kedua
-keduadua
 kedudukan
 keempat
 kelima
 kekal
+kemajuan
 kemudahan
 kenaikan
 kenapa
@@ -189,19 +193,21 @@ ketua
 keuntungan
 kewangan
 kini
-kirakira
+kira
 kita
 klci
 klibor
+komoditi
 komposit
 kontrak
 kos
+kosong
 kuasa
 kukuh
 kumpulan
 lagi
 lain
-lainlain
+lampiran
 langkah
 lapan
 laporan
@@ -220,10 +226,10 @@ malam
 mana
 manakah
 manakala
+manusia
 masa
 masalah
 masih
-masingmasing
 masyarakat
 mata
 media
@@ -279,7 +285,6 @@ mungkin
 naik
 nasional
 negara
-negaranegara
 negeri
 niaga
 oleh
@@ -301,7 +306,6 @@ pejabat
 pekerja
 pelabur
 pelaburan
-pelancongan
 pelanggan
 pelbagai
 peluang
@@ -321,6 +325,7 @@ pengguna
 pengurusan
 peniaga
 peningkatan
+pentadbir
 penting
 peratus
 perdagangan
@@ -433,6 +438,7 @@ tanpa
 tarikh
 tawaran
 teknologi
+teks
 telah
 tempat
 tempatan

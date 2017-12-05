@@ -4,7 +4,7 @@ Adalah
 Adakah
 Agar
 Ahli
-Ahliahli
+Air
 Akan
 Akhbar
 Akhir
@@ -39,10 +39,9 @@ Bank
 Banyak
 Barangan
 Baru
-Barubaru
 Bawah
-berapa
-berapakah
+Berapa
+Berapakah
 Beberapa
 Bekas
 Belas
@@ -53,6 +52,7 @@ Berakhir
 Berbanding
 Berdasarkan
 Berharap
+Berhormat
 Beri
 Berikutan
 Berjaya
@@ -91,6 +91,7 @@ Demikian
 Dengan
 Depan
 Derivatives
+Dewan
 Di
 Diadakan
 Diberi
@@ -98,7 +99,9 @@ Dibuka
 Dibuat
 Dicatatkan
 Dijangka
+Dimulakan
 Diniagakan
+Ditangguhkan
 Ditutup
 Dolar
 Dua
@@ -117,6 +120,7 @@ Harga
 Hari
 Hasil
 Hingga
+Hijau
 Hubungan
 Ia
 Iaitu
@@ -152,6 +156,7 @@ Kedudukan
 Keempat
 Kelima
 Kekal
+Kemajuan
 Kemudahan
 Kenaikan
 Kenapa
@@ -175,19 +180,21 @@ Ketua
 Keuntungan
 Kewangan
 Kini
-Kirakira
+Kira
 Kita
 Klci
 Klibor
+Komoditi
 Komposit
 Kontrak
 Kos
+Kosong
 Kuasa
 Kukuh
 Kumpulan
 Lagi
 Lain
-Lainlain
+Lampiran
 Langkah
 Lapan
 Laporan
@@ -205,10 +212,10 @@ Malam
 Mana
 Manakah
 Manakala
+Manusia
 Masa
 Masalah
 Masih
-Masingmasing
 Masyarakat
 Mata
 Media
@@ -264,7 +271,6 @@ Mungkin
 Naik
 Nasional
 Negara
-Negaranegara
 Negeri
 Niaga
 Oleh
@@ -286,7 +292,6 @@ Pejabat
 Pekerja
 Pelabur
 Pelaburan
-Pelancongan
 Pelanggan
 Pelbagai
 Peluang
@@ -306,6 +311,7 @@ Pengguna
 Pengurusan
 Peniaga
 Peningkatan
+Pentadbir
 Penting
 Peratus
 Perdagangan
@@ -418,6 +424,7 @@ Tanpa
 Tarikh
 Tawaran
 Teknologi
+Teks
 Telah
 Tempat
 Tempatan
@@ -432,7 +439,6 @@ Terbuka
 Terdapat
 Terhadap
 Terima Kasih
-Terima kasih
 Termasuk
 Tersebut
 Terus
