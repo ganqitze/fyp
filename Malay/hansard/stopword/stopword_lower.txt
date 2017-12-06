@@ -77,6 +77,7 @@ bersidang
 berubah
 berucap
 besar
+beta
 betul
 bidang
 bila
@@ -95,6 +96,7 @@ contoh
 d
 dagangan
 dalam
+dah
 dan
 dana
 dapat
@@ -127,16 +129,19 @@ dolar
 dua
 dunia
 e
+eh
 ekonomi
 eksekutif
 eksport
 empat
 enam
+esok
 f
 faedah
 g
 global
 h
+ha
 hadapan
 hanya
 harga
@@ -155,6 +160,7 @@ ix
 ia
 iaitu
 ialah
+ikhlas
 indeks
 ingan
 ingin
@@ -178,6 +184,7 @@ jualan
 juga
 jumlah
 juta
+justeru
 kadar
 kadang kala
 kah
@@ -329,6 +336,7 @@ nasional
 negara
 negeri
 niaga
+oh
 okay
 okey
 oleh
@@ -386,6 +394,7 @@ pernah
 perniagaan
 persidangan
 pertama
+pertanyaan
 pertubuhan
 pertumbuhan
 perusahaan
@@ -542,6 +551,7 @@ vii
 viii
 walaupun
 wang
+watuk
 x
 ya
 yang

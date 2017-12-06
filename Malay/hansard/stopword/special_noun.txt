@@ -17,6 +17,7 @@ HANSARD
 Hansard
 pg
 ptg
+tgh
 mlm
 DOA
 mempengerusikan Mesyuarat
@@ -27,6 +28,7 @@ YANG DI-PERTUA DEWAN NEGARA
 JAWAPAN-JAWAPAN LISAN BAGI PERTANYAAN-PERTANYAAN
 RANG UNDANG-UNDANG
 DIBAWA KE DALAM
+MENANGGUH BACAAN KALI DI BAWAH
 USUL-USUL
 USUL
 MEMPERKENANKAN AKTA-AKTA
@@ -34,15 +36,30 @@ PERUTUSAN DARIPADA DEWAN NEGARA
 Perutusan Daripada Dewan Negara kepada Dewan Rakyat
 PINDAAN
 WAKTU URUSAN DIBEBASKAN DARIPADA PERATURAN
+MENJUNJUNG KASIH
+JALAN-JALAN MASUK KE
 Pertanyaan-pertanyaan Jawab Lisan
-Assalamualaikum 
+Assalamualaikum
+assalamualaikum
+Warahmatullahi 
 warahmatullahi 
+Aarahmatullahi 
+aarahmatullahi 
+Wabarakatuh
 wabarakatuh
 Alhamdulillah
 Bismillahi Rahmani Rahim
 taala
+Salam
 salam
+Sejahtera
 sejahtera
+Bismillaahir Rahmaanir Rahiim Alhamdulillahi Rabbil Alamin Wassolaatu Wassalaamu Ala Asyrafil Anbiyaai Wal Mursaliin Wa ala Aalihi Wa Sohbihi Ajma iin Warahmatullaahi Wabarakaatuh
+Allah Subhanahu Wata ala
+izin-Nya
+Nabi Sallallahu Alaihi Wasallam
+Wabillahi Taufik Walhidayah
+Wassalamualaikum Warahmatullahi Wabarakaatuh
 1Malaysia
 UMNO
 MCA
@@ -64,6 +81,18 @@ UPKO
 GERAKAN
 Barisan
 Titah
+Insya-Allah
 insya-Allah
 DR
 No
+t t
+II
+III
+IV
+V
+VI
+VII
+XV
+Raja Salman bin Abdulaziz Al-Saud
+Penjaga Masjid Suci
+Raja Arab Saudi

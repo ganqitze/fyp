@@ -15,8 +15,10 @@ DiPertua
 Di-Pertua
 diPertua
 di-Pertua
+di- Pertua
 Kaya Indera Shah
 Speaker
+Diraja
 Dato
 Sri
 Seri
@@ -30,6 +32,13 @@ Ir
 Bt
 Hj
 En
+Diraja
+SULTAN MUHAMMAD V
+Nenda Tuanku Alhaj Abdul Halim Mu adzam Shah Ibni Almarhum Sultan Badlishah
+Sultan Kedah Nenda Tuanku Haminah
+Sultanah Kedah
+Raja Permaisuri
+
 Mohd Najib Bin Tun Abdul Razak
 Mohd Najib bin Tun Abdul Razak
 Najib Tun Razak
@@ -52,6 +61,8 @@ Mustapa Mohamed
 Douglas Uggah Embas
 Ahmad Zahid Bin Hamidi
 Ahmad Zahid bin Hamidi
+Ahmad Zahid Bin Hamid
+Ahmad Zahid bin Hamid
 Ahmad Shabery Cheek
 S Subramaniam
 Ismail Sabri Bin Yaakob
@@ -615,3 +626,4 @@ Muhammad
 Amar
 Aman
 Prof
+Duta

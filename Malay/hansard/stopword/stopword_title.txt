@@ -75,6 +75,7 @@ Bersidang
 Berubah
 Berucap
 Besar
+Beta
 Betual
 Bidang
 Bila
@@ -90,6 +91,7 @@ Butiran
 Cadangan
 Contoh
 Dagangan
+Dah
 Dalam
 Dan
 Dana
@@ -121,13 +123,16 @@ Disambung
 Dolar
 Dua
 Dunia
+Eh
 Ekonomi
 Eksekutif
 Eksport
 Empat
 Enam
+Esok
 Faedah
 Global
+Ha
 Hadapan
 Hanya
 Harga
@@ -139,6 +144,7 @@ Hubungan
 Ia
 Iaitu
 Ialah
+Ikhlas
 Indeks
 Ingat
 Ingin
@@ -162,6 +168,7 @@ Jualan
 Juga
 Jumlah
 Juta
+Justeru
 Kadar
 Kadang kala
 Kah
@@ -314,6 +321,7 @@ Nasional
 Negara
 Negeri
 Niaga
+Oh
 Okay
 Okey
 Oleh
@@ -371,6 +379,7 @@ Pernah
 Perniagaan
 Persidangan
 Pertama
+Pertanyaan
 Pertubuhan
 Pertumbuhan
 Perusahaan
@@ -523,5 +532,6 @@ Usul
 Utama
 Walaupun
 Wang
+Watuk
 Ya
 Yang
