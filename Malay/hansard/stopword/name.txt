@@ -73,8 +73,7 @@ Jamil Khir bin Baharom
 Joseph Kurup
 Joseph Entulu Anak Belaun
 Joseph Entulu anak Belaun
-Joseph Entulu Anak
-Joseph Entulu anak
+Joseph Entulu
 Belaun
 Rohani Binti Abdul Karim
 Rohani binti Abdul Karim
@@ -82,8 +81,9 @@ Fadillah Bin Yusof
 Fadillah bin Yusof
 Hasan Bin Malek
 Hasan bin Malek
-Richard Riot anak Jaem
 Richard Riot Anak Jaem
+Richard Riot anak Jaem
+Richard Riot Jaem
 Tengku Adnan Tengku Mansor
 Idris Jusoh
 Shahidan Bin Kassim
@@ -156,10 +156,12 @@ Raime bin Unggi
 Abdul Manan Ismail
 Abdul Manan bin Ismail
 Abdul Manan Bin Ismail
-Aaron Ago anak Dagang
 Aaron Ago Anak Dagang
+Aaron Ago anak Dagang
+Aaron Ago Dagang
 Ago Anak Dagang Aaron
-Aaron Ago anakDagang
+Ago anak Dagang Aaron
+Ago Dagang Aaron
 Juslie Bin Haji Ajirol
 Juslie bin Haji Ajirol
 Juslie Bin Ajirol
@@ -197,6 +199,7 @@ Noor Azmi Bin Ghazali
 Noor Azmi bin Ghazali
 Nogeh Anak Gumbek
 Nogeh anak Gumbek
+Nogeh Gumbek
 Wilson Ugak Anak Kumbong
 Wilson Ugak anak Kumbong
 Wilson Ugak Kumbong
@@ -234,6 +237,7 @@ Jumat bin
 William Nyallau Anak Badak
 William Nyallau anak Badak
 William NyallauanakBadak
+William Nyallau Badak
 Ismail Bin Daut
 Ismail bin Daut
 Abdul Rahman Bin Mohamad
@@ -335,6 +339,9 @@ Abdul Ghapur Bin Salleh
 Abdul Ghapur bin Salleh
 Wee Jeck Seng
 Makin Marcus Mojigoh
+Makin Marcus Majigoh
+Marcus Makin Mojigoh
+Marcus Makin Majigoh
 Chua Tee Yong
 William Mawan Ikom
 Willian Mawan Ikom
@@ -539,6 +546,7 @@ Azman Bin Ismail
 Azman bin Ismail
 Sim Chee Keong
 Wong Ling Biu
+Wong Lai Biu
 Izani Bin Husin
 Izani bin Husin
 Mohd Idris Bin Jusi
