@@ -16,9 +16,9 @@ start_time = time.time()
 # base_path_lin  = "/home/User/Desktop/fyp/order_paper"
 # base_path_win = "C:/Users/User/Desktop/fyp/English/order_paper"
 
-paper_dir = "C:/Users/User/Desktop/fyp/Malay/hansard/parse"
+paper_dir = "C:/Users/User/Desktop/fyp/Malay/hansard/paper"
 stopword_dir = "C:/Users/User/Desktop/fyp/Malay/hansard/stopword"
-log_file = "C:/Users/User/Desktop/fyp/Malay/hansard/parse/log3.csv"
+log_file = "C:/Users/User/Desktop/fyp/Malay/hansard/parse/log2.csv"
 symbol_file = "C:/Users/User/Desktop/fyp/Malay/hansard/stopword/special/symbol.txt"
 
 # paper_dir = "/home/User/fyp/paper"
@@ -100,22 +100,22 @@ def parser(paper_id, date, file, stopword, symbol):
         # Out of the many LT objects within layout, we are interested in LTTextBox and LTTextLine
         for lt_obj in layout:
             if isinstance(lt_obj, LTTextBox) or isinstance(lt_obj, LTTextLine):
-                if word_1 in extracted_text or word_2 in extracted_text or word_3 in extracted_text or word_4 in extracted_text or word_5 in extracted_text or word_6 in extracted_text or word_7 in extracted_text or word_8 in extracted_text:
-                    break
-                else:
-                    extracted_text += lt_obj.get_text()
-                    # print lt_obj.get_text(), "SKIP"
-                    extracted_text = extracted_text.replace('\n', ' ').replace('\r', ' ').replace('\t', ' ').replace('       ',' ').replace('    ', ' ').replace('         ', ' ').replace(',', '')
-                    extracted_text = extracted_text.replace(u'\u2018', '\'').replace(u'\u2019', '\'').replace(u'\u201C', '\"').replace(u'\u201D', '\"').replace(u'\u2013', '').replace(u'\u201E', '\"').replace(u'\u201F', '\"').replace(u'\u25A0', '')
-                    extracted_text = extracted_text.replace('.', ' ').replace(')', '').replace('(', '').replace('MALAYSIA', '')
-                    extracted_text = remove_stopword(extracted_text, symbol, stopword)
+                # if word_1 in extracted_text or word_2 in extracted_text or word_3 in extracted_text or word_4 in extracted_text or word_5 in extracted_text or word_6 in extracted_text or word_7 in extracted_text or word_8 in extracted_text:
+                    # break
+                # else:
+                extracted_text += lt_obj.get_text()
+                # print lt_obj.get_text(), "SKIP"
+                extracted_text = extracted_text.replace('\n', ' ').replace('\r', ' ').replace('\t', ' ').replace('       ',' ').replace('    ', ' ').replace('         ', ' ').replace(',', '')
+                extracted_text = extracted_text.replace(u'\u2018', '\'').replace(u'\u2019', '\'').replace(u'\u201C', '\"').replace(u'\u201D', '\"').replace(u'\u2013', '').replace(u'\u201E', '\"').replace(u'\u201F', '\"').replace(u'\u25A0', '')
+                extracted_text = extracted_text.replace('.', ' ').replace(')', '').replace('(', '').replace('MALAYSIA', '')
+                extracted_text = remove_stopword(extracted_text, symbol, stopword)
         page_count = page_count + 1        
         if (page_count%10 == 0):  
-            extracted_text = extracted_text.replace(word_1 + ' ', '').replace(word_2 + ' ', '').replace(word_3 + ' ', '').replace(word_4 + ' ', '').replace(word_5 + ' ', '').replace(word_6 + ' ', '').replace(word_7 + ' ', '').replace(word_8 + ' ', '')   
+            # extracted_text = extracted_text.replace(word_1 + ' ', '').replace(word_2 + ' ', '').replace(word_3 + ' ', '').replace(word_4 + ' ', '').replace(word_5 + ' ', '').replace(word_6 + ' ', '').replace(word_7 + ' ', '').replace(word_8 + ' ', '')   
             save_text(paper_id, date, page_count, extracted_text)
             extracted_text = " "        
     fp.close()   
-    extracted_text = extracted_text.replace(word_1 + ' ', '').replace(word_2 + ' ', '').replace(word_3 + ' ', '').replace(word_4 + ' ', '').replace(word_5 + ' ', '').replace(word_6 + ' ', '').replace(word_7 + ' ', '').replace(word_8 + ' ', '')
+    # extracted_text = extracted_text.replace(word_1 + ' ', '').replace(word_2 + ' ', '').replace(word_3 + ' ', '').replace(word_4 + ' ', '').replace(word_5 + ' ', '').replace(word_6 + ' ', '').replace(word_7 + ' ', '').replace(word_8 + ' ', '')
     if not extracted_text == " ": 
         extracted_text = remove_stopword(extracted_text, symbol, stopword)       
         save_text(paper_id, date, page_count, extracted_text)
@@ -145,8 +145,8 @@ if __name__ == "__main__":
     for filename in os.listdir(paper_dir):
         page_start = 0
         interval_time = time.time()
-        if filename.startswith("paper") and filename.endswith(".pdf"):
-            date = datetime.strptime(filename[5:-4], '%d%m%Y')
+        if filename.startswith("DR-") and filename.endswith(".pdf"):
+            date = datetime.strptime(filename[3:-4], '%d%m%Y')
             parser(filename[:-4], date, os.path.join(paper_dir, filename), blacklist, symbol_blacklist) 
         print("--- Done %s with %s seconds ---" % (filename, time.time() - interval_time))
     print("--- Done all! %s seconds ---" % (time.time() - start_time))

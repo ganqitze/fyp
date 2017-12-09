@@ -31,6 +31,8 @@ awal
 awam
 b
 bacaan
+bagai
+bagaimana
 bagaimanapun
 bagi
 bahagian
@@ -93,6 +95,7 @@ butiran
 c
 cadangan
 contoh
+cukup
 d
 dagangan
 dalam
@@ -260,11 +263,13 @@ macam
 mahkamah
 mahu
 majlis
+maka
 makanan
 maklum
 maklumat
 maksud
 malam
+mampu
 mana
 manakah
 manakala
@@ -321,6 +326,7 @@ merupakan
 merujuk
 mesti
 mesyuarat
+meter
 minat
 minggu
 minit
@@ -332,6 +338,8 @@ mohon
 mungkin
 naib
 naik
+nak
+nanti
 nasional
 negara
 negeri
@@ -383,6 +391,7 @@ penting
 peraturan
 peratus
 perdagangan
+pergi
 peringkat
 perjanjian
 perkara

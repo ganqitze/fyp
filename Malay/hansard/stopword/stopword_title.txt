@@ -29,6 +29,8 @@ Awal
 Awam
 B
 Bacaan
+Bagai
+Bagaimana
 Bagaimanapun
 Bagi
 Bahagian
@@ -90,6 +92,7 @@ Bursa
 Butiran
 Cadangan
 Contoh
+Cukup
 Dagangan
 Dah
 Dalam
@@ -245,10 +248,12 @@ Macam
 Mahkamah
 Mahu
 Majlis
+Maka
 Makanan
 Maklumat
 Maksud
 Malam
+Mampu
 Mana
 Manakah
 Manakala
@@ -306,6 +311,7 @@ Merupakan
 Merujuk
 Mesti
 Mesyuarat
+Meter
 Minat
 Minggu
 Minit
@@ -317,6 +323,8 @@ Mudah
 Mungkin
 Naib
 Naik
+Nak
+Nanti
 Nasional
 Negara
 Negeri
@@ -368,6 +376,7 @@ Penting
 Peraturan
 Peratus
 Perdagangan
+Pergi
 Peringkat
 Perjanjian
 Perkara
