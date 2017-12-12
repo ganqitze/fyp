@@ -12,19 +12,18 @@ from pdfminer.layout import LAParams, LTTextBox, LTTextLine, LTChar
 from pdfminer.converter import PDFPageAggregator
 
 start_time = time.time()
-#HELLO WORLD
+
 # base_path_lin  = "/home/User/fyp/English/parse"
 # base_path_win = "C:/Users/User/Desktop/fyp/English/parse"
-paper_dir = "/home/User/fyp/English/paper"
-stopword_dir = "/home/User/fyp/English/stopword"
-log_file = "/home/User/fyp/English/parse/log1.csv"
-symbol_file = "/home/User/fyp/English/stopword/special/symbol.txt"
+paper_dir = "C:/Users/User/Desktop/fyp/English/paper"
+stopword_dir = "C:/Users/User/Desktop/fyp/English/stopword"
+log_file = "C:/Users/User/Desktop/fyp/English/parse/log.csv"
+symbol_file = "C:/Users/User/Desktop/fyp/English/stopword/special/symbol.txt"
 
 # paper_dir = "/home/User/fyp/paper"
 # stopword_dir = "/home/User/fyp/stopword"
 # log_file = "/home/User/fyp/order_paper/log.csv"
 # symbol_file = "/home/User/fyp/stopword/special/symbol.txt"
-
 
 word_1 = "THE COMMENCEMENT PUBLIC BUSINESS PRESENTATION GOVERNMENT BILL FOR FIRST READING"
 word_2 = "THE COMMENCEMENT PUBLIC BUSINESS PRESENTATION GOVERNMENT BILLS FOR FIRST READING"
@@ -64,7 +63,7 @@ def symbol_stop():
 def parser(paper_id, date, file, stopword, symbol):
 	# page_count = 1
 	password = ""
-	extracted_text = ""
+	extracted_text = " "
 	# Open and read the pdf file in binary mode
 	fp = open(file, "rb")
 	# Create parser object to parse the pdf content
@@ -107,19 +106,30 @@ def parser(paper_id, date, file, stopword, symbol):
 					extracted_text = extracted_text.replace('\n', ' ').replace('\r', ' ').replace('\t', ' ').replace('       ',' ').replace('    ', ' ').replace('         ', ' ').replace(',', '').replace('READINNG', 'READING')
 					extracted_text = extracted_text.replace(u'\u2018', '\'').replace(u'\u2019', '\'').replace(u'\u201C', '\"').replace(u'\u201D', '\"').replace(u'\u2013', '-')
 					extracted_text = extracted_text.replace('.', '').replace('-', '').replace('MALAYSIA', '')
-					for s in symbol:
-						extracted_text = extracted_text.replace(s, ' ')
-					for word in stopword:
-							extracted_text = extracted_text.replace(' ' + word + ' ', ' ')
-					while "  " in extracted_text:
-						extracted_text = extracted_text.replace('  ', ' ')  # Replace double spaces by one while double spaces are in text
+					extracted_text = remove_stopword(extracted_text, symbol, stopword)
 		# page_count = page_count + 1
 	extracted_text = extracted_text.replace(word_1 + ' ', '').replace(word_2 + ' ', '').replace(word_3 + ' ', '').replace(word_4 + ' ', '').replace(word_5 + ' ', '')
-		
 	fp.close()
-	with open(log_file, "ab") as newFile:
-		newFileWriter = csv.writer(newFile)
-		newFileWriter.writerow([paper_id, date, extracted_text.encode("utf-8")])
+	extracted_text = remove_stopword(extracted_text, symbol, stopword)
+	save_text(paper_id, date, extracted_text)
+
+
+def remove_stopword(extracted_text, symbol, stopword):
+    for s in symbol:
+        extracted_text = extracted_text.replace(s, ' ')
+    for word in stopword:
+            extracted_text = extracted_text.replace(' ' + word + ' ', ' ')
+    while "  " in extracted_text:
+        extracted_text = extracted_text.replace('  ', ' ')  # Replace double spaces by one while double spaces are in text
+    # extracted_text = extracted_text.replace(word_1 + ' ', '').replace(word_2 + ' ', '').replace(word_3 + ' ', '').replace(word_4 + ' ', '').replace(word_5 + ' ', '').replace(word_6 + ' ', '').replace(word_7 + ' ', '').replace(word_8 + ' ', '')
+    return extracted_text
+
+
+def save_text(paper_id, date, extracted_text):    
+    with open(log_file, "ab") as newFile:
+        newFileWriter = csv.writer(newFile)
+        newFileWriter.writerow([paper_id, date, extracted_text.encode("utf-8")])
+
 
 
 if __name__ == "__main__":	
