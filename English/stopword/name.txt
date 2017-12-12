@@ -1,4 +1,25 @@
 Yang Amat Berhormat
+YB
+YAB
+Paduka
+Baginda
+Ampun Tuanku
+Patik
+DYMM
+Pertuan
+Agong
+DiPertuan
+Di-Pertuan
+diPertuan
+di-Pertuan
+DiPertua
+Di-Pertua
+diPertua
+di-Pertua
+di- Pertua
+Kaya Indera Shah
+Speaker
+Diraja
 Dato
 Sri
 Seri
@@ -10,6 +31,15 @@ Ust
 Dr
 Ir
 Bt
+Hj
+En
+Diraja
+SULTAN MUHAMMAD V
+Nenda Tuanku Alhaj Abdul Halim Mu adzam Shah Ibni Almarhum Sultan Badlishah
+Sultan Kedah Nenda Tuanku Haminah
+Sultanah Kedah
+Raja Permaisuri
+TUANKU ALHAJ ABDUL HALIM MU ADZAM SHAH IBNI ALMARHUM SULTAN BADLISHAH
 Mohd Najib Bin Tun Abdul Razak
 Mohd Najib bin Tun Abdul Razak
 Najib Tun Razak
@@ -22,35 +52,50 @@ G Palanivel
 Mohamed Nazri Abdul Aziz
 Hishammuddin Bin Tun Hussien
 Hishammuddin bin Tun Hussien
+Hishammuddin Bin Tun Hussein
+Hishammuddin bin Tun Hussein
 Mohd Shafie Bin Haji Apdal
 Mohd Shafie bin Haji Apdal
+Mohd Shafie Bin Apdal
+Mohd Shafie bin Apdal
 Mustapa Mohamed
 Douglas Uggah Embas
 Ahmad Zahid Bin Hamidi
 Ahmad Zahid bin Hamidi
+Ahmad Zahid Bin Hamid
+Ahmad Zahid bin Hamid
 Ahmad Shabery Cheek
 S Subramaniam
 Ismail Sabri Bin Yaakob
 Ismail Sabri bin Yaakob
 Ahmad Husni Bin Mohamad Hanadzlah
 Ahmad Husni bin Mohamad Hanadzlah
+Ahmad Husni Bin Mohamad
+Ahmad Husni bin Mohamad
+Hanadzlah
 Anifah Bin Haji Aman
 Anifah bin Haji Aman
+Anifah Bin Aman
+Anifah bin Aman
 Mejar Jeneral
 Jamil Khir Bin Baharum
 Jamil Khir bin Baharum
-Panglima Joseph Kurup
-Tan Panglima Joseph Kurup
-Joseph Entulu anak Belaun
+Jamil Khir Bin Baharom
+Jamil Khir bin Baharom
+Joseph Kurup
 Joseph Entulu Anak Belaun
+Joseph Entulu anak Belaun
+Joseph Entulu
+Belaun
 Rohani Binti Abdul Karim
 Rohani binti Abdul Karim
 Fadillah Bin Yusof
 Fadillah bin Yusof
 Hasan Bin Malek
 Hasan bin Malek
-Richard Riot anak Jaem
 Richard Riot Anak Jaem
+Richard Riot anak Jaem
+Richard Riot Jaem
 Tengku Adnan Tengku Mansor
 Idris Jusoh
 Shahidan Bin Kassim
@@ -73,9 +118,13 @@ Abdul Rahim Bin Bakri
 Abdul Rahim bin Bakri
 Abd Rahim Bin Bakri
 Abd Rahim bin Bakri
+Abdul Rahim bin
+Bakri
 Abd Rahim
-Rosnah Binti Haji Abd Rashid Shirlin
-Rosnah binti Haji Abd Rashid Shirlin
+Rosnah Binti Abd Rashid Shirlin
+Rosnah binti Abd Rashid Shirlin
+Rosnah Binti Abdul Rashid Shirlin
+Rosnah binti Abdul Rashid Shirlin
 Razali Bin Ibrahim
 Razali bin Ibrahim
 Ahmad Bin Haji Maslan
@@ -87,6 +136,8 @@ Wan Junaidi Tuanku Jaafar
 Mahdzir Khalid
 Azizah Binti Panglima Mohd Dun
 Azizah binti Panglima Mohd Dun
+Azizah Binti Mohd Dun
+Azizah binti Mohd Dun
 Hilmi Bin Yahaya
 Hilmi bin Yahaya
 Halimah Binti Mohd Sadique
@@ -103,8 +154,8 @@ P Kamalanathan
 Jailani Bin Johari
 Jailani bin Johari
 Yap Kain Ching Mary Yap Ken Jin
-Ismail Bin Haji Abd Muttalib
-Ismail bin Haji Abd Muttalib
+Ismail Bin Abd Muttalib
+Ismail bin Abd Muttalib
 Ismail Bin Haji Abdul Muttalib
 Ismail bin Haji Abdul Muttalib
 Alexander Nanta Linggi
@@ -117,10 +168,12 @@ Raime bin Unggi
 Abdul Manan Ismail
 Abdul Manan bin Ismail
 Abdul Manan Bin Ismail
-Aaron Ago anak Dagang
 Aaron Ago Anak Dagang
+Aaron Ago anak Dagang
+Aaron Ago Dagang
 Ago Anak Dagang Aaron
-Aaron Ago anakDagang
+Ago anak Dagang Aaron
+Ago Dagang Aaron
 Juslie Bin Haji Ajirol
 Juslie bin Haji Ajirol
 Juslie Bin Ajirol
@@ -131,6 +184,10 @@ Sapawi Bin Haji Ahmad Wasali
 Sapawi bin Haji Ahmad Wasali
 Sapawi Bin Ahmad Wasali
 Sapawi bin Ahmad Wasali
+Sapawi Bin Ahmad
+Sapawi bin Ahmad
+Masir Anak Kujat
+Masir anak Kujat
 Masir Kujat
 Madius Bin Tangau
 Madius bin Tangau
@@ -143,7 +200,9 @@ Othman Bin Aziz
 Othman bin Aziz
 Zahidi Bin Zainul Abidin
 Zahidi bin Zainul Abidin
+Tsen Thau Lin Linda
 Linda Tsen Thau Lin
+Tsen Thau Lin
 Ahmad Lai Bin Bujang
 Ahmad Lai bin Bujang
 Mas Ermieyati Binti Samsudin
@@ -152,15 +211,20 @@ Noor Azmi Bin Ghazali
 Noor Azmi bin Ghazali
 Nogeh Anak Gumbek
 Nogeh anak Gumbek
+Nogeh Gumbek
 Wilson Ugak Anak Kumbong
 Wilson Ugak anak Kumbong
 Wilson Ugak Kumbong
 Rubiah Binti Haji Wang
 Rubiah binti Haji Wang
+Rubiah binti
 Khoo Soo Seang
 Hasbi Bin Haji Habibollah
+Hasbi Bin Habibollah
 Hasbi bin Haji Habibollah
+Hasbi bin Habibollah
 Henry Sum Agong
+Henry Sum
 Mansor Bin Haji Abd Rahman
 Mansor bin Haji Abd Rahman
 Mansor Bin Abdul Rahman
@@ -171,6 +235,7 @@ Anuar Bin Abd Manap
 Anuar bin Abd Manap
 Ahmad Nazlan Bin Idris
 Ahmad Nazlan bin Idris
+Idris Ahmad Nazlan
 Mohd Fasiah Bin Mohd Fakeh
 Mohd Fasiah bin Mohd Fakeh
 Mohd Fasiah Bin Haji Mohd Fakeh
@@ -184,6 +249,7 @@ Jumat bin
 William Nyallau Anak Badak
 William Nyallau anak Badak
 William NyallauanakBadak
+William Nyallau Badak
 Ismail Bin Daut
 Ismail bin Daut
 Abdul Rahman Bin Mohamad
@@ -194,6 +260,8 @@ Datu Nasrun Bin Datu Mansur
 Datu Nasrun bin Datu Mansur
 Irmohizam Bin Haji Ibrahim
 Irmohizam bin Haji Ibrahim
+Irmohizam bin Ibrahim
+Irmohizam bin Ibrahim
 Koh Nai Kwong
 Shabudin Bin Yahaya
 Shabudin bin Yahaya
@@ -201,6 +269,8 @@ Mohd Zaim Bin Abu Hasan
 Mohd Zaim bin Abu Hasan
 Rozman Bin Isli
 Rozman bin Isli
+Rozman Bin
+Isli
 Normala Binti Abdul Samad
 Normala binti Abdul Samad
 Normala Abdul Samad
@@ -214,6 +284,11 @@ Zainudin bin Ismail
 Noor Ehsanuddin Bin Mohd Harun Narrashid
 Noor Ehsanuddin bin Mohd Harun Narrashid
 Anyi Ngau
+Ngau
+Anyi
+Wan Mohammad Khair-il Anuar Bin Wan Ahmad
+Wan Mohammad Khair-il Anuar bin Wan Ahmad
+Wan Mohammad Khair-il Anuar Wan Ahmad
 Wan Mohammad Khairil Anuar Bin Wan Ahmad
 Wan Mohammad Khairil Anuar bin Wan Ahmad
 Wan Mohammad Khairil Anuar Wan Ahmad
@@ -223,12 +298,14 @@ Hasbullah Bin Osman
 Hasbullah bin Osman
 Utama Shahrir Bin Abdul Samad
 Utama Shahrir bin Abdul Samad
-Panglima Joseph Pairin Kitingan
+Shahrir Bin Abdul Samad
+Shahrir bin Abdul Samad
+Joseph Pairin Kitingan
 Tengku Razaleigh Hamzah
-Tan Panglima Haji Annuar Bin Haji Musa
-Tan Panglima Haji Annuar bin Haji Musa
-Panglima Annuar bin Musa
-Panglima Annuar Bin Musa
+Haji Annuar Bin Haji Musa
+Haji Annuar bin Haji Musa
+Annuar Bin Musa
+Annuar bin Musa
 Mohd Isa Bin Abdul Samad
 Mohd Isa bin Abdul Samad
 Tan Mohd Isa Bin Abdul Samad
@@ -237,12 +314,14 @@ Jamaluddin Bin Mohd Jarjis
 Jamaluddin bin Mohd Jarjis
 Bung Moktar Bin Radin
 Bung Moktar bin Radin
-Wira Mohd Johari Bin Baharum
-Wira Mohd Johari bin Baharum
+Mohd Johari Bin Baharum
+Mohd Johari bin Baharum
+Mohd Johari Bin Baharom
 Mohd Johari bin Baharom
 Tiong King Sing
 Abd Latiff Bin Ahmad
 Abd Latiff bin Ahmad
+Abd Latiff Ahmad
 Noh Bin Omar
 Noh bin Omar
 Shaziman Bin Abu Mansor
@@ -264,13 +343,17 @@ Joseph Salang Anak Gandum
 Joseph Salang anak Gandum
 Joseph Salang Gandum
 Muhammad Leo Michael Toyad Abdullah
+Leo Michael Toyad Abdullah
 Ong Ka Chuan
-Panglima Haji Abdul Ghapur Bin Salleh
-Panglima Haji Abdul Ghapur bin Salleh
-Panglima Abdul Ghapur Bin Salleh
-Panglima Abdul Ghapur bin Salleh
+Haji Abdul Ghapur Bin Salleh
+Haji Abdul Ghapur bin Salleh
+Abdul Ghapur Bin Salleh
+Abdul Ghapur bin Salleh
 Wee Jeck Seng
 Makin Marcus Mojigoh
+Makin Marcus Majigoh
+Marcus Makin Mojigoh
+Marcus Makin Majigoh
 Chua Tee Yong
 William Mawan Ikom
 Willian Mawan Ikom
@@ -284,20 +367,24 @@ Johari Bin Abdul Ghani
 Johari bin Abdul Ghani
 Ahmad Fauzi Bin Zahari
 Ahmad Fauzi bin Zahari
-Abd Aziz Bin Haji Sheikh Fadzir
-Abd Aziz bin Haji Sheikh Fadzir
+Ahmad Fauzi Zahari
 Abd Aziz Bin Sheikh Fadzir
 Abd Aziz bin Sheikh Fadzir
+Abd Aziz Sheikh Fadzir
+Abd Aziz Sheikh Fadzir
 Ikmal Hisham Bin Abdul Aziz
 Ikmal Hisham bin Abdul Aziz
 Reezal Merican Bin Naina Merican
 Reezal Merican bin Naina Merican
 Reezal Merican
+Naina Merican
 Ahmad Jazlan Bin Yaakub
 Ahmad Jazlan bin Yaakub
 Ronald Kiandee
 Ismail Bin Haji Mohamed Said
-Ismail Bbn Haji Mohamed Said
+Ismail bin Haji Mohamed Said
+Ismail Bin Mohamed Said
+Ismail bin Mohamed Said
 Anwar Bin Ibrahim
 Anwar bin Ibrahim
 Abdul Hadi Bin Awang
@@ -321,10 +408,20 @@ Siti Zailah binti Mohd Yusoff
 Nurul Izzah Binti Anwar
 Nurul Izzah binti Anwar
 Teresa Kok Suh Sim
+M Kula Segaran L V Murugeson
+M Kula Segaran l V Murugeson
+M Kulasegaran L
+M Kulasegaran l
 M Kulasegaran
+M Kula Segaran L
+M Kula Segaran l
+V Murugeson
 N Surendran L K Nagarajan
 N Surendran l K Nagarajan
+Surendran l K Nagarajan
 N Surendran
+L K Nagarajan
+l K Nagarajan
 Mansor Bin Othman
 Mansor bin Othman
 Chong Chieng Jen
@@ -373,6 +470,7 @@ Gobind Singh Deo
 Liew Chin Tong
 Mohd Rafizi Bin Ramli
 Mohd Rafizi bin Ramli
+Mohd Rafizi
 Johari Bin Abdul
 Johari bin Abdul
 Wong Sze Phin Jimmy
@@ -406,12 +504,14 @@ Fauzi Bin Abdul Rahman
 Fauzi bin Abdul Rahman
 Mohd Khairuddin Bin Aman Razali
 Mohd Khairuddin bin Aman Razali
+Mohd Khairuddin Bin Razali
+Mohd Khairuddin bin Razali
 Charles Anthony Santiago
 Charles Anthony R Santiago
 Charles Anthony l R Santiago
 Charles Anthony L R Santiago
 Wan Hassan Bin Mohd Ramli
-Wan Hasan bin Mohd Ramli
+Wan Hassan bin Mohd Ramli
 Su Keong Siong
 Su KeongSiong
 Abdullah Sani Bin Abdul Hamid
@@ -434,6 +534,7 @@ Raja Kamarul Bahrin Shah Bin Raja Ahmad
 Raja Kamarul Bahrin Shah bin Raja Ahmad
 Raja Kamarul Bahrin Shah
 Jeff Ooi Chuan Aun
+Ooi Chuan Aun
 Wong Tien Fatt Wong Nyuk Foh
 Wong Tien Fatt Wong NyukFoh
 Manivannan L Gowindasamy
@@ -451,12 +552,13 @@ Mohamad Imran Bin Abd Hamid
 Mohamad Imran bin Abd Hamid
 Mohamad Imran Bin Abdul Hamid
 Mohamad Imran bin Abdul Hamid
-Laksamana Pertama
+Laksamana
 Seah Leong Peng
 Azman Bin Ismail
 Azman bin Ismail
 Sim Chee Keong
 Wong Ling Biu
+Wong Lai Biu
 Izani Bin Husin
 Izani bin Husin
 Mohd Idris Bin Jusi
@@ -468,13 +570,18 @@ Wong Chen
 Ko Chung Sen
 Er Teck Hwa
 Gooi Hsiao Leung
+Gooi Hsiao-Leung
 Gooi HsiaoLeung
+Wan Azizah Bin Wan Ismail
+Wan Azizah bin Wan Ismail
 Wan Azizah Binti Wan Ismail
 Wan Azizah binti Wan Ismail
 Wan Azizah Wan Ismail
 Ramkarpal Singh L Karpal Singh
 Ramkarpal Singh l Karpal Singh
 Ramkarpal Singh
+L Karpal Singh
+l Karpal Singh
 Karpal Singh
 Mastura Binti Mohd Yazid
 Mastura binti Mohd Yazid
@@ -489,6 +596,26 @@ Budiman Mohd Zohdi
 Budiman Bin Mohd Zohdi
 Budiman bin Mohd Zohdi
 Ahmad Zahid Hamidi
+Ahmad Zahid bin Hamidi
+Shamsul Anuar Bin Nasarah
+Shamsul Anuar bin Nasarah
+Shamsul Anuar Nasarah
+Pandikar Amin
+Maximus Johnity Ongkili
+Paul Low Seng Kuan
+Abdul Wahid Omar
+Mohd Salleh bin Tun Said Keruak
+Lee Chee Leong
+Loga Bala Mohan L Jaganathan
+Loga Bala Mohan l Jaganathan
+Chew Mei Fun
+Chew Fun
+Idris Jala
+Paul Low Seng Kwan
+Ahmad Bashah bin Md Hanipah
+Waytha Moorthy Ponnusamy
+Senator
+Panglima
 Tan
 Haji
 Hajah
@@ -498,4 +625,6 @@ Ar
 muhammad
 Muhammad
 Amar
+Aman
 Prof
+Duta

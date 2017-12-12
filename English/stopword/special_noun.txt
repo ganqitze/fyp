@@ -15,11 +15,15 @@ PAGI
 Bil
 PERTANYAANPERTANYAAN BAGI JAWAB LISAN
 MINISTER QUESTION TIME
+QUESTION TIME
 QUESTIONS FOR ORAL ANSWERS
 No
 OPDR
 SO
+ADMINISTRATION OATH
 ADMINISTRATION OF OATH
+PAPER
+ORDER
 AM
 PM
 AT
@@ -59,3 +63,14 @@ Sub
 sub
 Question pursuant
 Sdn Bhd
+<<<<<<< HEAD:English/stopword/special_noun.txt
+=======
+country
+countries
+year
+years
+project
+people
+amounted
+355
+>>>>>>> linux-1:English/stopword/special_noun.txt
