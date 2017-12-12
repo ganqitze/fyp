@@ -13,19 +13,11 @@ from pdfminer.converter import PDFPageAggregator
 
 start_time = time.time()
 
-<<<<<<< HEAD:English/parse/parse.py
-# base_path_lin  = "/home/User/Desktop/fyp/order_paper"
-# base_path_win = "C:/Users/User/Desktop/fyp/English/order_paper"
-paper_dir = "C:/Users/User/Desktop/fyp/English/paper"
-stopword_dir = "C:/Users/User/Desktop/fyp/English/stopword"
-log_file = "C:/Users/User/Desktop/fyp/English/parse/log4.csv"
-=======
 # base_path_lin  = "/home/User/fyp/English/parse"
 # base_path_win = "C:/Users/User/Desktop/fyp/English/parse"
 paper_dir = "C:/Users/User/Desktop/fyp/English/paper"
 stopword_dir = "C:/Users/User/Desktop/fyp/English/stopword"
 log_file = "C:/Users/User/Desktop/fyp/English/parse/log.csv"
->>>>>>> linux-1:English/parse/parse.py
 symbol_file = "C:/Users/User/Desktop/fyp/English/stopword/special/symbol.txt"
 
 # paper_dir = "/home/User/fyp/paper"
@@ -137,7 +129,6 @@ def save_text(paper_id, date, extracted_text):
     with open(log_file, "ab") as newFile:
         newFileWriter = csv.writer(newFile)
         newFileWriter.writerow([paper_id, date, extracted_text.encode("utf-8")])
-
 
 
 if __name__ == "__main__":	

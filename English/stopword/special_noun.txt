@@ -63,8 +63,6 @@ Sub
 sub
 Question pursuant
 Sdn Bhd
-<<<<<<< HEAD:English/stopword/special_noun.txt
-=======
 country
 countries
 year
@@ -73,4 +71,3 @@ project
 people
 amounted
 355
->>>>>>> linux-1:English/stopword/special_noun.txt
