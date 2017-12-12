@@ -75,9 +75,13 @@ f_list = []
 factory = StemmerFactory()
 stemmer = factory.create_stemmer()
 katadasar = [stemmer.stem(x) for x in texts]
+print("--- Done Stem %s seconds ---" % (time.time() - start_time))
+interval_time = time.time()
 
 # # tokenize words using nltk
 stem_tokens = [nltk.word_tokenize(x) for x in katadasar]
+print("--- Done token %s seconds ---" % (time.time() - interval_time))
+
 
 # flatten nested list based on SOF-Q952914
 for sublist in stem_tokens:
@@ -85,8 +89,9 @@ for sublist in stem_tokens:
         f_list.append(item.lower())
 print "texts count", len(f_list) 
 
-# # unique list
-# vocab = stem_tokens
+
+# unique list
+vocab = stem_tokens
 vocab = sorted(list(set(f_list)))
 print "remove duplicate", len(vocab)
 
@@ -98,6 +103,13 @@ for stopword in stopword_list:
 	if stopword in vocab:
 		vocab.remove(stopword) # no remove() in np.array
 print "remove stopword", len(vocab)
+print len(vocab)
+
+
+# hue = {v: vocab[v] for v in range(len(vocab))}
+# print hue
+# tokens = hue.keys()
+
 
 # # create list with certain size
 # nums = []
@@ -114,10 +126,9 @@ print "remove stopword", len(vocab)
 # print data_dict
 
 
-
 del texts
 
-# # Make a ranked list of rare vs frequent words
+# # # Make a ranked list of rare vs frequent words
 # corpus = Corpus()
 # corpus.update_word_count(tokens)
 # corpus.finalize()
