@@ -63,6 +63,7 @@ texts = features.pop('content').values
 factory = StemmerFactory()
 stemmer = factory.create_stemmer()
 katadasar = [stemmer.stem(x) for x in texts]
+
 tokens, vocab = preprocess.tokenize(katadasar, max_length, n_threads=4,
                                     merge=False)
 
@@ -149,11 +150,11 @@ flattened, features_flat = corpus.compact_to_flat(pruned, *feature_arrs)
 # # np.savez('data', **data)
 # # np.save(open('tokens', 'w'), tokens)
 
-# pickle.dump(corpus, open('corpus', 'wb'), protocol=2)
-# pickle.dump(vocab, open('vocab', 'wb'), protocol=2)
-# features.to_pickle('features.pd')
-# data = dict(flattened=flattened, paper_id=paper_id_f, date_id=date_id_f)
-# np.savez('data', **data)
-# np.save(open('tokens', 'wb'), tokens)
+pickle.dump(corpus, open('corpus', 'wb'), protocol=2)
+pickle.dump(vocab, open('vocab', 'wb'), protocol=2)
+features.to_pickle('features.pd')
+data = dict(flattened=flattened, paper_id=paper_id_f, date_id=date_id_f)
+np.savez('data', **data)
+np.save(open('tokens', 'wb'), tokens)
 
 print("--- Done %s seconds ---" % (time.time() - start_time))

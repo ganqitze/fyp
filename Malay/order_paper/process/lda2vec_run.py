@@ -175,7 +175,8 @@ for epoch in range(150):
                         cuda.to_cpu(model.mixture_sty.factors.W.data).copy(),
                         cuda.to_cpu(model.sampler.W.data).copy(),
                         words)
-    topic_words = print_top_words_per_topic(ts)
+    # topic_words = print_top_words_per_topic(ts)
+    print_top_words_per_topic(ts)
     ts['doc_lengths'] = paper_len
     ts['term_frequency'] = term_frequency
     np.savez('topics.story.pyldavis', **ts)
@@ -198,7 +199,7 @@ for epoch in range(150):
                     prior=float(prior.data), rate=rate)
         print msg.format(**logs)
         j += 1
-    coherence = topic_coherence(topic_words, services=['cv'])
-    for j in range(n_story_topics):
-    	print j, coherence[(j, 'cv')]
+    # coherence = topic_coherence(topic_words, services=['cv'])
+    # for j in range(n_story_topics):
+    # 	print j, coherence[(j, 'cv')]
     serializers.save_hdf5("lda2vec.hdf5", model)
