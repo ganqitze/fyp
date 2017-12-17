@@ -16,15 +16,14 @@ start_time = time.time()
 # base_path_lin  = "/home/User/Desktop/fyp/order_paper"
 # base_path_win = "C:/Users/User/Desktop/fyp/English/order_paper"
 
-paper_dir = "C:/Users/User/Desktop/fyp/Malay/order_paper/paper"
-stopword_dir = "C:/Users/User/Desktop/fyp/Malay/order_paper/stopword"
-log_file = "C:/Users/User/Desktop/fyp/Malay/order_paper/parse/log3.csv"
-symbol_file = "C:/Users/User/Desktop/fyp/Malay/order_paper/stopword/special/symbol.txt"
+base_dir_linux = "/home/User/fyp/Malay/"
+base_dir_win = "C:/Users/User/Desktop/fyp/Malay/"
 
-# paper_dir = "/home/User/fyp/paper"
-# stopword_dir = "/home/User/fyp/stopword"
-# log_file = "/home/User/fyp/order_paper/log.csv"
-# symbol_file = "/home/User/fyp/stopword/special/symbol.txt"
+paper_dir = os.path.join(base_dir_linux, "order_paper/paper")
+stopword_dir = os.path.join(base_dir_linux, "order_paper/stopword")
+log_file = os.path.join(base_dir_linux, "order_paper/parse/log3.csv")
+symbol_file = os.path.join(base_dir_linux, "order_paper/stopword/special/symbol.txt")
+
 
 word_1 = "UCAPAN-UCAPAN PENANGGUHAN"
 word_2 = "UCAPAN PENANGGUHAN"

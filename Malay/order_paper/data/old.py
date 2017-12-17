@@ -30,7 +30,7 @@ nrows = None  # Number of rows of file to read; None reads in full file
 # base_path_win = "C:/Users/User/Desktop/fyp/order_paper"
 
 # fn = "hacker_news_comments.csv"
-fn = "C:/Users/User/Desktop/fyp/Malay/order_paper/parse/log2.csv"
+fn = "/home/User/fyp/Malay/order_paper/parse/log3.csv"
 
 # url = "https://zenodo.org/record/45901/files/hacker_news_comments.csv"
 # if not os.path.exists(fn):
