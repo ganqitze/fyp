@@ -150,7 +150,7 @@ if __name__ == "__main__":
 	symbol_blacklist = symbol_stop()
 	for filename in os.listdir(paper_dir):
 		interval_time = time.time()
-		if filename.startswith("XXDR") and filename.endswith(".pdf"):
+		if filename.startswith("OPDR") and filename.endswith(".pdf"):
 			date = datetime.strptime(filename[4:-4], '%d%m%Y')
 			parser(filename[:-4], date, os.path.join(paper_dir, filename), blacklist, symbol_blacklist) 
 		print("--- Done %s with %s seconds ---" % (filename, time.time() - interval_time))
