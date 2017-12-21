@@ -1,6 +1,8 @@
 import os
 import time
 import csv
+import re
+
 from datetime import datetime
 from pdfminer.pdfparser import PDFParser
 from pdfminer.pdfdocument import PDFDocument
@@ -17,7 +19,7 @@ start_time = time.time()
 # base_path_win = "C:/Users/User/Desktop/fyp/English/parse"
 paper_dir = "C:/Users/User/Desktop/fyp/English/paper"
 stopword_dir = "C:/Users/User/Desktop/fyp/English/stopword"
-log_file = "C:/Users/User/Desktop/fyp/English/parse/log.csv"
+log_file = "C:/Users/User/Desktop/fyp/English/parse/log1.csv"
 symbol_file = "C:/Users/User/Desktop/fyp/English/stopword/special/symbol.txt"
 
 # paper_dir = "/home/User/fyp/paper"
@@ -31,6 +33,11 @@ word_3 = "ORDERS THE DAY AND MOTIONS"
 word_4 = "ORDERS THE DAY AND MOTION"
 word_5 = "THE COMMENCEMENT PUBLIC BUSINESS PRESENTATION GOVERNMENT BILL FOR THE FIRST READING"
 # word_list = ["AT THE COMMENCEMENT OF PUBLIC BUSINESS PRESENTATION OF GOVERNMENT BILL FOR FIRST READING", "AT THE COMMENCEMENT OF PUBLIC BUSINESS PRESENTATION OF GOVERNMENT BILLS FOR FIRST READING", "AT THE COMMENCEMENT OF PUBLIC BUSINESS PRESENTATION OF GOVERNMENT BILL FOR THE FIRST READING", "ORDERS OF THE DAY AND MOTIONS", "ORDERS OF THE DAY AND MOTION"]
+
+
+pattern1 = re.compile(r"PR13[1-5][1-3][a-zA-Z]{1,3}\s{0,1}\d*")
+pattern2 = re.compile(r"MQT13430\d*")
+
 
 open(log_file, 'wb').close()
 
@@ -115,14 +122,20 @@ def parser(paper_id, date, file, stopword, symbol):
 
 
 def remove_stopword(extracted_text, symbol, stopword):
-    for s in symbol:
-        extracted_text = extracted_text.replace(s, ' ')
-    for word in stopword:
-            extracted_text = extracted_text.replace(' ' + word + ' ', ' ')
-    while "  " in extracted_text:
-        extracted_text = extracted_text.replace('  ', ' ')  # Replace double spaces by one while double spaces are in text
-    # extracted_text = extracted_text.replace(word_1 + ' ', '').replace(word_2 + ' ', '').replace(word_3 + ' ', '').replace(word_4 + ' ', '').replace(word_5 + ' ', '').replace(word_6 + ' ', '').replace(word_7 + ' ', '').replace(word_8 + ' ', '')
-    return extracted_text
+	test = re.findall(pattern1, extracted_text)
+	test += re.findall(pattern2, extracted_text)
+	# if test:
+	# 	print test
+	for x in test:
+		extracted_text = extracted_text.replace(' ' + x + ' ', ' ')
+	for s in symbol:
+		extracted_text = extracted_text.replace(s, ' ')
+	for word in stopword:
+		extracted_text = extracted_text.replace(' ' + word + ' ', ' ')
+	while "  " in extracted_text:
+		extracted_text = extracted_text.replace('  ', ' ')  # Replace double spaces by one while double spaces are in text
+	# extracted_text = extracted_text.replace(word_1 + ' ', '').replace(word_2 + ' ', '').replace(word_3 + ' ', '').replace(word_4 + ' ', '').replace(word_5 + ' ', '').replace(word_6 + ' ', '').replace(word_7 + ' ', '').replace(word_8 + ' ', '')
+	return extracted_text
 
 
 def save_text(paper_id, date, extracted_text):    
@@ -137,7 +150,7 @@ if __name__ == "__main__":
 	symbol_blacklist = symbol_stop()
 	for filename in os.listdir(paper_dir):
 		interval_time = time.time()
-		if filename.startswith("OPDR") and filename.endswith(".pdf"):
+		if filename.startswith("XXDR") and filename.endswith(".pdf"):
 			date = datetime.strptime(filename[4:-4], '%d%m%Y')
 			parser(filename[:-4], date, os.path.join(paper_dir, filename), blacklist, symbol_blacklist) 
 		print("--- Done %s with %s seconds ---" % (filename, time.time() - interval_time))
