@@ -15,24 +15,20 @@ from pdfminer.converter import PDFPageAggregator
 
 start_time = time.time()
 
-# base_path_lin  = "/home/User/fyp/English/parse"
-# base_path_win = "C:/Users/User/Desktop/fyp/English/parse"
-paper_dir = "C:/Users/User/Desktop/fyp/English/paper"
-stopword_dir = "C:/Users/User/Desktop/fyp/English/stopword"
-log_file = "C:/Users/User/Desktop/fyp/English/parse/log1.csv"
-symbol_file = "C:/Users/User/Desktop/fyp/English/stopword/special/symbol.txt"
+# base_path_lin  = "/home/User/fyp/English"
+base_path_win = "C:/Users/User/Desktop/fyp/English/"
 
-# paper_dir = "/home/User/fyp/paper"
-# stopword_dir = "/home/User/fyp/stopword"
-# log_file = "/home/User/fyp/order_paper/log.csv"
-# symbol_file = "/home/User/fyp/stopword/special/symbol.txt"
+paper_dir = os.path.join(base_path_win, "paper")
+stopword_dir = os.path.join(base_path_win, "stopword")
+log_file = os.path.join(base_path_win, "parse/log1.csv")
+symbol_file = os.path.join(base_path_win, "stopword/special/symbol.txt")
+
 
 word_1 = "THE COMMENCEMENT PUBLIC BUSINESS PRESENTATION GOVERNMENT BILL FOR FIRST READING"
 word_2 = "THE COMMENCEMENT PUBLIC BUSINESS PRESENTATION GOVERNMENT BILLS FOR FIRST READING"
 word_3 = "ORDERS THE DAY AND MOTIONS"
 word_4 = "ORDERS THE DAY AND MOTION"
 word_5 = "THE COMMENCEMENT PUBLIC BUSINESS PRESENTATION GOVERNMENT BILL FOR THE FIRST READING"
-# word_list = ["AT THE COMMENCEMENT OF PUBLIC BUSINESS PRESENTATION OF GOVERNMENT BILL FOR FIRST READING", "AT THE COMMENCEMENT OF PUBLIC BUSINESS PRESENTATION OF GOVERNMENT BILLS FOR FIRST READING", "AT THE COMMENCEMENT OF PUBLIC BUSINESS PRESENTATION OF GOVERNMENT BILL FOR THE FIRST READING", "ORDERS OF THE DAY AND MOTIONS", "ORDERS OF THE DAY AND MOTION"]
 
 
 pattern1 = re.compile(r"PR13[1-5][1-3][a-zA-Z]{1,3}\s{0,1}\d*")
@@ -122,11 +118,11 @@ def parser(paper_id, date, file, stopword, symbol):
 
 
 def remove_stopword(extracted_text, symbol, stopword):
-	test = re.findall(pattern1, extracted_text)
-	test += re.findall(pattern2, extracted_text)
+	code = re.findall(pattern1, extracted_text)
+	code += re.findall(pattern2, extracted_text)
 	# if test:
 	# 	print test
-	for x in test:
+	for x in code:
 		extracted_text = extracted_text.replace(' ' + x + ' ', ' ')
 	for s in symbol:
 		extracted_text = extracted_text.replace(s, ' ')

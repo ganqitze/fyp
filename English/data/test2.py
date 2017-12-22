@@ -23,11 +23,12 @@ max_length = 32767   # Limit of 250 words per comment
 min_author_comments = 50  # Exclude authors with fewer comments
 nrows = None  # Number of rows of file to read; None reads in full file
 
-# base_path_lin  = "/home/User/Desktop/fyp/order_paper"
-# base_path_win = "C:/Users/User/Desktop/fyp/order_paper"
 
-# fn = "hacker_news_comments.csv"
-fn = "/home/User/fyp/English/parse/log.csv"
+# base_path_lin  = "/home/User/fyp/English"
+base_path_win = "C:/Users/User/Desktop/fyp/English/"
+
+fn = os.path.join(base_path_win, "parse/log.csv")
+
 # url = "https://zenodo.org/record/45901/files/hacker_news_comments.csv"
 # if not os.path.exists(fn):
 #     import requests
