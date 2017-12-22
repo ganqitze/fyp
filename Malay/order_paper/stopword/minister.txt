@@ -45,6 +45,7 @@ WILAYAH
 PERSEKUTUAN
 SETIAUSAHA
 MENTERI
+dan
 Perdana 
 Jabatan
 Kewangan
@@ -57,7 +58,9 @@ Tenaga Teknologi Hijau Air
 Kemajuan Luar Bandar Wilayah
 Perdagangan Antarabangsa Industri
 Sains Teknologi Inovasi
+Sains Inovasi
 Sumber Asli Alam Sekitar
+Asli Sekitar
 Pelancongan Kebudayaan
 Pertanian Industri Asas Tani
 Pertahanan
@@ -67,9 +70,11 @@ Belia Sukan
 Sumber Manusia
 Perdagangan Koperasi Kepenggunaan
 KPerdagangan Koperasi Kepenggunaan
+Koperasi Kepenggunaan
 Perdagangan Dalam Negeri Koperasi Kepenggunaan
 Kesejahteraan Bandar Perumahan Kerajaan Tempatan
 Pembangunan Wanita Keluarga Masyarakat
+Wanita Keluarga
 Luar Negeri
 Wilayah Persekutuan
 Setiausaha Kabinet
@@ -80,7 +85,7 @@ Timbalan
 Perdagangan Antarabangsa 
 Industri
 Pertanian 
-Asas Tani
+Tani
 Kesejahteraan
 Bandar
 Perumahan
