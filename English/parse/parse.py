@@ -15,7 +15,7 @@ from pdfminer.converter import PDFPageAggregator
 
 start_time = time.time()
 
-# base_path_lin  = "/home/User/fyp/English"
+base_path_lin  = "/home/User/fyp/English"
 base_path_win = "C:/Users/User/Desktop/fyp/English/"
 
 paper_dir = os.path.join(base_path_win, "paper")

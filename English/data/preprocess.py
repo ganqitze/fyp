@@ -22,13 +22,11 @@ logging.basicConfig()
 
 start_time = time.time()
 
-
-
 max_length = 32767   # Limit of 250 words per comment
-min_author_comments = 50  # Exclude authors with fewer comments
+# min_author_comments = 50  # Exclude authors with fewer comments
 nrows = None  # Number of rows of file to read; None reads in full file
 
-# base_path_lin  = "/home/User/fyp/English"
+base_path_lin  = "/home/User/fyp/English"
 base_path_win = "C:/Users/User/Desktop/fyp/English/"
 
 fn = os.path.join(base_path_win, "parse/log.csv")
@@ -62,6 +60,7 @@ tokens, vocab = preprocess.tokenize(texts, max_length, n_threads=4,
                                     merge=False)
 # print tokens, vocab
 
+
 # LDA
 # tokenize words using nltk
 tokens = [nltk.word_tokenize(x) for x in texts]
@@ -75,6 +74,7 @@ print len(doc_term_matrix)
 print doc_term_matrix[100]
 print "LDA preprocess complete"
 # END OF LDA
+
 
 del texts
 
