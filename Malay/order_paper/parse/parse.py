@@ -1,6 +1,8 @@
 import os
 import time
 import csv
+import re
+
 from datetime import datetime
 from pdfminer.pdfparser import PDFParser
 from pdfminer.pdfdocument import PDFDocument
@@ -16,10 +18,10 @@ start_time = time.time()
 base_dir_linux = "/home/User/fyp/Malay/"
 base_dir_win = "C:/Users/User/Desktop/fyp/Malay/"
 
-paper_dir = os.path.join(base_dir_linux, "order_paper/paper")
-stopword_dir = os.path.join(base_dir_linux, "order_paper/stopword")
-log_file = os.path.join(base_dir_linux, "order_paper/parse/log3.csv")
-symbol_file = os.path.join(base_dir_linux, "order_paper/stopword/special/symbol.txt")
+paper_dir = os.path.join(base_dir_win, "order_paper/paper")
+stopword_dir = os.path.join(base_dir_win, "order_paper/stopword")
+log_file = os.path.join(base_dir_win, "order_paper/parse/log1.csv")
+symbol_file = os.path.join(base_dir_win, "order_paper/stopword/special/symbol.txt")
 
 
 word_1 = "UCAPAN-UCAPAN PENANGGUHAN"
@@ -30,6 +32,9 @@ word_5 = "RISALAT-RISALAT YANG DIBAWA KE DALAM MESYUARAT"
 word_6 = "RISALAT YANG DIBAWA KE DALAM MESYUARAT"
 word_7 = "RISALAT DOKUMEN"
 word_8 = "TARIKH DIBENTANGKAN"
+
+pattern1 = re.compile(r"PR-13[1-5][1-3]-[a-zA-Z]{1,3}\s{0,1}\d*")
+pattern2 = re.compile(r"MQT-1343-0\d*")
 
 open(log_file, 'wb').close()
 
@@ -119,6 +124,12 @@ def parser(paper_id, date, file, stopword, symbol):
 
 
 def remove_stopword(extracted_text, symbol, stopword):
+    code = re.findall(pattern1, extracted_text)
+    code += re.findall(pattern2, extracted_text)
+    # if test:
+    #   print test
+    for x in code:
+        extracted_text = extracted_text.replace(' ' + x + ' ', ' ')
     for s in symbol:
         extracted_text = extracted_text.replace(s, ' ')
     for word in stopword:
