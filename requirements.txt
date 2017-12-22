@@ -1,0 +1,7 @@
+LDA2Vec - Remember to modify NDArray, topic_coherence
+Gensim LDA
+nltk - LDA tokens
+pdfminer - parse pdf
+pyPDF2 - split pdf (if necessary)
+PySastrawi - Stem malay tokens
+Palmetto docker
