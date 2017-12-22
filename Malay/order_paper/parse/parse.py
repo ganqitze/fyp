@@ -20,7 +20,7 @@ base_dir_win = "C:/Users/User/Desktop/fyp/Malay/"
 
 paper_dir = os.path.join(base_dir_win, "order_paper/paper")
 stopword_dir = os.path.join(base_dir_win, "order_paper/stopword")
-log_file = os.path.join(base_dir_win, "order_paper/parse/log1.csv")
+log_file = os.path.join(base_dir_win, "order_paper/parse/log2.csv")
 symbol_file = os.path.join(base_dir_win, "order_paper/stopword/special/symbol.txt")
 
 
@@ -129,7 +129,7 @@ def remove_stopword(extracted_text, symbol, stopword):
     # if test:
     #   print test
     for x in code:
-        extracted_text = extracted_text.replace(' ' + x + ' ', ' ')
+        extracted_text = extracted_text.replace(x + ' ', ' ')
     for s in symbol:
         extracted_text = extracted_text.replace(s, ' ')
     for word in stopword:
@@ -153,7 +153,7 @@ if __name__ == "__main__":
     for filename in os.listdir(paper_dir):
         page_start = 0
         interval_time = time.time()
-        if filename.startswith("AUMDR") and filename.endswith(".pdf"):
+        if filename.startswith("XXXDR") and filename.endswith(".pdf"):
             date = datetime.strptime(filename[5:-4], '%d%m%Y')
             parser(filename[:-4], date, os.path.join(paper_dir, filename), blacklist, symbol_blacklist) 
         print("--- Done %s with %s seconds ---" % (filename, time.time() - interval_time))

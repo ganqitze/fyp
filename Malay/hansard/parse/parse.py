@@ -13,27 +13,14 @@ from pdfminer.converter import PDFPageAggregator
 
 start_time = time.time()
 
-# base_path_lin  = "/home/User/Desktop/fyp/order_paper"
-# base_path_win = "C:/Users/User/Desktop/fyp/English/order_paper"
 
-paper_dir = "C:/Users/User/Desktop/fyp/Malay/hansard/paper_splited/"
-stopword_dir = "C:/Users/User/Desktop/fyp/Malay/hansard/stopword"
-log_file = "C:/Users/User/Desktop/fyp/Malay/hansard/parse/log.csv"
-symbol_file = "C:/Users/User/Desktop/fyp/Malay/hansard/stopword/special/symbol.txt"
+base_dir_linux = "/home/User/fyp/Malay/hansard/"
+base_dir_win = "C:/Users/User/Desktop/fyp/Malay/hansard/"
 
-# paper_dir = "/home/User/fyp/paper"
-# stopword_dir = "/home/User/fyp/stopword"
-# log_file = "/home/User/fyp/order_paper/log.csv"
-# symbol_file = "/home/User/fyp/stopword/special/symbol.txt"
-
-# word_1 = "UCAPAN-UCAPAN PENANGGUHAN"
-# word_2 = "UCAPAN PENANGGUHAN"
-# word_3 = "UCAPAN-UCAPAN"
-# word_4 = "UCAPAN"
-# word_5 = "RISALAT-RISALAT YANG DIBAWA KE DALAM MESYUARAT"
-# word_6 = "RISALAT YANG DIBAWA KE DALAM MESYUARAT"
-# word_7 = "RISALAT DOKUMEN"
-# word_8 = "TARIKH DIBENTANGKAN"
+paper_dir = os.path.join(base_dir_win, "paper_splited")
+stopword_dir = os.path.join(base_dir_win, "stopword")
+log_file = os.path.join(base_dir_win, "parse/log3.csv")
+symbol_file = os.path.join(base_dir_win, "stopword/special/symbol.txt")
 
 open(log_file, 'wb').close()
 

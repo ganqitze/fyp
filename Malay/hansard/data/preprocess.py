@@ -27,8 +27,8 @@ max_length = 32767   # Limit of 250 words per comment
 # min_author_comments = 50  # Exclude authors with fewer comments
 nrows = None  # Number of rows of file to read; None reads in full file
 
-base_path_lin  = "/home/User/Desktop/fyp/Malay/order_paper"
-base_path_win = "C:/Users/User/Desktop/fyp/Malay/order_paper"
+base_path_lin  = "/home/User/Desktop/fyp/Malay/hansard/"
+base_path_win = "C:/Users/User/Desktop/fyp/Malay/hansard/"
 
 fn = os.path.join(base_path_win, "parse/log3.csv")
 
