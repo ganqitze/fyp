@@ -6,23 +6,27 @@
 # memory, so please be patient!
 from datetime import datetime
 import time
-start_time = time.time()
-
-
-from lda2vec import preprocess, Corpus
+import os.path
+import nltk 
 import numpy as np
 import pandas as pd
 import logging
 import cPickle as pickle
-import os.path
+from lda2vec import preprocess, Corpus
+import warnings
+warnings.filterwarnings(action='ignore', category=UserWarning, module='gensim')
+import gensim
+from gensim import corpora, models
 
 logging.basicConfig()
+
+start_time = time.time()
+
 
 
 max_length = 32767   # Limit of 250 words per comment
 min_author_comments = 50  # Exclude authors with fewer comments
 nrows = None  # Number of rows of file to read; None reads in full file
-
 
 # base_path_lin  = "/home/User/fyp/English"
 base_path_win = "C:/Users/User/Desktop/fyp/English/"
@@ -57,6 +61,21 @@ texts = features.pop('content').values
 tokens, vocab = preprocess.tokenize(texts, max_length, n_threads=4,
                                     merge=False)
 # print tokens, vocab
+
+# LDA
+# tokenize words using nltk
+tokens = [nltk.word_tokenize(x) for x in texts]
+dictionary = corpora.Dictionary(tokens)
+dictionary.save('dictionary.dict')
+print dictionary
+
+doc_term_matrix = [dictionary.doc2bow(doc) for doc in tokens]
+corpora.MmCorpus.serialize('corpus.mm', doc_term_matrix)
+print len(doc_term_matrix)
+print doc_term_matrix[100]
+print "LDA preprocess complete"
+# END OF LDA
+
 del texts
 
 # Make a ranked list of rare vs frequent words
