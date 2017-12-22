@@ -33,9 +33,9 @@ print "Using GPU " + str(gpu_id)
 # score = data['score'].astype('float32')
 
 # # My part
-vocab = pickle.load(open('../../data/vocab', 'rb'))
-corpus = pickle.load(open('../../data/corpus', 'rb'))
-data = np.load(open('../../data/data.npz', 'rb'))
+vocab = pickle.load(open('../../../data/vocab', 'rb'))
+corpus = pickle.load(open('../../../data/corpus', 'rb'))
+data = np.load(open('../../../data/data.npz', 'rb'))
 flattened = data['flattened']
 paper_id = data['paper_id']
 date_id = data['date_id']
@@ -64,7 +64,7 @@ n_vocab = flattened.max() + 1
 # Number of dimensions in a single word vector
 n_units = 256
 # Number of topics to fit
-n_story_topics = 20
+n_story_topics = 10
 batchsize = 4096
 # Get the string representation for every compact key
 words = corpus.word_list(vocab)[:n_vocab]
@@ -175,8 +175,8 @@ for epoch in range(700):
                         cuda.to_cpu(model.mixture_sty.factors.W.data).copy(),
                         cuda.to_cpu(model.sampler.W.data).copy(),
                         words)
-    print_top_words_per_topic(ts)
-    # topic_words = print_top_words_per_topic(ts)
+    # print_top_words_per_topic(ts)
+    topic_words = print_top_words_per_topic(ts)
     ts['doc_lengths'] = paper_len
     ts['term_frequency'] = term_frequency
     np.savez('topics.story.pyldavis', **ts)
@@ -199,7 +199,7 @@ for epoch in range(700):
                     prior=float(prior.data), rate=rate)
         print msg.format(**logs)
         j += 1
-    # coherence = topic_coherence(topic_words, services=['cv'])
-    # for j in range(n_story_topics):
-    # 	print j, coherence[(j, 'cv')]
+    coherence = topic_coherence(topic_words, services=['cv'])
+    for j in range(n_story_topics):
+    	print j, coherence[(j, 'cv')]
     serializers.save_hdf5("lda2vec.hdf5", model)
