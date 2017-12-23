@@ -170,7 +170,7 @@ optimizer.add_hook(clip)
 j = 0
 epoch = 0
 fraction = batchsize * 1.0 / flattened.shape[0]
-for epoch in range(50):
+for epoch in range(1):
     ts = prepare_topics(cuda.to_cpu(model.mixture_sty.weights.W.data).copy(),
                         cuda.to_cpu(model.mixture_sty.factors.W.data).copy(),
                         cuda.to_cpu(model.sampler.W.data).copy(),

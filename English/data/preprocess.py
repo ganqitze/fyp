@@ -29,7 +29,7 @@ nrows = None  # Number of rows of file to read; None reads in full file
 base_path_lin  = "/home/User/fyp/English"
 base_path_win = "C:/Users/User/Desktop/fyp/English/"
 
-fn = os.path.join(base_path_win, "parse/log.csv")
+fn = os.path.join(base_path_lin, "parse/log.csv")
 
 # url = "https://zenodo.org/record/45901/files/hacker_news_comments.csv"
 # if not os.path.exists(fn):
@@ -57,21 +57,21 @@ for col, dtype in zip(features.columns, features.dtypes):
 texts = features.pop('content').values
 # texts = features.pop('comment_text').values
 tokens, vocab = preprocess.tokenize(texts, max_length, n_threads=4,
-                                    merge=False)
+                                    merge=True)
 # print tokens, vocab
 
 
 # LDA
 # tokenize words using nltk
-tokens = [nltk.word_tokenize(x) for x in texts]
-dictionary = corpora.Dictionary(tokens)
-dictionary.save('dictionary.dict')
-print dictionary
+lda_tokens = [nltk.word_tokenize(x) for x in texts]
+lda_dictionary = corpora.Dictionary(lda_tokens)
+lda_dictionary.save('dictionary.dict')
+print lda_dictionary
 
-doc_term_matrix = [dictionary.doc2bow(doc) for doc in tokens]
+doc_term_matrix = [lda_dictionary.doc2bow(doc) for doc in lda_tokens]
 corpora.MmCorpus.serialize('corpus.mm', doc_term_matrix)
 print len(doc_term_matrix)
-print doc_term_matrix[100]
+# print doc_term_matrix[100]
 print "LDA preprocess complete"
 # END OF LDA
 
@@ -94,7 +94,7 @@ pruned = corpus.filter_count(compact, min_count=10)
 clean = corpus.subsample_frequent(pruned)
 
 # print np.unique(clean)
-# print "n_words", np.unique(clean).max()
+print "n_words", np.unique(clean).max()
 
 
 # # Extract numpy arrays over the fields we want covered by topics
@@ -162,5 +162,5 @@ features.to_pickle('features.pd')
 data = dict(flattened=flattened, paper_id=paper_id_f, date_id=date_id_f)
 np.savez('data', **data)
 np.save(open('tokens', 'wb'), tokens)
-
+print "lda2vec complete"
 print("--- Done %s seconds ---" % (time.time() - start_time))

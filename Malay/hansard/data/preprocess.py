@@ -27,10 +27,10 @@ max_length = 32767   # Limit of 250 words per comment
 # min_author_comments = 50  # Exclude authors with fewer comments
 nrows = None  # Number of rows of file to read; None reads in full file
 
-base_path_lin  = "/home/User/Desktop/fyp/Malay/hansard/"
+base_path_lin  = "/home/User/fyp/Malay/hansard/"
 base_path_win = "C:/Users/User/Desktop/fyp/Malay/hansard/"
 
-fn = os.path.join(base_path_win, "parse/log3.csv")
+fn = os.path.join(base_path_lin, "parse/log.csv")
 
 # url = "https://zenodo.org/record/45901/files/hacker_news_comments.csv"
 # if not os.path.exists(fn):
@@ -72,15 +72,15 @@ tokens, vocab = preprocess.tokenize(katadasar, max_length, n_threads=4,
 
 # LDA
 # tokenize words using nltk
-tokens = [nltk.word_tokenize(x) for x in texts]
-dictionary = corpora.Dictionary(tokens)
-dictionary.save('dictionary.dict')
-print dictionary
+lda_tokens = [nltk.word_tokenize(x) for x in katadasar]
+lda_dictionary = corpora.Dictionary(lda_tokens)
+lda_dictionary.save('dictionary.dict')
+print lda_dictionary
 
-doc_term_matrix = [dictionary.doc2bow(doc) for doc in tokens]
+doc_term_matrix = [lda_dictionary.doc2bow(doc) for doc in lda_tokens]
 corpora.MmCorpus.serialize('corpus.mm', doc_term_matrix)
 print len(doc_term_matrix)
-print doc_term_matrix[100]
+# print doc_term_matrix[100]
 print "LDA preprocess complete"
 # END OF LDA
 
@@ -169,5 +169,5 @@ features.to_pickle('features.pd')
 data = dict(flattened=flattened, paper_id=paper_id_f, date_id=date_id_f)
 np.savez('data', **data)
 np.save(open('tokens', 'wb'), tokens)
-
+print "lda2vec complete"
 print("--- Done %s seconds ---" % (time.time() - start_time))

@@ -18,10 +18,10 @@ start_time = time.time()
 base_path_lin  = "/home/User/fyp/English"
 base_path_win = "C:/Users/User/Desktop/fyp/English/"
 
-paper_dir = os.path.join(base_path_win, "paper")
-stopword_dir = os.path.join(base_path_win, "stopword")
-log_file = os.path.join(base_path_win, "parse/log1.csv")
-symbol_file = os.path.join(base_path_win, "stopword/special/symbol.txt")
+paper_dir = os.path.join(base_path_lin, "paper")
+stopword_dir = os.path.join(base_path_lin, "stopword")
+log_file = os.path.join(base_path_lin, "parse/log.csv")
+symbol_file = os.path.join(base_path_lin, "stopword/special/symbol.txt")
 
 
 word_1 = "THE COMMENCEMENT PUBLIC BUSINESS PRESENTATION GOVERNMENT BILL FOR FIRST READING"

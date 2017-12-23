@@ -17,10 +17,10 @@ start_time = time.time()
 base_dir_linux = "/home/User/fyp/Malay/hansard/"
 base_dir_win = "C:/Users/User/Desktop/fyp/Malay/hansard/"
 
-paper_dir = os.path.join(base_dir_win, "paper_splited")
-stopword_dir = os.path.join(base_dir_win, "stopword")
-log_file = os.path.join(base_dir_win, "parse/log3.csv")
-symbol_file = os.path.join(base_dir_win, "stopword/special/symbol.txt")
+paper_dir = os.path.join(base_dir_linux, "paper_splited")
+stopword_dir = os.path.join(base_dir_linux, "stopword")
+log_file = os.path.join(base_dir_linux, "parse/log.csv")
+symbol_file = os.path.join(base_dir_linux, "stopword/special/symbol.txt")
 
 open(log_file, 'wb').close()
 
