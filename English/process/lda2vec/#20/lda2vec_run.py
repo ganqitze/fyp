@@ -6,6 +6,9 @@
 import os.path
 import pickle
 import time
+import csv
+import time
+start_time = time.time()
 
 import chainer
 from chainer import cuda
@@ -16,6 +19,26 @@ import numpy as np
 from lda2vec import utils
 from lda2vec import prepare_topics, print_top_words_per_topic, topic_coherence
 from lda2vec_model import LDA2Vec
+
+
+base_path_lin  = "/home/User/fyp/English/process/lda2vec/#20/"
+base_path_win = "C:/Users/User/Desktop/fyp/English/process/lda2vec/#20/"
+
+topic_file = os.path.join(base_path_lin, "topic.csv")
+coherence_file = os.path.join(base_path_lin, "coherence.csv")
+
+open(topic_file, 'wb').close()
+open(coherence_file, 'wb').close()
+
+def save_topic(paper_id, date, extracted_text):    
+    with open(topic_file, "ab") as newFile:
+        newFileWriter = csv.writer(newFile)
+        newFileWriter.writerow([paper_id, date, extracted_text.encode("utf-8")])
+
+def save_coherence(time, looper, measures):
+    with open(coherence_file, "ab") as newFile:
+        newFileWriter = csv.writer(newFile)
+        newFileWriter.writerow([time, looper, measures.encode("utf-8")])
 
 gpu_id = int(os.getenv('CUDA_GPU', 0))
 # cuda.get_device(gpu_id).use()
@@ -200,6 +223,11 @@ for epoch in range(1):
         print msg.format(**logs)
         j += 1
     coherence = topic_coherence(topic_words, services=['cv'])
+    coherence_str = 'hue,'
     for j in range(n_story_topics):
+        coherence_str += str(coherence[(j, 'cv')]) + ','
     	print j, coherence[(j, 'cv')]
+    print coherence_str
+    save_coherence(time=time.time(), looper=10, measures=coherence_str)
     serializers.save_hdf5("lda2vec.hdf5", model)
+print("--- Done all! %s seconds ---" % (time.time() - start_time))
