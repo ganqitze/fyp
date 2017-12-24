@@ -8,6 +8,7 @@ import pickle
 import time
 import csv
 import time
+from datetime import datetime
 start_time = time.time()
 
 import chainer
@@ -27,18 +28,18 @@ base_path_win = "C:/Users/User/Desktop/fyp/English/process/lda2vec/#20/"
 topic_file = os.path.join(base_path_lin, "topic.csv")
 coherence_file = os.path.join(base_path_lin, "coherence.csv")
 
-open(topic_file, 'wb').close()
-open(coherence_file, 'wb').close()
+# open(topic_file, 'wb').close()
+# open(coherence_file, 'wb').close()
 
-def save_topic(paper_id, date, extracted_text):    
+def save_topic(text):    
     with open(topic_file, "ab") as newFile:
         newFileWriter = csv.writer(newFile)
-        newFileWriter.writerow([paper_id, date, extracted_text.encode("utf-8")])
+        newFileWriter.writerow(text)
 
-def save_coherence(time, looper, measures):
+def save_coherence(measures):
     with open(coherence_file, "ab") as newFile:
         newFileWriter = csv.writer(newFile)
-        newFileWriter.writerow([time, looper, measures.encode("utf-8")])
+        newFileWriter.writerow(measures)
 
 gpu_id = int(os.getenv('CUDA_GPU', 0))
 # cuda.get_device(gpu_id).use()
@@ -193,17 +194,22 @@ optimizer.add_hook(clip)
 j = 0
 epoch = 0
 fraction = batchsize * 1.0 / flattened.shape[0]
-for epoch in range(1):
+avg = sum_coherence = 0
+while avg < 0.40 and epoch < 2:
+# for epoch in range(1):
     ts = prepare_topics(cuda.to_cpu(model.mixture_sty.weights.W.data).copy(),
                         cuda.to_cpu(model.mixture_sty.factors.W.data).copy(),
                         cuda.to_cpu(model.sampler.W.data).copy(),
                         words)
     # print_top_words_per_topic(ts)
     topic_words = print_top_words_per_topic(ts)
+    save_topic(topic_words)
     ts['doc_lengths'] = paper_len
     ts['term_frequency'] = term_frequency
     np.savez('topics.story.pyldavis', **ts)
     for p, f in utils.chunks(batchsize, paper_id, flattened):
+        sum_coherence = 0
+        avg = 0
         t0 = time.time()
         optimizer.zero_grads()
         l = model.fit_partial(p.copy(), f.copy())
@@ -223,11 +229,20 @@ for epoch in range(1):
         print msg.format(**logs)
         j += 1
     coherence = topic_coherence(topic_words, services=['cv'])
-    coherence_str = 'hue,'
+    coherence_train = [datetime.now().strftime("%Y-%m-%d %H:%M")]
     for j in range(n_story_topics):
-        coherence_str += str(coherence[(j, 'cv')]) + ','
-    	print j, coherence[(j, 'cv')]
-    print coherence_str
-    save_coherence(time=time.time(), looper=10, measures=coherence_str)
+        print j, coherence[(j, 'cv')]
+        if coherence[(j, 'cv')] == None:
+            coherence[(j, 'cv')] = -1
+        sum_coherence += coherence[(j, 'cv')]
+        coherence_train.append(coherence[(j, 'cv')])
+    avg = sum_coherence/n_story_topics
+    print avg
+    epoch += 1
+    coherence_train.append(avg)
+    save_coherence(coherence_train)
     serializers.save_hdf5("lda2vec.hdf5", model)
+else:
+    serializers.save_hdf5("lda2vec.hdf5", model)
+    print("COMPLETE with epoch: ", epoch)
 print("--- Done all! %s seconds ---" % (time.time() - start_time))
