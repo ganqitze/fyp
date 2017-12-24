@@ -57,8 +57,8 @@ print "Using GPU " + str(gpu_id)
 # score = data['score'].astype('float32')
 
 # # My part
-vocab = pickle.load(open('../../../data/vocab', 'rb'))
-corpus = pickle.load(open('../../../data/corpus', 'rb'))
+vocab = pickle.load(open('../../../data/vocab.p', 'rb'))
+corpus = pickle.load(open('../../../data/corpus.p', 'rb'))
 data = np.load(open('../../../data/data.npz', 'rb'))
 flattened = data['flattened']
 paper_id = data['paper_id']
