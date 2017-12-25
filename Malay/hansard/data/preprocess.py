@@ -31,7 +31,7 @@ base_path_lin  = "/home/User/fyp/Malay/hansard/"
 base_path_win = "C:/Users/User/Desktop/fyp/Malay/hansard/"
 
 fn = os.path.join(base_path_lin, "parse/log.csv")
-
+symbol_file = os.path.join(base_path_lin, "data/stopword.txt")
 # url = "https://zenodo.org/record/45901/files/hacker_news_comments.csv"
 # if not os.path.exists(fn):
 #     import requests
@@ -64,7 +64,23 @@ factory = StemmerFactory()
 stemmer = factory.create_stemmer()
 katadasar = [stemmer.stem(x) for x in texts]
 
-tokens, vocab = preprocess.tokenize(katadasar, max_length, n_threads=4,
+# # Remove stopword
+with open(symbol_file) as f:
+	symbol_list = f.readlines()
+symbol_list = [x.strip() for x in symbol_list]
+
+new_katadasar = []
+for text in katadasar:
+	text = ' ' + text + ' '
+	for stopword in symbol_list:
+		text = text.replace(' ' + stopword + ' ', ' ')
+		text = text.replace('-', ' ')
+	while "  " in text:
+		text = text.replace('  ', ' ')
+	new_katadasar.append(text)
+
+
+tokens, vocab = preprocess.tokenize(new_katadasar, max_length, n_threads=4,
                                     merge=False)
 # print tokens
 # print len(tokens), len(vocab)
@@ -72,7 +88,7 @@ tokens, vocab = preprocess.tokenize(katadasar, max_length, n_threads=4,
 
 # LDA
 # tokenize words using nltk
-lda_tokens = [nltk.word_tokenize(x) for x in katadasar]
+lda_tokens = [nltk.word_tokenize(x) for x in new_katadasar]
 lda_dictionary = corpora.Dictionary(lda_tokens)
 lda_dictionary.save('dictionary.dict')
 print lda_dictionary
