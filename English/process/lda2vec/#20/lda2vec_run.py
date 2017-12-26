@@ -195,7 +195,7 @@ j = 0
 epoch = 0
 fraction = batchsize * 1.0 / flattened.shape[0]
 avg = sum_coherence = 0
-while avg < 0.40 and epoch < 2:
+while avg < 0.50 and epoch < 1000:
 # for epoch in range(1):
     ts = prepare_topics(cuda.to_cpu(model.mixture_sty.weights.W.data).copy(),
                         cuda.to_cpu(model.mixture_sty.factors.W.data).copy(),
