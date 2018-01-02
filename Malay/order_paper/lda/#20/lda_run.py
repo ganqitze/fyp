@@ -19,10 +19,11 @@ n_topic = 20
 n_word = 10
 
 base_path_lin  = "/home/User/fyp/Malay/order_paper/lda/#20/"
+base_path_lin2  = "/home/ganqitze/Desktop/fyp/Malay/order_paper/lda/#20/"
 base_path_win = "C:/Users/User/Desktop/fyp/Malay/order_paper/lda/#20"
 
-topic_file = os.path.join(base_path_lin, "topic.csv")
-coherence_file = os.path.join(base_path_lin, "coherence.csv")
+topic_file = os.path.join(base_path_lin2, "topic.csv")
+coherence_file = os.path.join(base_path_lin2, "coherence.csv")
 
 # open(topic_file, 'wb').close()
 # open(coherence_file, 'wb').close()
@@ -50,7 +51,7 @@ lda_tokens = pickle.load(open('../data/tokens.p', 'rb'))
 
 
 counter = avg = 0
-while avg < 0.90 and counter < 1500:
+while avg < 0.90 and counter < 48:
 	sums = []
 	# Running and Training LDA model on the document term matrix.
 	ldamodel = Lda(doc_term_matrix, num_topics=n_topic, id2word=lda_dictionary, passes=10)
@@ -68,10 +69,11 @@ while avg < 0.90 and counter < 1500:
 	save_topic(topic_list)
 	save_coherence(sums)
 	ldamodel.save('topic.model')
+	print counter, avg
 else:
-	save_topic(topic_list)
-	save_coherence(sums)
-	ldamodel.save('topic.model')
+	# save_topic(topic_list)
+	# save_coherence(sums)
+	# ldamodel.save('topic.model')
 	print("COMPLETE with epoch: ", counter)
 
 print("--- Done %s seconds ---" % (time.time() - start_time))

@@ -19,10 +19,11 @@ n_topic = 10
 n_word = 10
 
 base_path_lin  = "/home/User/fyp/Malay/order_paper/lda/#10/"
+base_path_lin2  = "/home/ganqitze/Desktop/fyp/Malay/order_paper/lda/#10/"
 base_path_win = "C:/Users/User/Desktop/fyp/Malay/order_paper/lda/#10"
 
-topic_file = os.path.join(base_path_lin, "topic.csv")
-coherence_file = os.path.join(base_path_lin, "coherence.csv")
+topic_file = os.path.join(base_path_lin2, "topic.csv")
+coherence_file = os.path.join(base_path_lin2, "coherence.csv")
 
 # open(topic_file, 'wb').close()
 # open(coherence_file, 'wb').close()
@@ -70,9 +71,9 @@ while avg < 0.90 and counter < 29:
 	ldamodel.save('topic.model')
 	print counter, avg
 else:
-	save_topic(topic_list)
-	save_coherence(sums)
-	ldamodel.save('topic.model')
+	# save_topic(topic_list)
+	# save_coherence(sums)
+	# ldamodel.save('topic.model')
 	print("COMPLETE with epoch: ", counter)
 
 print("--- Done %s seconds ---" % (time.time() - start_time))
