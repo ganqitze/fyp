@@ -50,7 +50,7 @@ lda_tokens = pickle.load(open('../data/tokens.p', 'rb'))
 
 
 counter = avg = 0
-while avg < 0.90 and counter < 25:
+while avg < 0.90 and counter < 50:
 	sums = []
 	# Running and Training LDA model on the document term matrix.
 	ldamodel = Lda(doc_term_matrix, num_topics=n_topic, id2word=lda_dictionary, passes=10)
