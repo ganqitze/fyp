@@ -48,9 +48,9 @@ lda_tokens = pickle.load(open('../data/tokens.p', 'rb'))
 # print dictionary
 # print len(doc_term_matrix)
 
-
+print "reloading"
 counter = avg = 0
-while avg < 0.90 and counter < 2:
+while avg < 0.90 and counter < 133:
 	sums = []
 	# Running and Training LDA model on the document term matrix.
 	ldamodel = Lda(doc_term_matrix, num_topics=n_topic, id2word=lda_dictionary, passes=10)
@@ -68,10 +68,11 @@ while avg < 0.90 and counter < 2:
 	save_topic(topic_list)
 	save_coherence(sums)
 	ldamodel.save('topic.model')
+	print counter, avg
 else:
-	save_topic(topic_list)
-	save_coherence(sums)
-	ldamodel.save('topic.model')
+	# save_topic(topic_list)
+	# save_coherence(sums)
+	# ldamodel.save('topic.model')
 	print("COMPLETE with epoch: ", counter)
 
 print("--- Done %s seconds ---" % (time.time() - start_time))
