@@ -16,7 +16,7 @@ nrows = None  # Number of rows of file to read; None reads in full file
 
 start_time = time.time()
 
-fn = "C:/Users/User/Desktop/fyp/Malay/order_paper/parse/log3.csv"
+fn = "/home/ganqitze/Desktop/fyp/Malay/order_paper/parse/log.csv"
 
 features = []
 # Convert to unicode (spaCy only works with unicode)
