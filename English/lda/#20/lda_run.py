@@ -19,7 +19,7 @@ n_topic = 20
 n_word = 10
 
 base_path_lin  = "/home/User/fyp/English/lda/#20/"
-base_path_lin2  = "/home/ganqitze/Desktop/fyp/English/lda/#20/"
+base_path_lin2  = "/home/ganfyp/Desktop/fyp/English/lda/#20/"
 base_path_win = "C:/Users/User/Desktop/fyp/English/lda/#20"
 
 topic_file = os.path.join(base_path_lin2, "topic.csv")
@@ -51,8 +51,9 @@ lda_tokens = pickle.load(open('../data/tokens.p', 'rb'))
 
 print "reloaded"
 counter = avg = 0
-while avg < 0.90 and counter < 600:
+while avg < 0.90 and counter < 4000:
 	sums = []
+	interval_time = time.time()
 	# Running and Training LDA model on the document term matrix.
 	ldamodel = Lda(doc_term_matrix, num_topics=n_topic, id2word=lda_dictionary, passes=10)
 	topic_list = ldamodel.print_topics(num_topics=n_topic, num_words=n_word)
@@ -69,7 +70,7 @@ while avg < 0.90 and counter < 600:
 	save_topic(topic_list)
 	save_coherence(sums)
 	ldamodel.save('topic.model')
-	print counter, avg
+	print counter, avg, (time.time() - interval_time)
 else:
 	# save_topic(topic_list)
 	# save_coherence(sums)
