@@ -23,10 +23,11 @@ from lda2vec_model import LDA2Vec
 
 
 base_path_lin  = "/home/User/fyp/Malay/hansard/process/lda2vec/#20/"
+base_path_lin_3 = "/home/ganfyp/Desktop/fyp/Malay/hansard/process/lda2vec/#20/"
 base_path_win = "C:/Users/User/Desktop/fyp/Malay/hansard/process/lda2vec/#20/"
 
-topic_file = os.path.join(base_path_lin, "topic.csv")
-coherence_file = os.path.join(base_path_lin, "coherence.csv")
+topic_file = os.path.join(base_path_lin_3, "topic.csv")
+coherence_file = os.path.join(base_path_lin_3, "coherence.csv")
 
 # open(topic_file, 'wb').close()
 # open(coherence_file, 'wb').close()
@@ -195,21 +196,21 @@ j = 0
 epoch = 0
 fraction = batchsize * 1.0 / flattened.shape[0]
 avg = sum_coherence = 0
-while avg < 0.50 and epoch < 50:
+while avg < 0.90 and epoch < 10:
 # for epoch in range(1):
     ts = prepare_topics(cuda.to_cpu(model.mixture_sty.weights.W.data).copy(),
                         cuda.to_cpu(model.mixture_sty.factors.W.data).copy(),
                         cuda.to_cpu(model.sampler.W.data).copy(),
                         words)
-    # print_top_words_per_topic(ts)
+    ##print_top_words_per_topic(ts)
     topic_words = print_top_words_per_topic(ts)
     save_topic(topic_words)
     ts['doc_lengths'] = paper_len
     ts['term_frequency'] = term_frequency
     np.savez('topics.story.pyldavis', **ts)
     for p, f in utils.chunks(batchsize, paper_id, flattened):
-        sum_coherence = 0
-        avg = 0
+        #sum_coherence = 0
+        #avg = 0
         t0 = time.time()
         optimizer.zero_grads()
         l = model.fit_partial(p.copy(), f.copy())
@@ -228,19 +229,19 @@ while avg < 0.50 and epoch < 50:
                     prior=float(prior.data), rate=rate)
         print msg.format(**logs)
         j += 1
-    coherence = topic_coherence(topic_words, services=['cv'])
-    coherence_train = [datetime.now().strftime("%Y-%m-%d %H:%M")]
-    for j in range(n_story_topics):
-        print j, coherence[(j, 'cv')]
-        if coherence[(j, 'cv')] == None:
-            coherence[(j, 'cv')] = -1
-        sum_coherence += coherence[(j, 'cv')]
-        coherence_train.append(coherence[(j, 'cv')])
-    avg = sum_coherence/n_story_topics
-    print avg
+    #coherence = topic_coherence(topic_words, services=['cv'])
+    #coherence_train = [datetime.now().strftime("%Y-%m-%d %H:%M")]
+    #for j in range(n_story_topics):
+    #    print j, coherence[(j, 'cv')]
+    #    if coherence[(j, 'cv')] == None:
+    #        coherence[(j, 'cv')] = -1
+     #   sum_coherence += coherence[(j, 'cv')]
+     #   coherence_train.append(coherence[(j, 'cv')])
+    #avg = sum_coherence/n_story_topics
+    #print avg
     epoch += 1
-    coherence_train.append(avg)
-    save_coherence(coherence_train)
+    #coherence_train.append(avg)
+    #save_coherence(coherence_train)
     serializers.save_hdf5("lda2vec.hdf5", model)
 else:
     serializers.save_hdf5("lda2vec.hdf5", model)
