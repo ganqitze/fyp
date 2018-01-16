@@ -51,8 +51,10 @@ lda_tokens = pickle.load(open('../data/tokens.p', 'rb'))
 
 
 counter = avg = 0
-while avg < 0.90 and counter < 1000:
+while avg < 0.90 and counter < 4000:
 	sums = []
+	interval_time = time.time()
+	sums.append(interval_time)
 	# Running and Training LDA model on the document term matrix.
 	ldamodel = Lda(doc_term_matrix, num_topics=n_topic, id2word=lda_dictionary, passes=10)
 	topic_list = ldamodel.print_topics(num_topics=n_topic, num_words=n_word)
@@ -69,7 +71,7 @@ while avg < 0.90 and counter < 1000:
 	save_topic(topic_list)
 	save_coherence(sums)
 	ldamodel.save('topic.model')
-	print counter, avg
+	print counter, avg, (time.time() - interval_time)
 else:
 	# save_topic(topic_list)
 	# save_coherence(sums)
