@@ -19,10 +19,11 @@ n_topic = 30
 n_word = 10
 
 base_path_lin  = "/home/User/fyp/Malay/hansard/lda/#30/"
+base_path_lin2 = "/home/ganqitze/Desktop/fyp/Malay/hansard/lda/#30/"
 base_path_win = "C:/Users/User/Desktop/fyp/Malay/hansard/lda/#30"
 
-topic_file = os.path.join(base_path_lin, "topic.csv")
-coherence_file = os.path.join(base_path_lin, "coherence.csv")
+topic_file = os.path.join(base_path_lin2, "topic.csv")
+coherence_file = os.path.join(base_path_lin2, "coherence.csv")
 
 # open(topic_file, 'wb').close()
 # open(coherence_file, 'wb').close()
@@ -48,10 +49,11 @@ lda_tokens = pickle.load(open('../data/tokens.p', 'rb'))
 # print dictionary
 # print len(doc_term_matrix)
 
-
+print "reloaded from save"
 counter = avg = 0
-while avg < 0.90 and counter < 200:
+while avg < 0.90 and counter < 50:
 	sums = []
+	interval_time = time.time()
 	# Running and Training LDA model on the document term matrix.
 	ldamodel = Lda(doc_term_matrix, num_topics=n_topic, id2word=lda_dictionary, passes=10)
 	topic_list = ldamodel.print_topics(num_topics=n_topic, num_words=n_word)
@@ -68,7 +70,7 @@ while avg < 0.90 and counter < 200:
 	save_topic(topic_list)
 	save_coherence(sums)
 	ldamodel.save('topic.model')
-	print counter, avg
+	print counter, avg, (time.time() - interval_time)
 else:
 	# save_topic(topic_list)
 	# save_coherence(sums)
