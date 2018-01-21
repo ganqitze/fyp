@@ -13,8 +13,8 @@ base_path_win = "C:/Users/User/Desktop/fyp/"
 topic_file = os.path.join(base_path_lin, "topic.csv")
 coherence_file = os.path.join(base_path_lin, "coherence.csv")
 
-palmetto = Palmetto()
-# palmetto = Palmetto("http://example.com/myownendpoint")
+# palmetto = Palmetto()
+palmetto = Palmetto("http://localhost:7777/service/")
 
 # open(coherence_file, 'ab').close()
 
@@ -38,12 +38,12 @@ for i in range(0, len(topic_list)):
 	sums = avg = 0
 	for j in range(0, len(topic_list[0])):
 		# print topic_list[i][j]
-		print i, j
+		# print i, j
 		text = topic_list[i][j].replace('[u\'', '').replace(' u\'', ' ').replace('\']', '').replace('\',', '')
 		text = text.split()
-		print text
+		# print text
 		coherence = palmetto.get_coherence(text, coherence_type="cv")
-		print coherence		
+		# print coherence		
 		coherence_list.append(coherence)
 		sums += coherence
 	avg = sums / len(topic_list[0])
