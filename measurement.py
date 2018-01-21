@@ -10,8 +10,8 @@ start_time = time.time()
 base_path_lin  = "/home/User/fyp/"
 base_path_win = "C:/Users/User/Desktop/fyp/"
 
-topic_file = os.path.join(base_path_win, "topic.csv")
-coherence_file = os.path.join(base_path_win, "coherence.csv")
+topic_file = os.path.join(base_path_lin, "topic.csv")
+coherence_file = os.path.join(base_path_lin, "coherence.csv")
 
 palmetto = Palmetto()
 # palmetto = Palmetto("http://example.com/myownendpoint")
@@ -33,6 +33,7 @@ def read_topic():
 topic_list = read_topic()
 print "start"
 for i in range(0, len(topic_list)):
+	interval_time = time.time()
 	coherence_list = []
 	sums = avg = 0
 	for j in range(0, len(topic_list[0])):
@@ -48,7 +49,8 @@ for i in range(0, len(topic_list)):
 	avg = sums / len(topic_list[0])
 	coherence_list.append(avg)
 	save_coherence(coherence_list)
-print "hello world"
+	print i, avg, (time.time() - interval_time)
+print("--- Done all! %s seconds ---" % (time.time() - start_time))
 	
 
 
