@@ -7,11 +7,11 @@ from palmettopy.palmetto import Palmetto
 
 start_time = time.time()
 
-base_path_lin  = "/home/User/fyp/"
-base_path_win = "C:/Users/User/Desktop/fyp/"
+base_path_lin  = "/home/User/fyp/special measurement LDA"
+base_path_win = "C:/Users/User/Desktop/fyp/special measurement LDA"
 
-topic_file = os.path.join(base_path_win, "topic.csv")
-coherence_file = os.path.join(base_path_win, "coherence.csv")
+topic_file = os.path.join(base_path_win, "aumdr_topic_20.csv")
+coherence_file = os.path.join(base_path_win, "aumdr_coherence_20.csv")
 
 palmetto = Palmetto()
 # palmetto = Palmetto("http://localhost:7777/service/")
@@ -43,8 +43,8 @@ for i in range(0, len(topic_list)):
 		# text = text.replace('(0,', '').replace('(1,', '').replace('(2,', '').replace('(3,', '').replace('(4,', '').replace('(5,', '').replace('(6,', '').replace('(7,', '').replace('(8,', '').replace('(9,', '').replace('(10,', '').replace('(11,', '').replace('(12,', '').replace('(13,', '').replace('(14,', '').replace('(15,', '').replace('(16,', '').replace('(17,', '').replace('(18,', '').replace('(19,', '')
 		text = text.replace('(0,', '').replace('(1,', '').replace('(2,', '').replace('(3,', '').replace('(4,', '').replace('(5,', '').replace('(6,', '').replace('(7,', '').replace('(8,', '').replace('(9,', '').replace('(10,', '').replace('(11,', '').replace('(12,', '').replace('(13,', '').replace('(14,', '').replace('(15,', '').replace('(16,', '').replace('(17,', '').replace('(18,', '').replace('(19,', '').replace('(20,', '').replace('(21,', '').replace('(22,', '').replace('(23,', '').replace('(24,', '').replace('(25,', '').replace('(26,', '').replace('(27,', '').replace('(28,', '').replace('(29,', '')
 		text = text.split()
-		print text[1::2]
-		coherence = palmetto.get_coherence(text, coherence_type="cv")
+		# print text[1::2]
+		coherence = palmetto.get_coherence(text[1::2], coherence_type="cv")
 	
 		coherence_list.append(coherence)
 		sums += coherence
