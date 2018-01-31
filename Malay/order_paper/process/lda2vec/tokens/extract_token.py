@@ -12,8 +12,8 @@ base_path_win = "C:/Users/User/Desktop/fyp/Malay/order_paper/process/lda2vec/tok
 
 topic_file = "C:/Users/User/Desktop/fyp/Malay/order_paper/process/lda2vec/#20/topic.csv"
 # topic_file = os.path.join(base_path_win, "topic_10.csv")
-text_file = os.path.join(base_path_win, "topic_20.txt")
-index_file = os.path.join(base_path_win, "topic_i_20.txt")
+text_file = os.path.join(base_path_win, "a_topic_20.txt")
+index_file = os.path.join(base_path_win, "a_topic_i_20.txt")
 
 
 open(text_file, 'wb').close()
@@ -54,16 +54,20 @@ for i in range(0, len(topic_list)):
 	# save_text(text_list)
 	# print i, (time.time() - interval_time)
 
-# print text_list
-c = a = 0
-for text in text_list:
-	interval_time = time.time()
-	a += 1
-	save_index(str(len(text)))
-	for i in text:
-		save_text(i.split())
-		c += 1
-	print a, (time.time() - interval_time)
-print c
+with open(text_file, "ab") as newFile:
+	newFileWriter = csv.writer(newFile)
+    # newFileWriter.writerow(measures)
+	# print text_list
+	c = a = 0
+	for text in text_list:
+		interval_time = time.time()
+		a += 1
+		save_index(str(len(text)))
+		for i in text:
+			newFileWriter.writerow(i.split())
+			# save_text(i.split())
+			c += 1
+		print a, (time.time() - interval_time)
+	print c
 print("--- Done all! %s seconds ---" % (time.time() - start_time))
 
