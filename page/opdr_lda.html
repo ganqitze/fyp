@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <!-- <link rel="stylesheet" type="text/css" href="page.css"> -->
+  <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+  <link rel="stylesheet" href="https://code.getmdl.io/1.3.0/material.blue_grey-light_blue.min.css"/>
+  <link rel="stylesheet" type="text/css" href="https://cdn.rawgit.com/bmabey/pyLDAvis/files/ldavis.v1.0.0.css">
+  <link rel="import" href="bower_components/paper-menu/paper-menu.html">
+  <link rel="import" href="bower_components/paper-menu/paper-submenu.html">
+    <link rel="import" href="bower_components/paper-item/paper-item.html">
+  <script defer src="https://code.getmdl.io/1.3.0/material.min.js"></script>
+  <title>FYP</title>  
+  <style>
+    .sub paper-item {
+      padding-left: 32px !important;
+    }
+    #draw {
+      background-color: #ffffff;
+    }
+    .nodec {
+      text-decoration: none;
+      color: #212121;
+      font-weight: normal;
+    }
+  </style>
+
+</head>
+
+<body>
+  <div class="mdl-layout mdl-js-layout mdl-layout--fixed-header">
+    <header class="mdl-layout__header mdl-layout__header--scroll">
+      <div class="mdl-layout__header-row">
+        <!-- Title -->
+        <span class="mdl-layout-title">FYP</span>
+      </div>
+      <!-- Tabs -->
+      <div class="mdl-layout__tab-bar mdl-js-ripple-effect">
+        <a href="#intro" class="mdl-layout__tab is-active">Introduction</a>
+        <a href="#opdr_lda_10" class="mdl-layout__tab">Distribution of words frequencies in 10 topics</a>
+        <a href="#opdr_lda_20" class="mdl-layout__tab">Distribution of words frequencies in 20 topics</a>
+        <a href="#wordclouds" class="mdl-layout__tab">Wordclouds</a>
+      </div>      
+    </header>
+    <!-- Drawer -->
+    <div class="mdl-layout__drawer" id="draw">
+
+        <paper-menu>
+          <paper-submenu>
+            <paper-item class="menu-trigger">English Order Paper</paper-item>
+            <paper-menu class="menu-content sub">
+              <paper-item><a class="nodec" href="opdr_lda2vec.html">Lda2vec</a></paper-item>
+              <paper-item><a class="nodec" href="opdr_lda.html">LDA</a></paper-item>
+            </paper-menu>
+          </paper-submenu>
+          <paper-submenu>
+            <paper-item class="menu-trigger">Malay Order Paper</paper-item>
+            <paper-menu class="menu-content sub">
+              <paper-item><a class="nodec" href="">Lda2vec</a></paper-item>
+              <paper-item><a class="nodec" href="">LDA</a></paper-item>
+            </paper-menu>
+          </paper-submenu>
+          <paper-submenu>
+            <paper-item class="menu-trigger">Hansard</paper-item>
+            <paper-menu class="menu-content sub">
+              <paper-item><a class="nodec" href="">Lda2vec</a></paper-item>
+              <paper-item><a class="nodec" href="">LDA</a></paper-item>
+            </paper-menu>
+          </paper-submenu>
+        </paper-menu>
+   </div>
+
+
+
+    <!-- Contents -->
+    <main class="mdl-layout__content">
+
+      <!-- Distribution -->
+      <section class="mdl-layout__tab-panel" id="opdr_lda_10">
+        <div class="page-content" style="padding: 10px 0px 10px 80px;">
+          <div id="ldavis_opdr_lda_10_id">
+            <script src="ldavis/opdr_lda_10.js"></script>
+          </div>
+        </div>
+      </section>
+
+      <section class="mdl-layout__tab-panel" id="opdr_lda_20">
+        <div class="page-content" style="padding: 10px 0px 10px 80px;">
+          <div id="ldavis_opdr_lda_20_id">
+            <script src="ldavis/opdr_lda_20.js"></script>
+          </div>
+        </div>
+      </section>
+
+      <!-- WordCloud -->
+      <section class="mdl-layout__tab-panel" id="wordclouds">
+        <div class="page-content">
+          <div class="mdl-grid">
+            <div class="mdl-cell mdl-cell--2-col"></div>
+            <div class="mdl-cell mdl-cell--8-col">
+              <img src="sample-31.png" width="720px" height="480px" id="">
+            </div>
+            <div class="mdl-cell mdl-cell--2-col">
+              Img #1
+            </div>
+
+
+            <div class="mdl-cell mdl-cell--2-col"></div>
+            <div class="mdl-cell mdl-cell--8-col">
+              <img src="sample-31.png" width="720px" height="480px" id="">
+            </div>
+            <div class="mdl-cell mdl-cell--2-col">
+              Img #2
+            </div>
+          </div>
+        </div>
+      </section>
+
+    </main>
+  </div>
+</body>
+
+</html>
