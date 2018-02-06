@@ -1,7 +1,7 @@
 from collections import Counter
 
-token_file = "C://Users/User/Desktop/fyp/English/lda/tokens/topic_20.txt"
-new_file = "C://Users/User/Desktop/New folder/opdr_lda_20.txt"
+token_file = "C://Users/User/Desktop/fyp/English/process/lda2vec/tokens/topic_10.txt"
+new_file = "C://Users/User/Desktop/New folder/opdr_lda2vec_9k_10.txt"
 
 
 with open(token_file) as f:
