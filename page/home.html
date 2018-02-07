@@ -1,0 +1,201 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <!-- <link rel="stylesheet" type="text/css" href="page.css"> -->
+  <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+  <link rel="stylesheet" href="https://code.getmdl.io/1.3.0/material.blue_grey-light_blue.min.css"/>
+  <link rel="stylesheet" type="text/css" href="https://cdn.rawgit.com/bmabey/pyLDAvis/files/ldavis.v1.0.0.css">
+  <link rel="import" href="bower_components/paper-menu/paper-menu.html">
+  <link rel="import" href="bower_components/paper-menu/paper-submenu.html">
+  <link rel="import" href="bower_components/paper-item/paper-item.html">
+  <script defer src="https://code.getmdl.io/1.3.0/material.min.js"></script>
+  <title>FYP</title>  
+  <style>
+  .sub paper-item {
+    padding-left: 32px !important;
+  }
+  #draw {
+    background-color: #ffffff;
+  }
+  .nodec {
+    text-decoration: none;
+    color: #212121;
+    font-weight: normal;
+  }
+  .intro-card-wide.mdl-card.intro-card{
+    width: 512px;
+  }
+  .intro-card-wide.mdl-card.summary-card{
+    width: 768px;
+  }
+  .bgcolor {
+    background-color: #fafafa;
+  }
+  .middle {
+    padding-top: 48px; 
+  }
+  .tg  {border-collapse:collapse;border-spacing:0;margin:0px auto;}
+  .tg td {padding:10px 5px;border-style:solid;border-width:1px;overflow:hidden;word-break:normal;}
+  .tg th {font-weight:normal;padding:10px 5px;border-style:solid;border-width:1px;overflow:hidden;word-break:normal;}
+  .tg .tg-s6z2 {text-align:center}
+  .tg .tg-hgcj {font-weight:bold;text-align:center}
+  @media screen and (max-width: 767px) {.tg {width: auto !important;}.tg col {width: auto !important;}.tg-wrap {overflow-x: auto;-webkit-overflow-scrolling: touch;margin: auto 0px;}}
+</style>
+
+</head>
+
+<body>
+  <div class="mdl-layout mdl-js-layout mdl-layout--fixed-header mdl-layout--fixed-tabs">
+    <header class="mdl-layout__header mdl-layout__header--scroll">
+      <div class="mdl-layout__header-row">
+        <!-- Title -->
+        <span class="mdl-layout-title">TMOP<sup>2</sup></span>
+      </div>
+      <!-- Tabs -->
+      <div class="mdl-layout__tab-bar mdl-js-ripple-effect">
+        <a href="#intro" class="mdl-layout__tab is-active">Introduction</a>
+        <a href="#summary" class="mdl-layout__tab">Summary of Experiment Result</a>
+      </div>      
+    </header>
+    <!-- Drawer -->
+    <div class="mdl-layout__drawer" id="draw">
+
+      <paper-menu>
+        <paper-submenu>
+          <paper-item class="menu-trigger"><a class="nodec" href="home.html">Home</a></paper-item>
+        </paper-submenu>
+        <paper-submenu>
+          <paper-item class="menu-trigger">English Order Paper</paper-item>
+          <paper-menu class="menu-content sub">
+            <paper-item><a class="nodec" href="opdr_lda2vec.html">Lda2vec</a></paper-item>
+            <paper-item><a class="nodec" href="opdr_lda.html">LDA</a></paper-item>
+            <paper-item><a class="nodec" href="opdr_lda2vec_9k.html">Lda2vec (Extended)</a></paper-item>
+          </paper-menu>
+        </paper-submenu>
+        <paper-submenu>
+          <paper-item class="menu-trigger">Malay Order Paper</paper-item>
+          <paper-menu class="menu-content sub">
+            <paper-item><a class="nodec" href="aumdr_lda2vec.html">Lda2vec</a></paper-item>
+            <paper-item><a class="nodec" href="aumdr_lda.html">LDA</a></paper-item>
+          </paper-menu>
+        </paper-submenu>
+        <paper-submenu>
+          <paper-item class="menu-trigger">Hansard</paper-item>
+          <paper-menu class="menu-content sub">
+            <paper-item><a class="nodec" href="hans_lda2vec.html">Lda2vec</a></paper-item>
+            <paper-item><a class="nodec" href="hans_lda.html">LDA</a></paper-item>
+          </paper-menu>
+        </paper-submenu>
+      </paper-menu>
+    </div>
+
+
+
+    <!-- Contents -->
+    <main class="mdl-layout__content bgcolor">
+
+      <!-- Introduction -->
+      <section class="mdl-layout__tab-panel is-active" id="intro">
+        <div class="page-content">
+          <div class="mdl-grid">
+            <div class="mdl-cell mdl-cell--4-col"></div>
+            <div class="mdl-cell mdl-cell--4-col middle">
+              <div class="intro-card-wide mdl-card mdl-shadow--2dp intro-card">
+                <div class="mdl-card__title">
+                  <h2 class="mdl-card__title-text">Welcome</h2>
+                </div>
+                <div class="mdl-card__supporting-text">
+                  <p>This is a web application for my project, Lda2vec for Parliamentary Paper Topic Modeling (722). In this web application, it contains all the experiment results conducted during the project.</p> 
+                  <p><strong>Data</strong> - English and Malay Order Paper, Hansard</p>            
+                  <p><strong>Model</strong> - LDA, Lda2vec</p>
+                  <p><strong>Topic Coherence Measurement</strong> - <i>Cv</i></p>
+                  <p><strong>Visualisation</strong> - Distribution of words frequencies, Wordclouds</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Summary -->
+      <section class="mdl-layout__tab-panel" id="summary">
+        <div class="page-content">
+          <div class="mdl-grid">
+            <div class="mdl-cell mdl-cell--3-col"></div>
+            <div class="mdl-cell mdl-cell--8-col middle">
+              <div class="intro-card-wide mdl-card mdl-shadow--2dp summary-card">
+                <div class="mdl-card__title">
+                  <h2 class="mdl-card__title-text centre">Summary of Experiment Result</h2>
+                </div>
+                <div class="mdl-card__supporting-text">
+
+                  <div class="tg-wrap">
+                    <table class="tg">
+                      <tr>
+                        <th class="tg-hgcj" rowspan="3">Model</th>
+                        <th class="tg-hgcj" rowspan="3">Corpus</th>
+                        <th class="tg-hgcj" colspan="3">Number of Topics, <i>n</i></th>
+                      </tr>
+                      <tr>
+                        <td class="tg-s6z2">10</td>
+                        <td class="tg-s6z2">20</td>
+                        <td class="tg-s6z2">30</td>
+                      </tr>
+                      <tr>
+                        <td class="tg-hgcj" colspan="3">Average of Topic Coherence, <i>Cv</i></td>
+                      </tr>
+                      <tr>
+                        <td class="tg-hgcj" rowspan="3">LDA</td>
+                        <td class="tg-s6z2">English Order Paper</td>
+                        <td class="tg-s6z2">0.252</td>
+                        <td class="tg-s6z2">0.246</td>
+                        <td class="tg-s6z2">N/A</td>
+                      </tr>
+                      <tr>
+                        <td class="tg-s6z2">Malay Order Paper</td>
+                        <td class="tg-s6z2">0.397</td>
+                        <td class="tg-s6z2">0.373</td>
+                        <td class="tg-s6z2">N/A</td>
+                      </tr>
+                      <tr>
+                        <td class="tg-s6z2">Hansard</td>
+                        <td class="tg-s6z2">N/A</td>
+                        <td class="tg-s6z2">0.371</td>
+                        <td class="tg-s6z2">0.366</td>
+                      </tr>
+                      <tr>
+                        <td class="tg-hgcj" rowspan="3">Lda2vec</td>
+                        <td class="tg-s6z2">English Order Paper</td>
+                        <td class="tg-s6z2">0.295</td>
+                        <td class="tg-s6z2">0.350</td>
+                        <td class="tg-s6z2">N/A</td>
+                      </tr>
+                      <tr>
+                        <td class="tg-s6z2">Malay Order Paper</td>
+                        <td class="tg-s6z2">0.379</td>
+                        <td class="tg-s6z2">0.307</td>
+                        <td class="tg-s6z2">N/A</td>
+                      </tr>
+                      <tr>
+                        <td class="tg-s6z2">Hansard</td>
+                        <td class="tg-s6z2">N/A</td>
+                        <td class="tg-s6z2">0.339</td>
+                        <td class="tg-s6z2">0.349</td>
+                      </tr>
+                    </table>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+
+
+    </main>
+  </div>
+</body>
+
+</html>

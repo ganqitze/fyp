@@ -22,3 +22,13 @@ Summary - https://goo.gl/etdeqx
 English Order Paper - https://goo.gl/piYsTu
 Malay Order Paper - https://goo.gl/uodnne
 Hansard - https://goo.gl/NAm6so
+
+----------------------------------------------------------
+Requirement:
+LDA2Vec
+Gensim LDA
+NLTK
+PDFMiner
+PyPDF2
+PySastrawi
+Palmetto docker
