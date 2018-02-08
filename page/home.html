@@ -35,12 +35,14 @@
   .middle {
     padding-top: 48px; 
   }
+  .highlight {
+    color: #FF1744;
+  }
   .tg  {border-collapse:collapse;border-spacing:0;margin:0px auto;}
-  .tg td {padding:10px 5px;border-style:solid;border-width:1px;overflow:hidden;word-break:normal;}
-  .tg th {font-weight:normal;padding:10px 5px;border-style:solid;border-width:1px;overflow:hidden;word-break:normal;}
-  .tg .tg-s6z2 {text-align:center}
-  .tg .tg-hgcj {font-weight:bold;text-align:center}
-  @media screen and (max-width: 767px) {.tg {width: auto !important;}.tg col {width: auto !important;}.tg-wrap {overflow-x: auto;-webkit-overflow-scrolling: touch;margin: auto 0px;}}
+  .tg td {padding:10px 5px;border-style:solid;border-width:1px;border-color: grey;overflow:hidden;word-break:normal;}
+  .tg th {font-size:14px;font-weight:normal;padding:10px 5px;border-style:solid;border-width:1px;overflow:hidden;word-break:normal;}
+  .tg .tg-ti5e{text-align:center}
+@media screen and (max-width: 767px) {.tg {width: auto !important;}.tg col {width: auto !important;}.tg-wrap {overflow-x: auto;-webkit-overflow-scrolling: touch;margin: auto 0px;}}</style>
 </style>
 
 </head>
@@ -68,23 +70,23 @@
         <paper-submenu>
           <paper-item class="menu-trigger">English Order Paper</paper-item>
           <paper-menu class="menu-content sub">
-            <paper-item><a class="nodec" href="opdr_lda2vec.html">Lda2vec</a></paper-item>
-            <paper-item><a class="nodec" href="opdr_lda.html">LDA</a></paper-item>
-            <paper-item><a class="nodec" href="opdr_lda2vec_9k.html">Lda2vec (Extended)</a></paper-item>
+            <a class="nodec" href="opdr_lda2vec.html"><paper-item>Lda2vec</paper-item></a>
+            <a class="nodec" href="opdr_lda.html"><paper-item>LDA</paper-item></a>
+            <a class="nodec" href="opdr_lda2vec_9k.html"><paper-item>Lda2vec (Extended)</paper-item></a>
           </paper-menu>
         </paper-submenu>
         <paper-submenu>
           <paper-item class="menu-trigger">Malay Order Paper</paper-item>
           <paper-menu class="menu-content sub">
-            <paper-item><a class="nodec" href="aumdr_lda2vec.html">Lda2vec</a></paper-item>
-            <paper-item><a class="nodec" href="aumdr_lda.html">LDA</a></paper-item>
+            <a class="nodec" href="aumdr_lda2vec.html"><paper-item>Lda2vec</paper-item></a>
+            <a class="nodec" href="aumdr_lda.html"><paper-item>LDA</paper-item></a>
           </paper-menu>
         </paper-submenu>
         <paper-submenu>
           <paper-item class="menu-trigger">Hansard</paper-item>
           <paper-menu class="menu-content sub">
-            <paper-item><a class="nodec" href="hans_lda2vec.html">Lda2vec</a></paper-item>
-            <paper-item><a class="nodec" href="hans_lda.html">LDA</a></paper-item>
+            <a class="nodec" href="hans_lda2vec.html"><paper-item>Lda2vec</paper-item></a>
+            <a class="nodec" href="hans_lda.html"><paper-item>LDA</paper-item></a>
           </paper-menu>
         </paper-submenu>
       </paper-menu>
@@ -129,59 +131,60 @@
                   <h2 class="mdl-card__title-text centre">Summary of Experiment Result</h2>
                 </div>
                 <div class="mdl-card__supporting-text">
-
+                  <!-- table -->
                   <div class="tg-wrap">
                     <table class="tg">
                       <tr>
-                        <th class="tg-hgcj" rowspan="3">Model</th>
-                        <th class="tg-hgcj" rowspan="3">Corpus</th>
-                        <th class="tg-hgcj" colspan="3">Number of Topics, <i>n</i></th>
+                        <th class="tg-ti5e" colspan="2" rowspan="5"><strong>Corpus</strong></th>
+                        <th class="tg-ti5e" colspan="4"><strong>Model</strong></th>
                       </tr>
                       <tr>
-                        <td class="tg-s6z2">10</td>
-                        <td class="tg-s6z2">20</td>
-                        <td class="tg-s6z2">30</td>
+                        <td class="tg-ti5e" colspan="2"><strong>LDA</strong></td>
+                        <td class="tg-ti5e" colspan="2"><strong>Lda2vec</strong></td>
                       </tr>
                       <tr>
-                        <td class="tg-hgcj" colspan="3">Average of Topic Coherence, <i>Cv</i></td>
+                        <td class="tg-ti5e" colspan="4"><strong>Number of Topics, <i>n</i></strong></td>
                       </tr>
                       <tr>
-                        <td class="tg-hgcj" rowspan="3">LDA</td>
-                        <td class="tg-s6z2">English Order Paper</td>
-                        <td class="tg-s6z2">0.252</td>
-                        <td class="tg-s6z2">0.246</td>
-                        <td class="tg-s6z2">N/A</td>
+                        <td class="tg-ti5e">10</td>
+                        <td class="tg-ti5e">20</td>
+                        <td class="tg-ti5e">10</td>
+                        <td class="tg-ti5e">20</td>
                       </tr>
                       <tr>
-                        <td class="tg-s6z2">Malay Order Paper</td>
-                        <td class="tg-s6z2">0.397</td>
-                        <td class="tg-s6z2">0.373</td>
-                        <td class="tg-s6z2">N/A</td>
+                        <td class="tg-ti5e" colspan="4"><strong>Average of Topic Coherence, <i>Cv</i></strong></td>
                       </tr>
                       <tr>
-                        <td class="tg-s6z2">Hansard</td>
-                        <td class="tg-s6z2">N/A</td>
-                        <td class="tg-s6z2">0.371</td>
-                        <td class="tg-s6z2">0.366</td>
+                        <td class="tg-ti5e"><strong>English</strong></td>
+                        <td class="tg-ti5e">Order Paper</td>
+                        <td class="tg-ti5e">0.252</td>
+                        <td class="tg-ti5e">0.246</td>
+                        <td class="tg-ti5e">0.295</td>
+                        <td class="tg-ti5e highlight">0.350</td>
                       </tr>
                       <tr>
-                        <td class="tg-hgcj" rowspan="3">Lda2vec</td>
-                        <td class="tg-s6z2">English Order Paper</td>
-                        <td class="tg-s6z2">0.295</td>
-                        <td class="tg-s6z2">0.350</td>
-                        <td class="tg-s6z2">N/A</td>
+                        <td class="tg-ti5e" rowspan="4"><strong>Malay</strong></td>
+                        <td class="tg-ti5e">Order Paper</td>
+                        <td class="tg-ti5e highlight">0.397</td>
+                        <td class="tg-ti5e">0.373</td>
+                        <td class="tg-ti5e">0.379</td>
+                        <td class="tg-ti5e">0.307</td>
                       </tr>
                       <tr>
-                        <td class="tg-s6z2">Malay Order Paper</td>
-                        <td class="tg-s6z2">0.379</td>
-                        <td class="tg-s6z2">0.307</td>
-                        <td class="tg-s6z2">N/A</td>
+                        <td class="tg-ti5e" rowspan="3">Hansard</td>
+                        <td class="tg-ti5e" colspan="4"><strong>Number of Topics, <i>n</i></strong></td>
                       </tr>
                       <tr>
-                        <td class="tg-s6z2">Hansard</td>
-                        <td class="tg-s6z2">N/A</td>
-                        <td class="tg-s6z2">0.339</td>
-                        <td class="tg-s6z2">0.349</td>
+                        <td class="tg-ti5e">20</td>
+                        <td class="tg-ti5e">30</td>
+                        <td class="tg-ti5e">20</td>
+                        <td class="tg-ti5e">30</td>
+                      </tr>
+                      <tr>
+                        <td class="tg-ti5e highlight">0.371</td>
+                        <td class="tg-ti5e">0.366</td>
+                        <td class="tg-ti5e">0.339</td>
+                        <td class="tg-ti5e">0.349</td>
                       </tr>
                     </table>
                   </div>
